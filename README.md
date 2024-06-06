@@ -1,20 +1,64 @@
-# Starlight Starter Kit: Basics
+# Yoda
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+<img width="513" alt="Yoda Documentation" src="https://github.com/Nestio/chuck/assets/24778724/e2db5b09-0a4e-4b2f-af13-6d112517bc4c">
 
-```
-npm create astro@latest -- --template starlight
-```
+Welcome to Yoda, the public developer documentation repository for Funnel Online Leasing! This repository is designed to provide our customers with comprehensive and up-to-date documentation for utilizing Funnel's Online Leasing services. We use Astro with the Starlight template to ensure a modern, fast, and easy-to-navigate documentation experience.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+## 📚 Table of Contents
+- [🌟 Project Overview](#-project-overview)
+- [⚙️ Installation](#%EF%B8%8F-installation)
+- [🚀 Usage](#-usage)
+- [📁 Project Structure](#-project-structure)
+- [🧞 Commands](#-commands)
+- [👀 Want to learn more?](#-want-to-learn-more)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌟 Project Overview
 
-## 🚀 Project Structure
+Yoda is built using Astro, a modern static site generator, and the Starlight template, which offers a clean and user-friendly design. This combination allows us to provide a seamless and efficient documentation experience for our customers.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## ⚙️ Installation
+
+To get started with Yoda, follow these steps:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/yoda.git
+    cd yoda
+    ```
+
+2. **Install Node.js v20.3.0:**
+
+    Ensure you have Node.js v20.3.0 installed. You can use [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions:
+
+    ```bash
+    nvm install 20.3.0
+    nvm use 20.3.0
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+## 🚀 Usage
+
+To run the documentation site locally and start making edits:
+
+1. **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+2. Open your browser and navigate to `http://localhost:4321` to view the site.
+
+3. Make changes to the documentation content or site configuration as needed. The development server will automatically reload to reflect your changes.
+
+## 📁 Project Structure
+
+Inside this Yoda project, you'll see the following folders and files:
 
 ```
 .
@@ -30,11 +74,13 @@ Inside of your Astro + Starlight project, you'll see the following folders and f
 └── tsconfig.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
+- **`public/`**: Static assets like favicons and images.
+- **`src/assets/`**: Project-specific assets. Images can be added here and embedded in Markdown with a relative link.
+- **`src/content/docs/`**: Documentation files in `.md` or `.mdx` format. Each file is exposed as a route based on its file name.
+- **`src/content/config.ts`**: Configuration file for documentation.
+- **`astro.config.mjs`**: Astro configuration file.
+- **`package.json`**: Project dependencies and scripts.
+- **`tsconfig.json`**: TypeScript configuration file.
 
 ## 🧞 Commands
 
@@ -44,11 +90,15 @@ All commands are run from the root of the project, from a terminal:
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm run build`           | Builds your production site to `./dist/`         |
+| `npm run preview`         | Previews your build locally, before deploying    |
+| `npm run astro ...`       | Runs CLI commands like `astro add`, `astro check`|
+| `npm run astro -- --help` | Gets help using the Astro CLI                    |
 
 ## 👀 Want to learn more?
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- Check out [Starlight’s docs](https://starlight.astro.build/).
+- Read the [Astro documentation](https://docs.astro.build).
+- Join the [Astro Discord server](https://astro.build/chat).
+
+Feel free to explore, contribute, and provide feedback to help us improve the documentation and overall user experience.
