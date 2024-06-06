@@ -13,6 +13,9 @@ export default defineConfig({
 				dark: '/src/assets/logo.svg',
 				replacesTitle: true,
 			},
+			social: {
+				github: 'https://github.com/Nestio/yoda',
+			},
 			sidebar: [
 				{
 					label: 'Guides',
