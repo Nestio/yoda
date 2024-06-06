@@ -1,0 +1,68 @@
+---
+title: Events Wakthrough
+description: Walkthrough
+---
+
+This walkthrough covers how to build with Funnel Leasing Events and Callbacks (aka "webhooks), which are payloads of event metadata automatically sent to your app when something happens in Funnel Online Leasing product.
+
+This resource centers implementation details, examples, and building with webhooks. For a higher-level overview of Funnel Leasing Events, please refer to the [Events Overview](/guides/events-and-callbacks/overview) section of the documentation.
+
+### Setting Up Funnel Leasing Events
+
+Enabling Funnel Leasing Events (webhooks) requires two distinct steps:
+
+1. Setting the callback url in Funnel Leasing, which are both covered in the sections directly below.
+2. Responding to the event to verify it was received.
+
+
+#### Set a Callback Url
+
+To set the account callback URL, please email the Funnel Leasing technical support team at [support@funnelleasing.com](mailto:support@funnelleasing.com). Alternatively, if you have an assigned account representative, you can contact them directly for assistance.
+
+#### Responding to Events
+
+Funnel Leasing sends events to a callback url and expects a specific response in order to verify that events are being sent to a live server. Once an event is sent, the callback url must return an HTTP `200` with a response body that contains the string `Funnel API Event Received`. If no response is received, Dropbox Sign considers that a failed callback and the event will be sent again later.
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="FAILED CALLBACKS">
+    Too many consecutive failed callbacks will result in Dropbox Sign deactivating webhooks for a callback url. Once deactivated, Dropbox Sign will stop sending events until a new callback url is added. Read more about this behavior in the Failures and Retries section.
+</Aside>
+
+Here's a basic example in NodeJS:
+```js
+// This sample is stripped down
+// Use for reference only
+const express = require('express');
+const app = express();
+
+app.post('/funnel-events', (req, res) => {
+    res.set('content-Type', 'text/plain');
+    res.status(200).send('Funnel API Event Received`');
+});
+```
+
+#### Testing your Callback Url
+
+When setting the callback url for your application with Funnel leasing, you can trigger a test event by calling out testing API. This is a great way to verify that your webhook handler is responding to events successfully.
+
+### Securing your Callback Handler
+Make sure that webhook events are originating from Funnel Leasing by using the following recommended method.
+
+#### IP Address Whitelisting
+We have made a JSON file containing the full list of IP addresses that webhook events may come from available for you below.
+
+```json
+{
+    "updatedDate": "2024-06-06-20-11-43",
+    "ips": {
+        "us": [
+            "**.**.**.**/32",
+            "**.**.**.**/32",
+        ]
+    }
+}
+
+```
+
+Note: This list will be automatically updated if the IP addresses change. We recommend checking this list periodically to ensure your callback handler is secure.

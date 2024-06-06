@@ -1,0 +1,19 @@
+---
+title: Events Overview
+description: Events Overview
+---
+You can use Funnel Leasing Events to learn about actions that happen in Funnel Online Leasing as they occur. This allows you to build automations on your system triggered by a Funnel Online Leasing event, such as reserving a unit, completing an application, or releasing a unit.
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="note" title="Note">
+    You may see the terms "webhooks" and "events and callbacks" used interchangeably throughout documentation on this feature. They mean the same thing.
+</Aside>
+
+## What are Funnel Leasing Events
+
+Funnel Leasing Events, or webhooks, are messages about an event that are sent via POST request from Funnel Leasing's servers to a user-defined callback url. They allow Funnel Leasing to automatically send real-time event data to your app when triggered by an event (like a unit being reserved). You can think of webhooks as push notifications for servers.
+
+## How Events Are Sent
+
+Events are sent as `application/json` POST requests. Some programming languages may require middleware tooling to parse the request and get to the message. More detailed information is available in our [Events and Callbacks Walkthrough.](/guides/events-and-callbacks/walkthrough).
