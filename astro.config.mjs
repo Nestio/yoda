@@ -30,27 +30,22 @@ export default defineConfig({
 										{
 											label: 'Unit Reserved',
 											link: '/guides/events-and-callbacks/events/event-unit-reserved/',
-											badge: 'Event'
 										},
 										{
 											label: 'Unit Released',
 											link: '/guides/events-and-callbacks/events/event-unit-released/',
-											badge: 'Event'
 										},
 										{
 											label: 'Unit Changed',
 											link: '/guides/events-and-callbacks/events/event-unit-changed/',
-											badge: 'Event'
 										},
 										{
 											label: 'Application Completed',
 											link: '/guides/events-and-callbacks/events/event-application-completed/',
-											badge: 'Event'
 										},
 										{
 											label: 'Application Submitted',
 											link: '/guides/events-and-callbacks/events/event-application-submitted/',
-											badge: 'Event'
 										},
 									]
 								},
