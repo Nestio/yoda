@@ -1,0 +1,81 @@
+---
+title: Authentication
+description: Authentication
+---
+
+#### API Key
+
+Getting your Authorized API Key
+To get access to the Funnel listings API please contact your customer service representative. We will create a key for you on request, configured according to your needs.
+
+Your customer service representative will discuss your intended API use to determine if you need a public or private access key. Typically public access keys are appropriate for website frontends and private access keys are required for server-to-server API integration.
+
+
+#### Basic Authentication
+
+Requests are made using the HTTP Basic Authentication protocol. The username is your key and the password is blank. See the wikipedia page for more details: [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side)
+
+###### Example Usage
+
+**Unix Shell**
+```shell
+curl --user <your_key>:  https://nestiolistings.com/api/v2/onlineleasing-link/
+```
+
+**Python**
+```python
+import requests
+
+response = requests.get('https://nestiolistings.com/api/v2/onlineleasing-link/', auth=('<your_key>', ''))
+```
+
+#### Best Practices
+
+We recommend the following best practices when using Funnel Online Leasing API keys:
+
+<table>
+    <thead>
+        <tr>
+            <th>🟢 Do These 🟢</th>
+            <th>🔴 Don't Do These 🔴</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>Treat all API keys like a very important password you need to keep safe.</li>
+                    <li>Use an environment file or credential manager to store your API key outside of your code.</li>
+                    <li>Immediately rotate API keys if you suspect a breach or exposure.</li>
+                    <li>Periodically rotate your API key on an annual basis as a proactive security measure.</li>
+                    <li>Keep minimum number of API keys as possible.</li>
+                    <li>Always remove keys that are inactive or serving a temporary need.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><b>Never share your API key with others.</b> It's not safe.</li>
+                    <li>Don't put your API key in your source code.</li>
+                    <li>Don't store your API key on the client side.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+#### Frequently Asked Questions (FAQs)
+
+Answers to commonly asked questions. When in doubt, please reach out to [support@funnelleasing.com](mailto:support@funnelleasing.com).
+
+###### My API key was compromised, what should I do?
+Do you suspect a breach?
+
+- Yes — Contact your customer service representative as soon as possible and ask to delete the compromised credentials immediately. You can fix your integration right after with minimal down time.
+- No — Send an email to [support@funnelleasing.com](mailto:support@funnelleasing.com) and rotate your API key as soon as possible.
+
+###### When does my API key expire?
+API keys are long-lived and do not expire.
+
+###### How often should I rotate my API key?
+We recommend rotating API keys at least once a year, but you can adjust the frequency to fit your security requirements.

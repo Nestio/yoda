@@ -57,8 +57,18 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'API Reference',
+					items: [
+						{
+							label: 'Introduction',
+							link: '/api-reference/overview/',
+						},
+						{
+							label: 'Authentication',
+							link: '/api-reference/authentication/',
+						},
+
+					]
 				},
 			],
 		}),
