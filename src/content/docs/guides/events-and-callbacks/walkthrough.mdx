@@ -21,12 +21,12 @@ To set the account callback URL, please email the Funnel Leasing technical suppo
 
 #### Responding to Events
 
-Funnel Leasing sends events to a callback url and expects a specific response in order to verify that events are being sent to a live server. Once an event is sent, the callback url must return an HTTP `200` with a response body that contains the string `Funnel API Event Received`. If no response is received, Dropbox Sign considers that a failed callback and the event will be sent again later.
+Funnel Leasing sends events to a callback url and expects a specific response in order to verify that events are being sent to a live server. Once an event is sent, the callback url must return an HTTP `200` with a response body that contains the string `Funnel API Event Received`. If no response is received, Funnel Leasing considers that a failed callback and the event will be sent again later.
 
 import { Aside } from '@astrojs/starlight/components';
 
 <Aside type="caution" title="FAILED CALLBACKS">
-    Too many consecutive failed callbacks will result in Dropbox Sign deactivating webhooks for a callback url. Once deactivated, Dropbox Sign will stop sending events until a new callback url is added. Read more about this behavior in the Failures and Retries section.
+    Too many consecutive failed callbacks will result in Funnel Leasing deactivating webhooks for a callback url. Once deactivated, Funnel Leasing will stop sending events until a new callback url is added. Read more about this behavior in the Failures and Retries section.
 </Aside>
 
 Here's a basic example in NodeJS:
