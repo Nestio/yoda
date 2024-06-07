@@ -1,0 +1,27 @@
+---
+title: Event List
+description: Event List
+---
+
+Here is a list of webhook events that can be sent to your callback urls:
+| Event type    | Description                                         | Event                                    |
+| ------------- | --------------------------------------------------- | ------------------------------------------ |
+| `application_unit_reserved`         | Triggered when an application reserved a unit               | [Documentation][application_unit_reserved] |
+| `application_unit_updated`         | Triggered when a leasing professional updates the unit on an application               | [Documentation][application_unit_updated] |
+| `application_status_canceled`         | Triggered when an application is canceled by a leasing professional               | [Documentation][application_status_canceled] |
+| `application_status_denied`         | Triggered when an application is denied by a leasing professional                | [Documentation][application_status_denied] |
+| `application_status_approved`         | Triggered when an application is approved or conditionally approved by a leasing professional                | [Documentation][application_status_approved] |
+| `application_status_completed`         | Triggered when an application is completed               | [Documentation][application_status_completed] |
+| `application_status_voided`         | Triggered when a leasing professional voids a completed application               | [Documentation][application_status_voided] |
+| `resident_status_moved_in`         | Triggered when a future resident moved in to a unit              | [Documentation][resident_status_moved_in] |
+
+
+[application_unit_reserved]: /guides/events-and-callbacks/events/application-unit-reserved
+[application_unit_updated]: /guides/events-and-callbacks/events/application-unit-updated
+[application_status_canceled]: /guides/events-and-callbacks/events/application-status-canceled
+[application_status_denied]: /guides/events-and-callbacks/events/application-status-denied
+[application_status_approved]: /guides/events-and-callbacks/events/application-status-approved
+[application_status_completed]: /guides/events-and-callbacks/events/application-status-completed
+[application_status_voided]: /guides/events-and-callbacks/events/application-status-voided
+[resident_status_moved_in]: /guides/events-and-callbacks/events/resident-status-moved-in
+

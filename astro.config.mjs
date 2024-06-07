@@ -32,24 +32,36 @@ export default defineConfig({
 										{ label: 'Event Object', link: '/guides/events-and-callbacks/events/overview/' },
 										{ label: 'Event List', link: '/guides/events-and-callbacks/events/event-names/' },
 										{
-											label: 'Unit Reserved',
-											link: '/guides/events-and-callbacks/events/event-unit-reserved/',
+											label: 'Application Unit Reserved',
+											link: '/guides/events-and-callbacks/events/application-unit-reserved',
 										},
 										{
-											label: 'Unit Released',
-											link: '/guides/events-and-callbacks/events/event-unit-released/',
+											label: 'Application Unit Updated',
+											link: '/guides/events-and-callbacks/events/application-unit-updated',
 										},
 										{
-											label: 'Unit Changed',
-											link: '/guides/events-and-callbacks/events/event-unit-changed/',
+											label: 'Application Approved',
+											link: '/guides/events-and-callbacks/events/application-status-approved',
+										},
+										{
+											label: 'Application Canceled',
+											link: '/guides/events-and-callbacks/events/application-status-canceled/',
 										},
 										{
 											label: 'Application Completed',
-											link: '/guides/events-and-callbacks/events/event-application-completed/',
+											link: '/guides/events-and-callbacks/events/application-status-completed/',
 										},
 										{
-											label: 'Application Submitted',
-											link: '/guides/events-and-callbacks/events/event-application-submitted/',
+											label: 'Application Denied',
+											link: '/guides/events-and-callbacks/events/application-status-denied/',
+										},
+										{
+											label: 'Application Voided',
+											link: '/guides/events-and-callbacks/events/application-status-voided',
+										},
+										{
+											label: 'Resident Moved In',
+											link: '/guides/events-and-callbacks/events/resident-status-moved-in',
 										},
 									]
 								},
