@@ -29,7 +29,8 @@ export default defineConfig({
 								{
 									label: 'Events',
 									items: [
-										{ label: 'Event Names', link: '/guides/events-and-callbacks/events/event-names/' },
+										{ label: 'Event Object', link: '/guides/events-and-callbacks/events/overview/' },
+										{ label: 'Event List', link: '/guides/events-and-callbacks/events/event-names/' },
 										{
 											label: 'Unit Reserved',
 											link: '/guides/events-and-callbacks/events/event-unit-reserved/',

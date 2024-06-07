@@ -1,0 +1,50 @@
+---
+title: Event Object
+description: Listen to events in your Funnel Leasing account on your webhook endpoint so your integration can automatically trigger reactions.
+---
+
+Funnel Leasing generates event data that we can send you to inform you of activity with your applications, residents and units.
+
+When an event occurs, Funnel Leasing generates a new Event object. For example, if an application is completed, you receive `application_status_completed` event.
+
+By registering webhook endpoints in Funnel Leasing, you enable Funnel Leasing to automatically send Event objects as part of POST requests to the registered webhook endpoint. After your webhook endpoint receives the Event, your app can run backend actions (for example, reserving a unit in your PMS after receiving the event application_unit_reserved).
+
+
+## The Event object
+The Event object we send to your webhook endpoint provides a snapshot of the object that changed.
+
+See the [full list of event types](/guides/events-and-callbacks/events/event-names)  that we send to your webhook.
+
+## Example event payload
+```json
+{
+  "event_id": "evt_1MqqbKLt4dXK03v5qaIbiNCC",
+  "event_type": "application_status_completed",
+  "created_at": 1680064028,
+  "event_data": {
+      "application_id": 1234,
+      "unit_id": 12453,
+      "community_id": 43522,
+  },
+}
+```
+
+## Event object structure
+Review the event object structure to better understand events and the underlying information they provide.
+
+### `event_type`
+
+You receive events for all of the event types your webhook endpoint is listening for in your configuration. Use the received event type to determine what processing your application needs to perform. The data object corresponding to each event type varies.
+
+### `event_id`
+
+This is a unique identifier for the object. This id will be helpful to reference events in your communications with Funnel Leasing and for troubleshooting.
+
+### `created_at`
+
+This is the timestamp when Funnel Leasing triggered the event.
+
+### `event_data`
+
+This is an object that contain useful information about your event. The data object corresponding to each event type varies.
+

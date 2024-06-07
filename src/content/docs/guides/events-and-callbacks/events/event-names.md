@@ -1,6 +1,6 @@
 ---
-title: Events Names
-description: Events Names
+title: Event List
+description: Event List
 ---
 
 Here is a list of webhook events that can be sent to your callback urls:
