@@ -18,6 +18,20 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'API Reference',
+					items: [
+						{
+							label: 'Introduction',
+							link: '/api-reference/overview/',
+						},
+						{
+							label: 'Authentication',
+							link: '/api-reference/authentication/',
+						},
+
+					]
+				},
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
@@ -68,20 +82,6 @@ export default defineConfig({
 							]
 						},
 					],
-				},
-				{
-					label: 'API Reference',
-					items: [
-						{
-							label: 'Introduction',
-							link: '/api-reference/overview/',
-						},
-						{
-							label: 'Authentication',
-							link: '/api-reference/authentication/',
-						},
-
-					]
 				},
 			],
 		}),
