@@ -2,12 +2,12 @@
 title: Events Overview
 description: Events Overview
 ---
-You can use Funnel Leasing Events to learn about actions that happen in Funnel Online Leasing as they occur. This allows you to build automations on your system triggered by a Funnel Online Leasing event, such as reserving a unit, completing an application, or releasing a unit.
+Welcome to the Events Overview for Funnel Online Leasing! This guide provides detailed insights into leveraging Funnel Leasing Events to enhance your system's automation capabilities. By tapping into these events, you can stay informed about crucial actions as they unfold within Funnel Online Leasing, such as unit reservations, application completions, or unit releases.
 
 import { Aside } from '@astrojs/starlight/components';
 
 <Aside type="note" title="Note">
-    You may see the terms "webhooks" and "events and callbacks" used interchangeably throughout documentation on this feature. They mean the same thing.
+    Throughout our documentation, you may encounter the terms "webhooks" and "events and callbacks," which are used interchangeably. Rest assured, they signify the same concept—a mechanism for delivering event-based notifications to your system.
 </Aside>
 
 ## What are Funnel Leasing Events
@@ -16,4 +16,4 @@ Funnel Leasing Events, or webhooks, are messages about an event that are sent vi
 
 ## How Events Are Sent
 
-Events are sent as `application/json` POST requests. Some programming languages may require middleware tooling to parse the request and get to the message. More detailed information is available in our [Events and Callbacks Walkthrough.](/guides/events-and-callbacks/walkthrough).
+Events are transmitted as `application/json` POST requests, ensuring compatibility with a wide range of programming languages. Depending on your chosen language, you may need middleware tooling to effectively parse these requests and extract the relevant data. For a comprehensive understanding of handling Funnel Leasing Events, we recommend exploring our detailed [Events and Callbacks Walkthrough](/guides/events-and-callbacks/walkthrough). This resource offers invaluable insights into integrating event-driven functionalities seamlessly into your application architecture.

@@ -1,4 +1,39 @@
 ---
 title: Application Reserved Unit Event
-description: Application Reserved Unit Event
+description: Documentation for the "Application Reserved Unit" webhook event
 ---
+
+The "Application Reserved Unit" event is triggered when an application successfully reserves a unit within Funnel Leasing. This event is crucial for tracking and managing the reservation process, allowing integrations to respond accordingly.
+
+## Event Details
+
+- **Event Type**: `application_unit_reserved`
+- **Description**: Triggered when an application successfully reserves a unit.
+- **Event Payload Example**:
+
+```json
+{
+  "event_id": "evt_1MqqbKLt4dXK03v5qaIbiNCC",
+  "event_type": "application_unit_reserved",
+  "created_at": 1680064028,
+  "event_data": {
+      "application_id": 1234,
+      "unit_id": 12453,
+      "community_id": 43522
+  }
+}
+```
+
+## Fields
+
+- **`event_id`**: Unique identifier for the event.
+- **`event_type`**: Type of the event (`application_unit_reserved`).
+- **`created_at`**: Timestamp of when the event occurred.
+- **`event_data`**: Additional data related to the event, including:
+  - **`application_id`**: The ID of the application that reserved the unit.
+  - **`unit_id`**: The ID of the reserved unit.
+  - **`community_id`**: The ID of the community where the unit is located.
+
+## Use Case
+
+This event is useful for integrations that need to track and manage unit reservations. For example, a Property Management System (PMS) integration could use this event to update the availability status of units and ensure that no double bookings occur.

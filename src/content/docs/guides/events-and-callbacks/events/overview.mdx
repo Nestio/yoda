@@ -1,21 +1,30 @@
 ---
-title: Event Object
+title: The Event Object
 description: Listen to events in your Funnel Leasing account on your webhook endpoint so your integration can automatically trigger reactions.
 ---
 
-Funnel Leasing generates event data that we can send you to inform you of activity with your applications, residents and units.
+## Overview
 
-When an event occurs, Funnel Leasing generates a new Event object. For example, if an application is completed, you receive `application_status_completed` event.
+Welcome to the documentation for Funnel Leasing's Event Object. Here, you'll learn how to seamlessly integrate event-driven functionality into your applications by listening to events generated within your Funnel Leasing account.
 
-By registering webhook endpoints in Funnel Leasing, you enable Funnel Leasing to automatically send Event objects as part of POST requests to the registered webhook endpoint. After your webhook endpoint receives the Event, your app can run backend actions (for example, reserving a unit in your PMS after receiving the event application_unit_reserved).
+Funnel Leasing generates event data to keep you informed about activities related to your applications, residents, and units. These events are pivotal in maintaining the synchronicity between your systems and Funnel Leasing.
 
+## How It Works
 
-## The Event object
-The Event object we send to your webhook endpoint provides a snapshot of the object that changed.
+When an event occurs, such as the completion of an application, Funnel Leasing creates a new Event object. This object encapsulates the pertinent details of the event, allowing you to react accordingly. For instance, upon receiving an `application_status_completed` event, your system can automate actions like reserving a unit in your Property Management System (PMS).
 
-See the [full list of event types](/guides/events-and-callbacks/events/event-names)  that we send to your webhook.
+## Listening to Events
 
-## Example event payload
+By registering webhook endpoints in your Funnel Leasing account, you empower Funnel Leasing to automatically dispatch Event objects to these endpoints via POST requests whenever an event occurs. This enables your application to respond promptly and effectively.
+
+## The Event Object
+
+The Event object dispatched to your webhook endpoint provides a comprehensive snapshot of the changes that have taken place. Let's delve into its structure and contents.
+
+### Example Event Payload
+
+Here's an example of the payload you can expect to receive:
+
 ```json
 {
   "event_id": "evt_1MqqbKLt4dXK03v5qaIbiNCC",
@@ -24,27 +33,28 @@ See the [full list of event types](/guides/events-and-callbacks/events/event-nam
   "event_data": {
       "application_id": 1234,
       "unit_id": 12453,
-      "community_id": 43522,
-  },
+      "community_id": 43522
+  }
 }
 ```
 
-## Event object structure
-Review the event object structure to better understand events and the underlying information they provide.
+### Event Object Structure
 
-### `event_type`
+Let's break down the components of the Event object:
 
-You receive events for all of the event types your webhook endpoint is listening for in your configuration. Use the received event type to determine what processing your application needs to perform. The data object corresponding to each event type varies.
+- **`event_id`**: This unique identifier facilitates easy referencing of events for communication with Funnel Leasing and troubleshooting purposes.
 
-### `event_id`
+- **`event_type`**: Indicating the type of event that has occurred, this field enables your application to determine the necessary processing steps. The structure of the accompanying `event_data` object varies based on the event type.
 
-This is a unique identifier for the object. This id will be helpful to reference events in your communications with Funnel Leasing and for troubleshooting.
+- **`created_at`**: This timestamp denotes the exact moment when Funnel Leasing triggered the event.
 
-### `created_at`
+- **`event_data`**: Containing essential information about the event, this object provides context for your application to act upon. Its structure varies according to the specific event type.
 
-This is the timestamp when Funnel Leasing triggered the event.
+## Next Steps
 
-### `event_data`
+To explore the full spectrum of event types that Funnel Leasing sends to your webhook, refer to the [complete list of event types](/guides/events-and-callbacks/events/event-names). Understanding these events and their payloads will empower you to build robust integrations that leverage real-time data from Funnel Leasing.
 
-This is an object that contain useful information about your event. The data object corresponding to each event type varies.
 
+---
+
+With this documentation, you're equipped to harness the power of event-driven architecture within your Funnel Leasing integration. Should you have any queries or require further assistance, feel free to reach out to our support team. Happy integrating!
