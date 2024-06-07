@@ -4,6 +4,8 @@
 
 Welcome to Yoda, the public developer documentation repository for Funnel Online Leasing! This repository is designed to provide our customers with comprehensive and up-to-date documentation for utilizing Funnel's Online Leasing services. We use Astro with the Starlight template to ensure a modern, fast, and easy-to-navigate documentation experience.
 
+**Published documentation can be found at [https://funnel-dev-doc.netlify.app/](https://funnel-dev-doc.netlify.app/)**
+
 ## 📚 Table of Contents
 - [🌟 Project Overview](#-project-overview)
 - [⚙️ Installation](#%EF%B8%8F-installation)
