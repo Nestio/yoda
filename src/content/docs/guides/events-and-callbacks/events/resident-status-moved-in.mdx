@@ -1,4 +1,51 @@
 ---
 title: Resident Moved In Event
 description: Resident Moved In Event
+tableOfContents: false
+head:
+  - tag: style
+    content: ":root { --sl-content-width: 100% !important; }"
 ---
+
+import { Code } from "@astrojs/starlight/components";
+
+export const exampleCode = `
+{
+  "event_id": "evt_1MqqbKLt4dXK03v5qaIbiNCC",
+  "event_type": "application_unit_reserved",
+  "created_at": 1680064028,
+  "event_data": {
+      "application_id": 1234,
+      "unit_id": 12453,
+      "community_id": 43522
+  }
+}
+`;
+export const fileName = "example.js";
+
+<div class="grid grid-cols-3 gap-4">
+  <div class="col-span-2 justify-self-start">
+      The "Application Reserved Unit" event is triggered when an application successfully reserves a unit within Funnel Leasing. This event is crucial for tracking and managing the reservation process, allowing integrations to respond accordingly.
+      ## Event Details
+      - **Event Type**: `application_unit_reserved`
+      - **Description**: Triggered when an application successfully reserves a unit.
+      - **Event Payload Example**:
+
+      ## Fields
+      - **`event_id`**: Unique identifier for the event.
+      - **`event_type`**: Type of the event (`application_unit_reserved`).
+      - **`created_at`**: Timestamp of when the event occurred.
+      - **`event_data`**: Additional data related to the event, including:
+      - **`application_id`**: The ID of the application that reserved the unit.
+      - **`unit_id`**: The ID of the reserved unit.
+      - **`community_id`**: The ID of the community where the unit is located.
+
+      ## Use Case
+
+      This event is useful for integrations that need to track and manage unit reservations. For example, a Property Management System (PMS) integration could use this event to update the availability status of units and ensure that no double bookings occur.
+
+  </div>
+  <div class="col-span-1">
+      <Code type="code" wrap={true} code={exampleCode} lang="json" lineNumbers={true} />
+  </div>
+</div>
