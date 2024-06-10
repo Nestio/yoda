@@ -8,7 +8,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   adapter: netlify(),
   integrations: [
-
     starlight({
       title: "Funnel Leasing",
       customCss: [
@@ -34,6 +33,26 @@ export default defineConfig({
             {
               label: "Authentication",
               link: "/api-reference/authentication/",
+            },
+            {
+              label: "Errors",
+              link: "/api-reference/errors/",
+            },
+            {
+              label: "Application",
+              link: "/api-reference/application/",
+            },
+            {
+              label: "Applicant",
+              link: "/api-reference/applicant/",
+            },
+            {
+              label: "Document",
+              link: "/api-reference/document/",
+            },
+            {
+              label: "Lease",
+              link: "/api-reference/lease/",
             },
           ],
         },

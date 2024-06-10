@@ -1,0 +1,119 @@
+---
+title: API Error Codes
+description: Detailed documentation on API error codes used by Funnel Leasing.
+tableOfContents: false
+head:
+  - tag: style
+    content: ":root { --sl-content-width: 100% !important; }"
+---
+
+<div class="grid grid-cols-2 gap-4">
+  <div class="col-span-1 justify-self-start">
+    <p>
+      Funnel Leasing uses conventional HTTP response codes to indicate the success or failure of an API request. Here is a general overview:
+    </p>
+    <ul>
+      <li>Codes in the <code>2xx</code> range indicate success.</li>
+      <li>Codes in the <code>4xx</code> range indicate an error due to the provided information (e.g., a required parameter was omitted, a permission error, etc.).</li>
+      <li>Codes in the <code>5xx</code> range indicate a server error on Funnel Leasing’s end (these are rare).</li>
+    </ul>
+    <p>
+      Some <code>4xx</code> errors (e.g., a missing parameter) include an error code that briefly explains the issue along with a human-friendly error message.
+    </p>
+
+    #### Attributes
+
+---
+
+<ul>
+  <li><strong>code</strong>: <span style="font-size: smaller;"><code>integer</code></span></li>
+  <p>
+    This represents the specific error code returned by the API. Each code corresponds to a specific type of error, helping to identify and troubleshoot issues quickly.
+  </p>
+
+{" "}
+<li>
+  <strong>message</strong>:{" "}
+  <span style="font-size: smaller;">
+    <code>nullable string</code>
+  </span>
+</li>
+<p>
+  A human-readable message that provides more details about the error. This
+  message can help users understand the nature of the error and potential steps
+  to resolve it.
+</p>
+
+  <li><strong>param</strong>: <span style="font-size: smaller;"><code>nullable string</code></span></li>
+  <p>
+    If the error is related to a specific parameter in the API request, this field will indicate which parameter caused the error. This is particularly useful for identifying issues with request formatting or missing information.
+  </p>
+</ul>
+
+  </div>
+  <div class="col-span-1">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="px-4">
+        <p class="font-medium text-gray-900">HTTP Status Code Summary</p>
+      </div>
+      <div class="px-4 py-3">
+        <table class="w-full table-auto">
+          <thead>
+            <tr class="text-left font-medium text-gray-700 uppercase tracking-wider">
+              <th class="px-4 py-2">Code</th>
+              <th class="px-4 py-2">Status</th>
+              <th class="px-4 py-2">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">200</td>
+              <td class="px-4 py-2 text-left">OK</td>
+              <td class="px-4 py-2 text-left">Everything worked as expected.</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">400</td>
+              <td class="px-4 py-2 text-left">Bad Request</td>
+              <td class="px-4 py-2 text-left">The request was unacceptable, often due to missing a required parameter.</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">401</td>
+              <td class="px-4 py-2 text-left">Unauthorized</td>
+              <td class="px-4 py-2 text-left">No valid API key provided.</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">402</td>
+              <td class="px-4 py-2 text-left">Request Failed</td>
+              <td class="px-4 py-2 text-left">The parameters were valid but the request failed.</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">403</td>
+              <td class="px-4 py-2 text-left">Forbidden</td>
+              <td class="px-4 py-2 text-left">The API key doesn’t have permissions to perform the request.</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">404</td>
+              <td class="px-4 py-2 text-left">Not Found</td>
+              <td class="px-4 py-2 text-left">The requested resource doesn’t exist.</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">409</td>
+              <td class="px-4 py-2 text-left">Conflict</td>
+              <td class="px-4 py-2 text-left">The request conflicts with another request (perhaps due to using the same idempotent key).</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">429</td>
+              <td class="px-4 py-2 text-left">Too Many Requests</td>
+              <td class="px-4 py-2 text-left">Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-2 text-left">500, 502, 503, 504</td>
+              <td class="px-4 py-2 text-left">Server Errors</td>
+              <td class="px-4 py-2 text-left">Something went wrong on Funnel Leasing’s end. (These are rare.)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
