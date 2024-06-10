@@ -1,4 +1,51 @@
 ---
 title: Application Voided Event
-description: Application Voided Event
+description: Comprehensive documentation for the "Application Voided" webhook event, detailing its purpose, payload, and use cases for seamless integration within the Funnel Leasing platform.
 ---
+
+The "Application Voided" event is a crucial webhook triggered when a completed application is voided within Funnel Leasing. This event is essential for tracking and managing changes to application statuses, providing necessary data for integrations to update records and take appropriate actions.
+
+## Event Details
+
+- **Event Type**: `application_voided`
+- **Description**: This event is triggered when a completed application is voided, indicating that the application process has been nullified to allow for modifications, denial, or cancellation.
+- **Event Payload Example**:
+
+```json
+{
+  "event_id": "evt_1SklmKLt4dXK03v5qaWxyzAB",
+  "event_type": "application_voided",
+  "created_at": 1685678901,
+  "event_data": {
+      "application_id": 7777,
+      "client_id": 7777,
+      "voided_by": "leasing_agent_005",
+      "community_id": 98765,
+      "reason": "Correction needed"
+  }
+}
+```
+
+## Payload Fields
+
+- **`event_id`**: A unique identifier for the event.
+- **`event_type`**: The type of event (`application_voided`).
+- **`created_at`**: A timestamp indicating when the event occurred.
+- **`event_data`**: Contains additional data related to the event:
+  - **`application_id`**: The ID of the voided application.
+  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`voided_by`**: The identifier of the leasing agent or system that voided the application.
+  - **`community_id`**: The ID of the community where the application was voided.
+  - **`reason`**: The reason for voiding the application.
+
+## Use Cases
+
+This event is critical for integrations that need to track and manage the voiding of completed applications. For instance, a Property Management System (PMS) integration can utilize this event to:
+
+- **Update Application Status**: Automatically update the status of the application to 'voided' within the system.
+- **Enable Modifications**: Allow for modifications to the application, such as updating applicant information or correcting errors.
+- **Trigger Follow-Up Actions**: Initiate follow-up actions such as re-evaluating the application, notifying the applicant of changes, or processing a new application.
+- **Data Synchronization**: Sync the voiding data across multiple systems to maintain consistent and up-to-date records.
+- **Notify Stakeholders**: Send notifications to relevant stakeholders, including leasing agents and property managers, about the voiding.
+
+By leveraging this event, integrations can ensure accurate application management, facilitate necessary changes, and maintain data integrity within the Funnel Leasing ecosystem.

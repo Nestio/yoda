@@ -1,14 +1,14 @@
 ---
 title: Application Reserved Unit Event
-description: Documentation for the "Application Reserved Unit" webhook event
+description: Comprehensive documentation for the "Application Reserved Unit" webhook event, detailing its purpose, payload, and use cases for seamless integration within the Funnel Leasing platform.
 ---
 
-The "Application Reserved Unit" event is triggered when an application successfully reserves a unit within Funnel Leasing. This event is crucial for tracking and managing the reservation process, allowing integrations to respond accordingly.
+The "Application Reserved Unit" event is a pivotal webhook triggered when an application successfully reserves a unit within Funnel Leasing. This event is essential for tracking and managing the reservation process, providing necessary data for integrations to act in real-time.
 
 ## Event Details
 
 - **Event Type**: `application_unit_reserved`
-- **Description**: Triggered when an application successfully reserves a unit.
+- **Description**: This event is triggered when an application successfully reserves a unit, signaling the reservation's confirmation.
 - **Event Payload Example**:
 
 ```json
@@ -17,23 +17,29 @@ The "Application Reserved Unit" event is triggered when an application successfu
   "event_type": "application_unit_reserved",
   "created_at": 1680064028,
   "event_data": {
-      "application_id": 1234,
-      "unit_id": 12453,
+      "application_id": 1111,
+      "client_id": 1111,
       "community_id": 43522
   }
 }
 ```
 
-## Fields
+## Payload Fields
 
-- **`event_id`**: Unique identifier for the event.
-- **`event_type`**: Type of the event (`application_unit_reserved`).
-- **`created_at`**: Timestamp of when the event occurred.
-- **`event_data`**: Additional data related to the event, including:
+- **`event_id`**: A unique identifier for the event.
+- **`event_type`**: The type of event (`application_unit_reserved`).
+- **`created_at`**: A timestamp indicating when the event occurred.
+- **`event_data`**: Contains additional data related to the event:
   - **`application_id`**: The ID of the application that reserved the unit.
-  - **`unit_id`**: The ID of the reserved unit.
-  - **`community_id`**: The ID of the community where the unit is located.
+  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`community_id`**: The ID of the community where the reserved unit is located.
 
-## Use Case
+## Use Cases
 
-This event is useful for integrations that need to track and manage unit reservations. For example, a Property Management System (PMS) integration could use this event to update the availability status of units and ensure that no double bookings occur.
+This event is vital for integrations that require tracking and managing unit reservations. For instance, a Property Management System (PMS) integration can utilize this event to:
+
+- **Update Availability**: Automatically update the availability status of units to prevent double bookings and ensure accurate inventory.
+- **Reservation Confirmation**: Send confirmation notifications to applicants and relevant stakeholders.
+- **Data Synchronization**: Sync reservation data across multiple systems to maintain consistent and up-to-date records.
+
+By leveraging this event, integrations can enhance operational efficiency, improve user experience, and maintain data integrity within the Funnel Leasing ecosystem.

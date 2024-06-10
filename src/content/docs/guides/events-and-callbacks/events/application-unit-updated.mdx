@@ -1,4 +1,49 @@
 ---
 title: Application Changed Unit Event
-description: Application Changed Unit Event
+description: Comprehensive documentation for the "Application Changed Unit" webhook event, detailing its purpose, payload, and use cases for seamless integration within the Funnel Leasing platform.
 ---
+
+The "Application Changed Unit" event is a significant webhook triggered when an application changes its reserved unit within Funnel Leasing. This event is crucial for tracking and managing unit changes, providing necessary data for integrations to update records and maintain accurate unit availability.
+
+## Event Details
+
+- **Event Type**: `application_unit_changed`
+- **Description**: This event is triggered when an application changes its reserved unit, indicating a modification in the reservation.
+- **Event Payload Example**:
+
+```json
+{
+  "event_id": "evt_1NabgKLt4dXK03v5qaXyzMNO",
+  "event_type": "application_unit_changed",
+  "created_at": 1680123456,
+  "event_data": {
+      "application_id": 2222,
+      "client_id": 2222,
+      "previous_unit_id": 54321,
+      "new_unit_id": 12345,
+      "community_id": 43522
+  }
+}
+```
+
+## Payload Fields
+
+- **`event_id`**: A unique identifier for the event.
+- **`event_type`**: The type of event (`application_unit_changed`).
+- **`created_at`**: A timestamp indicating when the event occurred.
+- **`event_data`**: Contains additional data related to the event:
+  - **`application_id`**: The ID of the application that changed the reserved unit.
+  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`previous_unit_id`**: The ID of the previously reserved unit.
+  - **`new_unit_id`**: The ID of the newly reserved unit.
+  - **`community_id`**: The ID of the community where the units are located.
+
+## Use Cases
+
+This event is essential for integrations that need to track and manage changes in unit reservations. For instance, a Property Management System (PMS) integration can utilize this event to:
+
+- **Update Unit Availability**: Automatically update the availability status of both the previously reserved unit and the newly reserved unit to reflect the change.
+- **Notification Updates**: Send notifications to applicants and relevant stakeholders about the change in unit reservation.
+- **Data Synchronization**: Sync the updated reservation data across multiple systems to maintain accurate and up-to-date records.
+
+By leveraging this event, integrations can ensure accurate unit availability, improve communication with applicants, and maintain data integrity within the Funnel Leasing ecosystem.
