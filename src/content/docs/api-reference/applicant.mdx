@@ -10,14 +10,106 @@ head:
 import { Code } from "@astrojs/starlight/components";
 export const exampleCode = `
 {
-  "id": 11111,
-  ... insert more data
+    "id": 519311,
+    "lease_transaction_id": 319927,
+    "first_name": "John",
+    "middle_name": null,
+    "suffix": null,
+    "last_name": "Doe",
+    "person": {
+        "id": 16924738,
+        "email": "hello@gmail.com",
+        "name": "John Doe",
+        "phone_1": "(111) 555-4532",
+        "phone_2": "",
+        "client_id": 1111,
+    },
+    "account": {
+        "id": 394080,
+        "email": "rcwilliams2407@gmail.com",
+        "phone_number": "(760) 996-0792"
+    },
+    "role": "Roommate",
+    "address_street": "2 Main Street",
+    "address_line_2": "Apt 1",
+    "address_city": "New York",
+    "address_state": "NY",
+    "address_postal_code": "10001",
+    "date_of_birth": "1991-01-01",
+    "international": false,
+    "verified_income_total": "80000.00",
+    "verified_asset_total": "0.00",
+    "stated_income": "80000.00",
+    "stated_assets": "0.00",
+    "credit_score_rating": "Approved",
+    "credit_rating": "Approved",
+    "screening_eviction_result": 140,
+    "screening_criminal_result": null,
+    "screening_criminal_result_overridden": false,
+    "eviction_report": {
+        "id": 204951,
+        "type": 30,
+        "report_id": "",
+        "status": 40,
+        "report_url": null,
+        "onlineleasing_report_url": null,
+        "created_at": "2024-05-21",
+        "name": "transunion eviction",
+        "available": 10,
+        "applicant_name": "John Doe",
+    },
+    "criminal_report": null,
+    "credit_report": {
+        "id": 204950,
+        "type": 10,
+        "report_id": "",
+        "status": 40,
+        "report_url": "url.com",
+        "onlineleasing_report_url": "url.com",
+        "created_at": "2024-05-21",
+        "name": "transunion credit",
+        "available": 20,
+        "applicant_name": "John Doe",
+        "lease_transaction_type": 10
+    },
+    "identity_verification_status": 30,
+    "warnings_and_cautions": [],
+    "transaction_errors": [],
+
+    "applicant_screened": true,
+    "requires_two_phased_screening": false,
+    "submitted_application": true,
+    "submitted_application_at": "2024-05-21T02:35:33.389256+00:00",
+    "is_registered": true,
+    "is_moving_in": true,
+
+
+    "is_managed": false,
+
+    "is_income_completed": true,
+
+    "employer": {
+        "name": "Funnel Leasing ",
+        "address_street": "33 Chelsea Street",
+        "address_line_2": "Floor 3",
+        "address_city": "Tampa",
+        "address_state": "FL",
+        "address_postal_code": "12341"
+    },
+    "ssn": "101-21-1124",
+    "corporation_name": "",
+    "representative_first_name": "",
+    "representative_last_name": "",
+    "corporation_screened": null,
+    "will_provide_own_screening": false,
+    "agent_uploaded_screening": false
+
 }
 `;
 
 <div class="grid grid-cols-2 gap-4">
   <div class="col-span-1 justify-self-start">
-      <p>Here add a description of the Applicant object</p>
+      <p>The Applicant object represents an individual or entity applying for a lease transaction within the Funnel Leasing system. It encapsulates detailed information about the applicant, including personal details, financial information, screening results, and application status. This object serves as a central entity in managing lease applications and facilitates the screening and approval process.</p>
   </div>
   <div class="col-span-1">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -26,9 +118,8 @@ export const exampleCode = `
       </div>
       <div class="px-4 py-3">
           ```
-          GET /v2/onlineleasing/applicant
+          GET /v2/onlineleasing/applicant/:id
           ```
-
       </div>
     </div>
 
@@ -44,16 +135,196 @@ export const exampleCode = `
 
 <div class="grid grid-cols-2 gap-4">
   <div class="col-span-1 justify-self-start">
-
-<ul>
-  <li><strong>id</strong>: <span style="font-size: smaller;"><code>integer</code></span></li>
-  <p>
-     A unique Funnel Leasing identifier
-  </p>
-
-</ul>
-
+          <ul>
+      <li><strong>id</strong>: <span style="font-size: smaller;"><code>integer</code></span></li>
+      <p>A unique Funnel Leasing identifier</p>
+    </ul>
+    <ul>
+      <li><strong>lease_transaction_id</strong>: <span style="font-size: smaller;"><code>integer</code></span></li>
+      <p>Identifier for the lease transaction associated with the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>first_name</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The first name of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>middle_name</strong>: <span style="font-size: smaller;"><code>string or null</code></span></li>
+      <p>The middle name of the applicant, if provided</p>
+    </ul>
+    <ul>
+      <li><strong>suffix</strong>: <span style="font-size: smaller;"><code>string or null</code></span></li>
+      <p>The suffix of the applicant's name, if provided</p>
+    </ul>
+    <ul>
+      <li><strong>last_name</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The last name of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>person</strong>: <span style="font-size: smaller;"><code>object</code></span></li>
+      <p>Information about the person associated with the applicant, including their email, name, phone numbers, and client ID</p>
+    </ul>
+    <ul>
+      <li><strong>account</strong>: <span style="font-size: smaller;"><code>object</code></span></li>
+      <p>Information about the account associated with the applicant, including email and phone number</p>
+    </ul>
+    <ul>
+      <li><strong>role</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The role of the applicant (e.g., Roommate)</p>
+    </ul>
+    <ul>
+      <li><strong>address_street</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The street address of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>address_line_2</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Additional address information (e.g., apartment number)</p>
+    </ul>
+    <ul>
+      <li><strong>address_city</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The city of the applicant's address</p>
+    </ul>
+    <ul>
+      <li><strong>address_state</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The state of the applicant's address</p>
+    </ul>
+    <ul>
+      <li><strong>address_postal_code</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The postal code of the applicant's address</p>
+    </ul>
+    <ul>
+      <li><strong>date_of_birth</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>The date of birth of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>international</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates whether the applicant is international</p>
+    </ul>
+    <ul>
+      <li><strong>verified_income_total</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Total verified income of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>verified_asset_total</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Total verified assets of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>stated_income</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Stated income of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>stated_assets</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Stated assets of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>credit_score_rating</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Credit score rating of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>credit_rating</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Credit rating of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>screening_eviction_result</strong>: <span style="font-size: smaller;"><code>integer</code></span></li>
+      <p>Screening result for eviction</p>
+    </ul>
+    <ul>
+      <li><strong>screening_criminal_result</strong>: <span style="font-size: smaller;"><code>integer or null</code></span></li>
+      <p>Screening result for criminal background, if available</p>
+    </ul>
+    <ul>
+      <li><strong>screening_criminal_result_overridden</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the screening result for criminal background has been overridden</p>
+    </ul>
+      <ul>
+      <li><strong>eviction_report</strong>: <span style="font-size: smaller;"><code>object</code></span></li>
+      <p>Information about the eviction report, including its ID, type, status, and name</p>
+    </ul>
+    <ul>
+      <li><strong>criminal_report</strong>: <span style="font-size: smaller;"><code>object or null</code></span></li>
+      <p>Information about the criminal report, if available</p>
+    </ul>
+    <ul>
+            <li><strong>credit_report</strong>: <span style="font-size: smaller;"><code>object</code></span></li>
+      <p>Information about the credit report, including its ID, type, status, and URLs</p>
+    </ul>
+    <ul>
+      <li><strong>identity_verification_status</strong>: <span style="font-size: smaller;"><code>integer</code></span></li>
+      <p>Status of identity verification</p>
+    </ul>
+    <ul>
+      <li><strong>warnings_and_cautions</strong>: <span style="font-size: smaller;"><code>array</code></span></li>
+      <p>Array of warnings and cautions</p>
+    </ul>
+    <ul>
+      <li><strong>transaction_errors</strong>: <span style="font-size: smaller;"><code>array</code></span></li>
+      <p>Array of transaction errors</p>
+    </ul>
+    <ul>
+      <li><strong>applicant_screened</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates whether the applicant has been screened</p>
+    </ul>
+    <ul>
+      <li><strong>requires_two_phased_screening</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the applicant requires two-phased screening</p>
+    </ul>
+    <ul>
+      <li><strong>submitted_application</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the application has been submitted</p>
+    </ul>
+    <ul>
+      <li><strong>submitted_application_at</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Date and time when the application was submitted</p>
+    </ul>
+    <ul>
+      <li><strong>is_registered</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the applicant is registered</p>
+    </ul>
+    <ul>
+      <li><strong>is_moving_in</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the applicant is moving in</p>
+    </ul>
+    <ul>
+      <li><strong>is_managed</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the applicant is managed</p>
+    </ul>
+    <ul>
+      <li><strong>is_income_completed</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the income information is completed for the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>employer</strong>: <span style="font-size: smaller;"><code>object</code></span></li>
+      <p>Information about the employer of the applicant, including name and address</p>
+    </ul>
+    <ul>
+      <li><strong>ssn</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Social Security Number of the applicant</p>
+    </ul>
+    <ul>
+      <li><strong>corporation_name</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Name of the corporation associated with the applicant, if applicable</p>
+    </ul>
+    <ul>
+      <li><strong>representative_first_name</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>First name of the representative of the corporation, if applicable</p>
+    </ul>
+    <ul>
+      <li><strong>representative_last_name</strong>: <span style="font-size: smaller;"><code>string</code></span></li>
+      <p>Last name of the representative of the corporation, if applicable</p>
+    </ul>
+    <ul>
+      <li><strong>corporation_screened</strong>: <span style="font-size: smaller;"><code>boolean or null</code></span></li>
+      <p>Indicates if the corporation associated with the applicant has been screened</p>
+    </ul>
+    <ul>
+      <li><strong>will_provide_own_screening</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the applicant will provide their own screening</p>
+    </ul>
+    <ul>
+      <li><strong>agent_uploaded_screening</strong>: <span style="font-size: smaller;"><code>boolean</code></span></li>
+      <p>Indicates if the agent has uploaded the screening information</p>
+    </ul>
   </div>
+
   <div class="col-span-1">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <div class="px-4">

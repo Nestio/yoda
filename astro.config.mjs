@@ -39,13 +39,14 @@ export default defineConfig({
               link: "/api-reference/errors/",
             },
             {
-              label: "Application",
-              link: "/api-reference/application/",
-            },
-            {
               label: "Applicant",
               link: "/api-reference/applicant/",
             },
+            {
+              label: "Application",
+              link: "/api-reference/application/",
+            },
+
             {
               label: "Document",
               link: "/api-reference/document/",
