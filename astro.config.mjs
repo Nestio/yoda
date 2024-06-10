@@ -46,14 +46,14 @@ export default defineConfig({
               label: "Application",
               link: "/api-reference/application/",
             },
+            {
+              label: "Lease",
+              link: "/api-reference/lease/",
+            },
 
             {
               label: "Document",
               link: "/api-reference/document/",
-            },
-            {
-              label: "Lease",
-              link: "/api-reference/lease/",
             },
           ],
         },
