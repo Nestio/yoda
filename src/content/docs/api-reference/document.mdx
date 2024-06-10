@@ -1,4 +1,67 @@
 ---
-title: Document Object
+title: Document
 description: Document Object
+tableOfContents: false
+head:
+  - tag: style
+    content: ":root { --sl-content-width: 100% !important; }"
 ---
+
+import { Code } from "@astrojs/starlight/components";
+export const exampleCode = `
+{
+  "id": 11111,
+  ... insert more data
+}
+`;
+
+<div class="grid grid-cols-2 gap-4">
+  <div class="col-span-1 justify-self-start">
+      <p>Here add a description of the Document object</p>
+  </div>
+  <div class="col-span-1">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="px-4">
+        <p class="font-medium text-gray-900">ENDPOINT</p>
+      </div>
+      <div class="px-4 py-3">
+          ```
+          GET /v2/onlineleasing/document
+          ```
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br />
+<br />
+
+    #### Attributes
+
+---
+
+<div class="grid grid-cols-2 gap-4">
+  <div class="col-span-1 justify-self-start">
+
+<ul>
+  <li><strong>id</strong>: <span style="font-size: smaller;"><code>integer</code></span></li>
+  <p>
+     A unique Funnel Leasing identifier
+  </p>
+
+</ul>
+
+  </div>
+  <div class="col-span-1">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="px-4">
+        <p class="font-medium text-gray-900">THE DOCUMENT OBJECT</p>
+      </div>
+      <div class="px-4 py-3">
+          <Code type="code" wrap={true} code={exampleCode} lang="json" lineNumbers={true} />
+      </div>
+    </div>
+  </div>
+</div>
