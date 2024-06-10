@@ -595,7 +595,7 @@ export const exampleCode = `
 
 <div class="grid grid-cols-2 gap-4">
   <div class="col-span-1 justify-self-start">
-      <p>Here add a description of the Lease object</p>
+      <p>The Lease object represents a rental agreement between a landlord (or property manager) and a tenant. It encapsulates crucial information about the terms and conditions of the lease, including rental property details, lease duration, rental payments, executed documents, and various other attributes. This object serves as a comprehensive record of the lease agreement's key aspects, facilitating effective management and tracking throughout its lifecycle.</p>
   </div>
   <div class="col-span-1">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -623,522 +623,374 @@ export const exampleCode = `
 <div class="grid grid-cols-2 gap-4">
   <div class="col-span-1 justify-self-start">
 
-<ul>
-  <li>
-    <strong>id</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>integer</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>id</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
+  </summary>
   <p>An identifier for the lease transaction.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>created_at</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>created_at</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
+  </summary>
   <p>The date and time when the lease transaction was created.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>unit</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>object</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>unit</strong>:{" "}<span style="font-size: smaller;"><code>object</code></span>
+  </summary>
   <p>Information about the unit being leased.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>lease_term</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>integer</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>lease_term</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
+  </summary>
   <p>The duration of the lease term in months.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>lease_start_date</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>lease_start_date</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
+  </summary>
   <p>The start date of the lease term.</p>
-</ul>
-<ul>
-  <li>
-    <strong>lease_end_date</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>string</code>
-    </span>
-  </li>
+</details>
+<details>
+  <summary>
+    <strong>lease_end_date</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
+  </summary>
   <p>The end date of the lease term.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>breakdown_lease_end_date</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>breakdown_lease_end_date</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
+  </summary>
   <p>The breakdown of the lease end date.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>move_out_date</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>move_out_date</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
+  </summary>
   <p>The date when the tenant moves out, if applicable.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>confirmed_moved_out_date</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>confirmed_moved_out_date</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
+  </summary>
   <p>The confirmed date when the tenant moved out, if applicable.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>base_rent</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>base_rent</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
+  </summary>
   <p>The base rent amount.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>primary_applicant</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>object</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>primary_applicant</strong>:{" "}<span style="font-size: smaller;"><code>object</code></span>
+  </summary>
   <p>Information about the primary applicant.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>occupants</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>occupants</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing information about the occupants of the unit.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>dependents</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>dependents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>
     An array containing information about the dependents of the primary
     applicant.
   </p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>co_applicants</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>co_applicants</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing information about co-applicants.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>guarantors</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>guarantors</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing information about guarantors.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>selected_rental_options</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>object</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>selected_rental_options</strong>:{" "}<span style="font-size: smaller;"><code>object</code></span>
+  </summary>
   <p>Information about selected rental options.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_holdover_eligible</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_holdover_eligible</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease is eligible for holdover.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_month_to_month</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_month_to_month</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease is month-to-month.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_vacating</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_vacating</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the tenant is vacating.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_renewed</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_renewed</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease is renewed.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_holdover</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_holdover</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease is in holdover status.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>renewed_to</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>renewed_to</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
+  </summary>
   <p>The renewed lease transaction ID, if applicable.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>enable_self_service_renewals</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>enable_self_service_renewals</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if self-service renewals are enabled for the lease.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>selected_lease_offer</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | object</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>selected_lease_offer</strong>:{" "}<span style="font-size: smaller;"><code>null | object</code></span>
+  </summary>
   <p>The selected lease offer.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>lease_offers</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>lease_offers</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing lease offers.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>latest_renewal_lease_offers_event</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>latest_renewal_lease_offers_event</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the latest event is a renewal lease offer event.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>lease_offer_options</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>lease_offer_options</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing lease offer options.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>month_to_month_rent</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>month_to_month_rent</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
+  </summary>
   <p>The rent amount for month-to-month leases.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>holdover_rent</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>holdover_rent</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
+  </summary>
   <p>The rent amount for holdover leases.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>original_holdover_end_date</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>original_holdover_end_date</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
+  </summary>
   <p>The original end date of the holdover lease.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>status</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>integer</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>status</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
+  </summary>
   <p>The status of the lease transaction.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>type</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>integer</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>type</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
+  </summary>
   <p>The type of the lease transaction.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>executed_documents</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>executed_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing information about executed documents.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>hotdocs_documents</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>hotdocs_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing HotDocs documents.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>encrypted_uploaded_documents</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>encrypted_uploaded_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing encrypted uploaded documents.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>imported_documents</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>array</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>imported_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
+  </summary>
   <p>An array containing imported documents.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>termination_option</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>termination_option</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
+  </summary>
   <p>The termination option for the lease.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>termination_fee</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | string</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>termination_fee</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
+  </summary>
   <p>The termination fee for the lease.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>renewal_threshold</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>integer</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>renewal_threshold</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
+  </summary>
   <p>The threshold for lease renewal in days.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_compliant</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_compliant</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease is compliant.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_contact_information_complete</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_contact_information_complete</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the contact information is complete.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_corporate</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_corporate</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease is corporate.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_below_market_rate</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_below_market_rate</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease is below market rate.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>is_move_out_date_confirmed</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>is_move_out_date_confirmed</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the move-out date is confirmed.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>has_uncompleted_res_app_move_in_costs_task</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>has_uncompleted_res_app_move_in_costs_task</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if there are uncompleted move-in costs tasks.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>lease_profile</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>integer</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>lease_profile</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
+  </summary>
   <p>The lease profile identifier.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>move_in_status</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>integer</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>move_in_status</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
+  </summary>
   <p>The move-in status of the lease.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>has_been_imported_and_upcoming</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>has_been_imported_and_upcoming</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>Indicates if the lease has been imported and is upcoming.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>created_from_renewal_or_holdover_transaction</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>created_from_renewal_or_holdover_transaction</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
+  </summary>
   <p>
     Indicates if the lease was created from a renewal or holdover transaction.
   </p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>res_app_lease_from_renewal</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | boolean</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>res_app_lease_from_renewal</strong>:{" "}<span style="font-size: smaller;"><code>null | boolean</code></span>
+  </summary>
   <p>Indicates if the lease is from a renewal.</p>
-</ul>
+</details>
 
-<ul>
-  <li>
-    <strong>data_mismatch_fields</strong>:{" "}
-    <span style="font-size: smaller;">
-      <code>null | object</code>
-    </span>
-  </li>
+<details>
+  <summary>
+    <strong>data_mismatch_fields</strong>:{" "}<span style="font-size: smaller;"><code>null | object</code></span>
+  </summary>
   <p>Information about data mismatch fields.</p>
-</ul>
+</details>
 
   </div>
-  <div class="col-span-1">
+
+
+
+
+
+    <div class="col-span-1">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <div class="px-4">
         <p class="font-medium text-gray-900">THE LEASE OBJECT</p>
