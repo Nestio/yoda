@@ -18,7 +18,7 @@ The "Application Canceled" event is a significant webhook triggered when an appl
   "created_at": 1682345678,
   "event_data": {
       "application_id": 4444,
-      "client_id": 4444,
+      "renter_id": 4444,
       "canceled_by": "leasing_agent_002",
       "community_id": 65432
   }
@@ -32,7 +32,7 @@ The "Application Canceled" event is a significant webhook triggered when an appl
 - **`created_at`**: A timestamp indicating when the event occurred.
 - **`event_data`**: Contains additional data related to the event:
   - **`application_id`**: The ID of the canceled application.
-  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`renter_id`**: The proprietary renter ID within Funnel.
   - **`canceled_by`**: The identifier of the leasing agent or system that canceled the application.
   - **`community_id`**: The ID of the community where the application was canceled.
 
