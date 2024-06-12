@@ -18,7 +18,7 @@ The "Application Changed Unit" event is a significant webhook triggered when an 
   "created_at": 1680123456,
   "event_data": {
       "application_id": 2222,
-      "client_id": 2222,
+      "renter_id": 2222,
       "previous_unit_id": 54321,
       "new_unit_id": 12345,
       "community_id": 43522
@@ -33,7 +33,7 @@ The "Application Changed Unit" event is a significant webhook triggered when an 
 - **`created_at`**: A timestamp indicating when the event occurred.
 - **`event_data`**: Contains additional data related to the event:
   - **`application_id`**: The ID of the application that changed the reserved unit.
-  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`renter_id`**: The proprietary renter ID within Funnel.
   - **`previous_unit_id`**: The ID of the previously reserved unit.
   - **`new_unit_id`**: The ID of the newly reserved unit.
   - **`community_id`**: The ID of the community where the units are located.

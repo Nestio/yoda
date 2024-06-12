@@ -18,7 +18,7 @@ The "Application Approved" event is a critical webhook triggered when an applica
   "created_at": 1681234567,
   "event_data": {
       "application_id": 3333,
-      "client_id": 3333,
+      "renter_id": 3333,
       "approved_by": "leasing_agent_001",
       "community_id": 54321
   }
@@ -32,7 +32,7 @@ The "Application Approved" event is a critical webhook triggered when an applica
 - **`created_at`**: A timestamp indicating when the event occurred.
 - **`event_data`**: Contains additional data related to the event:
   - **`application_id`**: The ID of the approved application.
-  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`renter_id`**: The proprietary renter ID within Funnel.
   - **`approved_by`**: The identifier of the leasing agent or system that approved the application.
   - **`community_id`**: The ID of the community where the application was approved.
 

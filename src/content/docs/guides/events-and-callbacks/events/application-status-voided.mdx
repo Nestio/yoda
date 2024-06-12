@@ -18,7 +18,7 @@ The "Application Voided" event is a crucial webhook triggered when a completed a
   "created_at": 1685678901,
   "event_data": {
       "application_id": 7777,
-      "client_id": 7777,
+      "renter_id": 7777,
       "voided_by": "leasing_agent_005",
       "community_id": 98765,
       "reason": "Correction needed"
@@ -33,7 +33,7 @@ The "Application Voided" event is a crucial webhook triggered when a completed a
 - **`created_at`**: A timestamp indicating when the event occurred.
 - **`event_data`**: Contains additional data related to the event:
   - **`application_id`**: The ID of the voided application.
-  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`renter_id`**: The proprietary renter ID within Funnel.
   - **`voided_by`**: The identifier of the leasing agent or system that voided the application.
   - **`community_id`**: The ID of the community where the application was voided.
   - **`reason`**: The reason for voiding the application.

@@ -18,7 +18,7 @@ The "Application Denied" event is a critical webhook triggered when an applicati
   "created_at": 1683456789,
   "event_data": {
       "application_id": 5555,
-      "client_id": 5555,
+      "renter_id": 5555,
       "denied_by": "leasing_agent_003",
       "community_id": 76543,
       "reason": "Insufficient income"
@@ -33,7 +33,7 @@ The "Application Denied" event is a critical webhook triggered when an applicati
 - **`created_at`**: A timestamp indicating when the event occurred.
 - **`event_data`**: Contains additional data related to the event:
   - **`application_id`**: The ID of the denied application.
-  - **`client_id`**: The proprietary client ID within Funnel.
+  - **`renter_id`**: The proprietary renter ID within Funnel.
   - **`denied_by`**: The identifier of the leasing agent or system that denied the application.
   - **`community_id`**: The ID of the community where the application was denied.
   - **`reason`**: The reason for the denial of the application.
