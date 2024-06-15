@@ -107,232 +107,268 @@ export const exampleCode = `
 }
 `;
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="col-span-1 justify-self-start">
-      <p>The Applicant object represents an individual or entity applying for a lease transaction within the Funnel Leasing system. It encapsulates detailed information about the applicant, including personal details, financial information, screening results, and application status. This object serves as a central entity in managing lease applications and facilitates the screening and approval process.</p>
-  </div>
-  <div class="col-span-1">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-      <div class="px-4">
-        <p class="font-medium text-gray-900">ENDPOINT</p>
-      </div>
-      <div class="px-4 py-3">
-          ```
-          GET /v2/onlineleasing/applicant/:id
-          ```
-      </div>
-    </div>
+import { Row, Col, Properties, Property } from './../../../components/Layout';
 
-  </div>
-</div>
-
-<br />
-<br />
-
-    #### Attributes
+<Row>
+  <Col>
+    <p>
+      The Applicant object represents an individual or entity applying for a
+      lease transaction within the Funnel Leasing system. It encapsulates
+      detailed information about the applicant, including personal details,
+      financial information, screening results, and application status. This
+      object serves as a central entity in managing lease applications and
+      facilitates the screening and approval process.
+    </p>
+  </Col>
+  <Col>
+    <Code
+      type="code"
+      wrap={true}
+      code={`GET /v2/onlineleasing/applicant/:id`}
+      frame="terminal"
+      title="API"
+    />
+  </Col>
+</Row>
 
 ---
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="col-span-1 justify-self-start">
-          <details>
-      <summary><strong>id</strong>: <span style="font-size: smaller;"><code>integer</code></span></summary>
-      <p>A unique Funnel Leasing identifier</p>
-    </details>
-    <details>
-      <summary><strong>lease_transaction_id</strong>: <span style="font-size: smaller;"><code>integer</code></span></summary>
-      <p>Identifier for the lease transaction associated with the applicant</p>
-    </details>
-    <details>
-      <summary><strong>first_name</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The first name of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>middle_name</strong>: <span style="font-size: smaller;"><code>string or null</code></span></summary>
-      <p>The middle name of the applicant, if provided</p>
-    </details>
-    <details>
-      <summary><strong>suffix</strong>: <span style="font-size: smaller;"><code>string or null</code></span></summary>
-      <p>The suffix of the applicant's name, if provided</p>
-    </details>
-    <details>
-      <summary><strong>last_name</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The last name of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>person</strong>: <span style="font-size: smaller;"><code>object</code></span></summary>
-      <p>Information about the person associated with the applicant, including their email, name, phone numbers, and client ID</p>
-    </details>
-    <details>
-      <summary><strong>account</strong>: <span style="font-size: smaller;"><code>object</code></span></summary>
-      <p>Information about the account associated with the applicant, including email and phone number</p>
-    </details>
-    <details>
-      <summary><strong>role</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The role of the applicant (e.g., Roommate)</p>
-    </details>
-    <details>
-      <summary><strong>address_street</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The street address of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>address_line_2</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Additional address information (e.g., apartment number)</p>
-    </details>
-    <details>
-      <summary><strong>address_city</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The city of the applicant's address</p>
-    </details>
-    <details>
-      <summary><strong>address_state</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The state of the applicant's address</p>
-    </details>
-    <details>
-      <summary><strong>address_postal_code</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The postal code of the applicant's address</p>
-    </details>
-    <details>
-      <summary><strong>date_of_birth</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>The date of birth of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>international</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates whether the applicant is international</p>
-    </details>
-    <details>
-      <summary><strong>verified_income_total</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Total verified income of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>verified_asset_total</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Total verified assets of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>stated_income</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Stated income of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>stated_assets</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Stated assets of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>credit_score_rating</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Credit score rating of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>credit_rating</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Credit rating of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>screening_eviction_result</strong>: <span style="font-size: smaller;"><code>integer</code></span></summary>
-      <p>Screening result for eviction</p>
-    </details>
-    <details>
-      <summary><strong>screening_criminal_result</strong>: <span style="font-size: smaller;"><code>integer or null</code></span></summary>
-      <p>Screening result for criminal background, if available</p>
-    </details>
-    <details>
-      <summary><strong>screening_criminal_result_overridden</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the screening result for criminal background has been overridden</p>
-    </details>
-      <details>
-      <summary><strong>eviction_report</strong>: <span style="font-size: smaller;"><code>object</code></span></summary>
-      <p>Information about the eviction report, including its ID, type, status, and name</p>
-    </details>
-    <details>
-      <summary><strong>criminal_report</strong>: <span style="font-size: smaller;"><code>object or null</code></span></summary>
-      <p>Information about the criminal report, if available</p>
-    </details>
-    <details>
-            <summary><strong>credit_report</strong>: <span style="font-size: smaller;"><code>object</code></span></summary>
-      <p>Information about the credit report, including its ID, type, status, and URLs</p>
-    </details>
-    <details>
-      <summary><strong>identity_verification_status</strong>: <span style="font-size: smaller;"><code>integer</code></span></summary>
-      <p>Status of identity verification</p>
-    </details>
-    <details>
-      <summary><strong>warnings_and_cautions</strong>: <span style="font-size: smaller;"><code>array</code></span></summary>
-      <p>Array of warnings and cautions</p>
-    </details>
-    <details>
-      <summary><strong>transaction_errors</strong>: <span style="font-size: smaller;"><code>array</code></span></summary>
-      <p>Array of transaction errors</p>
-    </details>
-    <details>
-      <summary><strong>applicant_screened</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates whether the applicant has been screened</p>
-    </details>
-    <details>
-      <summary><strong>requires_two_phased_screening</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the applicant requires two-phased screening</p>
-    </details>
-    <details>
-      <summary><strong>submitted_application</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the application has been submitted</p>
-    </details>
-    <details>
-      <summary><strong>submitted_application_at</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Date and time when the application was submitted</p>
-    </details>
-    <details>
-      <summary><strong>is_registered</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the applicant is registered</p>
-    </details>
-    <details>
-      <summary><strong>is_moving_in</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the applicant is moving in</p>
-    </details>
-    <details>
-      <summary><strong>is_managed</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the applicant is managed</p>
-    </details>
-    <details>
-      <summary><strong>is_income_completed</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the income information is completed for the applicant</p>
-    </details>
-    <details>
-      <summary><strong>employer</strong>: <span style="font-size: smaller;"><code>object</code></span></summary>
-      <p>Information about the employer of the applicant, including name and address</p>
-    </details>
-    <details>
-      <summary><strong>ssn</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Social Security Number of the applicant</p>
-    </details>
-    <details>
-      <summary><strong>corporation_name</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Name of the corporation associated with the applicant, if applicable</p>
-    </details>
-    <details>
-      <summary><strong>representative_first_name</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>First name of the representative of the corporation, if applicable</p>
-    </details>
-    <details>
-      <summary><strong>representative_last_name</strong>: <span style="font-size: smaller;"><code>string</code></span></summary>
-      <p>Last name of the representative of the corporation, if applicable</p>
-    </details>
-    <details>
-      <summary><strong>corporation_screened</strong>: <span style="font-size: smaller;"><code>boolean or null</code></span></summary>
-      <p>Indicates if the corporation associated with the applicant has been screened</p>
-    </details>
-    <details>
-      <summary><strong>will_provide_own_screening</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the applicant will provide their own screening</p>
-    </details>
-    <details>
-      <summary><strong>agent_uploaded_screening</strong>: <span style="font-size: smaller;"><code>boolean</code></span></summary>
-      <p>Indicates if the agent has uploaded the screening information</p>
-    </details>
-  </div>
 
-  <div class="col-span-1">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-      <div class="px-4">
-        <p class="font-medium text-gray-900">THE APPLICANT OBJECT</p>
-      </div>
-      <div class="px-4 py-3">
-          <Code type="code" wrap={true} code={exampleCode} lang="json" lineNumbers={true} />
-      </div>
-    </div>
-  </div>
-</div>
+#### Attributes
+
+<Row>
+  <Col>
+    <Properties>
+      <Property name="ID" type="integer">
+        A Unique Funnel Identifier
+      </Property>
+      <Property name="Lease Transaction ID" type="integer">
+        ID of the Lease Transaction
+      </Property>
+      <Property name="First Name" type="string">
+        The First Name of the Applicant
+      </Property>
+      <Property name="Middle Name" type="string">
+        The Middle Name of the Applicant
+      </Property>
+      <Property name="Suffix" type="string">
+        The Suffix of the Applicant
+      </Property>
+      <Property name="Last Name" type="string">
+        The Last Name of the Applicant
+      </Property>
+      <Property name="Person ID" type="integer">
+        ID of the Person
+      </Property>
+      <Property name="Email" type="string">
+        Email Address of the Person
+      </Property>
+      <Property name="Person Name" type="string">
+        Name of the Person
+      </Property>
+      <Property name="Phone 1" type="string">
+        Primary Phone Number of the Person
+      </Property>
+      <Property name="Phone 2" type="string">
+        Secondary Phone Number of the Person
+      </Property>
+      <Property name="Client ID" type="integer">
+        ID of the Client
+      </Property>
+      <Property name="Account ID" type="integer">
+        ID of the Account
+      </Property>
+      <Property name="Account Email" type="string">
+        Email Address of the Account
+      </Property>
+      <Property name="Account Phone Number" type="string">
+        Phone Number of the Account
+      </Property>
+      <Property name="Role" type="string">
+        Role of the Applicant
+      </Property>
+      <Property name="Street Address" type="string">
+        Street Address of the Applicant
+      </Property>
+      <Property name="Address Line 2" type="string">
+        Additional Address Information
+      </Property>
+      <Property name="City" type="string">
+        City of the Applicant's Address
+      </Property>
+      <Property name="State" type="string">
+        State of the Applicant's Address
+      </Property>
+      <Property name="Postal Code" type="string">
+        Postal Code of the Applicant's Address
+      </Property>
+      <Property name="Date of Birth" type="string">
+        Date of Birth of the Applicant
+      </Property>
+      <Property name="International" type="boolean">
+        Indicates if the Applicant is International
+      </Property>
+      <Property name="Verified Income Total" type="string">
+        Total Verified Income of the Applicant
+      </Property>
+      <Property name="Verified Asset Total" type="string">
+        Total Verified Assets of the Applicant
+      </Property>
+      <Property name="Stated Income" type="string">
+        Stated Income of the Applicant
+      </Property>
+      <Property name="Stated Assets" type="string">
+        Stated Assets of the Applicant
+      </Property>
+      <Property name="Credit Score Rating" type="string">
+        Credit Score Rating of the Applicant
+      </Property>
+      <Property name="Credit Rating" type="string">
+        Credit Rating of the Applicant
+      </Property>
+      <Property name="Screening Eviction Result" type="integer">
+        Eviction Screening Result Code
+      </Property>
+      <Property name="Screening Criminal Result" type="null">
+        Criminal Screening Result (Null if Not Available)
+      </Property>
+      <Property name="Screening Criminal Result Overridden" type="boolean">
+        Indicates if Criminal Screening Result was Overridden
+      </Property>
+      <Property name="Eviction Report ID" type="integer">
+        ID of the Eviction Report
+      </Property>
+      <Property name="Eviction Report Type" type="integer">
+        Type of the Eviction Report
+      </Property>
+      <Property name="Eviction Report Status" type="integer">
+        Status Code of the Eviction Report
+      </Property>
+      <Property name="Eviction Report Name" type="string">
+        Name of the Eviction Report
+      </Property>
+      <Property name="Eviction Report Available" type="integer">
+        Availability Status of the Eviction Report
+      </Property>
+      <Property name="Eviction Report Applicant Name" type="string">
+        Name of the Applicant in the Eviction Report
+      </Property>
+      <Property name="Criminal Report" type="null">
+        Criminal Report (Null if Not Available)
+      </Property>
+      <Property name="Credit Report ID" type="integer">
+        ID of the Credit Report
+      </Property>
+      <Property name="Credit Report Type" type="integer">
+        Type of the Credit Report
+      </Property>
+      <Property name="Credit Report Status" type="integer">
+        Status Code of the Credit Report
+      </Property>
+      <Property name="Credit Report URL" type="string">
+        URL Link to the Credit Report
+      </Property>
+      <Property name="Credit Report Onlineleasing URL" type="string">
+        Onlineleasing URL Link to the Credit Report
+      </Property>
+      <Property name="Credit Report Created At" type="string">
+        Date and Time when the Credit Report was Created
+      </Property>
+      <Property name="Credit Report Name" type="string">
+        Name of the Credit Report
+      </Property>
+      <Property name="Credit Report Available" type="integer">
+        Availability Status of the Credit Report
+      </Property>
+      <Property name="Credit Report Applicant Name" type="string">
+        Name of the Applicant in the Credit Report
+      </Property>
+      <Property name="Credit Report Lease Transaction Type" type="integer">
+        Lease Transaction Type Code in the Credit Report
+      </Property>
+      <Property name="Identity Verification Status" type="integer">
+        Identity Verification Status Code
+      </Property>
+      <Property name="Warnings and Cautions" type="array">
+        List of Warnings and Cautions
+      </Property>
+      <Property name="Transaction Errors" type="array">
+        List of Transaction Errors
+      </Property>
+      <Property name="Applicant Screened" type="boolean">
+        Indicates if the Applicant has been Screened
+      </Property>
+      <Property name="Requires Two Phased Screening" type="boolean">
+        Indicates if Two-Phased Screening is Required
+      </Property>
+      <Property name="Submitted Application" type="boolean">
+        Indicates if an Application has been Submitted
+      </Property>
+      <Property name="Submitted Application At" type="string">
+        Date and Time when the Application was Submitted
+      </Property>
+      <Property name="Is Registered" type="boolean">
+        Indicates if the Applicant is Registered
+      </Property>
+      <Property name="Is Moving In" type="boolean">
+        Indicates if the Applicant is Moving In
+      </Property>
+      <Property name="Is Managed" type="boolean">
+        Indicates if the Applicant is Managed
+      </Property>
+      <Property name="Is Income Completed" type="boolean">
+        Indicates if Income Information is Completed
+      </Property>
+      <Property name="Employer Name" type="string">
+        Name of the Applicant's Employer
+      </Property>
+      <Property name="Employer Street Address" type="string">
+        Street Address of the Applicant's Employer
+      </Property>
+      <Property name="Employer Address Line 2" type="string">
+        Additional Address Information of the Applicant's Employer
+      </Property>
+      <Property name="Employer City" type="string">
+        City of the Applicant's Employer
+      </Property>
+      <Property name="Employer State" type="string">
+        State of the Applicant's Employer
+      </Property>
+      <Property name="Employer Postal Code" type="string">
+        Postal Code of the Applicant's Employer
+      </Property>
+      <Property name="SSN" type="string">
+        Social Security Number of the Applicant
+      </Property>
+      <Property name="Corporation Name" type="string">
+        Name of the Corporation
+      </Property>
+      <Property name="Representative First Name" type="string">
+        First Name of the Representative
+      </Property>
+      <Property name="Representative Last Name" type="string">
+        Last Name of the Representative
+      </Property>
+      <Property name="Corporation Screened" type="null">
+        Corporation Screening Result (Null if Not Available)
+      </Property>
+      <Property name="Will Provide Own Screening" type="boolean">
+        Indicates if Applicant will Provide Own Screening
+      </Property>
+      <Property name="Agent Uploaded Screening" type="boolean">
+        Indicates if Agent Uploaded Screening
+      </Property>
+    </Properties>
+  </Col>
+  <Col sticky>
+    <Code
+      type="code"
+      wrap={true}
+      code={exampleCode}
+      lang="json"
+      lineNumbers={true}
+      frame="terminal"
+      title="Example Applicant Object"
+    />
+  </Col>
+</Row>
