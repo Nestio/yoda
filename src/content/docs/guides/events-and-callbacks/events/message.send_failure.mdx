@@ -1,0 +1,45 @@
+---
+title: Message Send Failure Event
+description: Comprehensive documentation for the "Message Send Failure" webhook event, detailing its purpose, payload, and use cases for seamless integration within the Funnel Leasing platform.
+---
+
+The "Message Send Failure" event is a webhook triggered when a message that has been submitted to the Funnel partner API failed to send.
+
+## Event Details
+
+- **Event Type**: `message.send_failure`
+- **Description**: This event is triggered when an email or SMS that was submitted to the send-communication partner API has failed to send.
+- **Event Payload Example**:
+
+```json
+{
+  "event_id": "evt_1OxyzKLt4dXK03v5qaZabcDE",
+  "event_type": "message.send_failure",
+  "created_at": 1681234567,
+  "event_data": {
+    "phone": "+18888888883", 
+    "renter_id": 8893952, 
+    "message_id": 201915458, 
+    "error_message": "Unknown destination handset",
+    "pms_identifier": "143204", 
+    "renter_person_id": 9756434
+  }
+}
+```
+
+## Payload Fields
+
+- **`event_id`**: A unique identifier for the event.
+- **`event_type`**: The type of event (`message.send_failure`).
+- **`created_at`**: A timestamp indicating when the event occurred.
+- **`event_data`**: Contains additional data related to the event:
+  - **`phone`**: The Phone number to which the message was sent.
+  - **`renter_id`**: The proprietary renter ID within Funnel.
+  - **`message_id`**: The ID of the message within Funnel (this is returned when calling send-communication).
+  - **`error_message`**: A short message that gives more detail on what went wrong.
+  - **`pms_identifier`**: The PMS identifier of the household to which the message was sent.
+  - **`renter_person_id`**: The proprietary ID of the individual person within the Funnel Renter.
+
+## Use Cases
+
+This event is crucial for integrations that need to track whether messages have been sent or failed to send to renters.

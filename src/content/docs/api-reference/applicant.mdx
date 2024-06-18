@@ -109,7 +109,7 @@ export const exampleCode = `
 
 <div class="grid grid-cols-2 gap-4">
   <div class="col-span-1 justify-self-start">
-      <p>The Applicant object represents an individual or entity applying for a lease transaction within the Funnel Leasing system. It encapsulates detailed information about the applicant, including personal details, financial information, screening results, and application status. This object serves as a central entity in managing lease applications and facilitates the screening and approval process.</p>
+      <p>The Applicant object represents an individual or entity applying for a lease transaction within the Funnel Leasing system. It encapsulates detailed information about the applicant, including personal details, financial information, screening results, and application status. This object serves as a central entity in managing lease applications and facilitates the screening and approval process. Note that if one individual with one email address applies for 2 different units, they will show up as 2 Applicant records with 2 different IDs. We would expect both of those Applicant records to share the same Account ID.</p>
   </div>
   <div class="col-span-1">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -135,7 +135,7 @@ export const exampleCode = `
 
 <div class="grid grid-cols-2 gap-4">
   <div class="col-span-1 justify-self-start">
-          <details>
+    <details>
       <summary><strong>id</strong>: <span style="font-size: smaller;"><code>integer</code></span></summary>
       <p>A unique Funnel Leasing identifier</p>
     </details>
