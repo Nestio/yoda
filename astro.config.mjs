@@ -1,13 +1,16 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import netlify from "@astrojs/netlify";
-
+import react from "@astrojs/react";
+import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
   adapter: netlify(),
   integrations: [
+    react(),
+
     starlight({
       title: "Funnel Leasing",
       customCss: [
@@ -126,5 +129,6 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
+    mdx(),
   ],
 });
