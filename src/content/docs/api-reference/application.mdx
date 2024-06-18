@@ -1561,7 +1561,7 @@ export const exampleCode = `
 
 <div class="grid grid-cols-2 gap-4">
   <div class="col-span-1 justify-self-start">
-      <p>The Application object encapsulates data related to a prospective tenant's application for a rental property. It includes details such as applicant information, employment history, financial records, screening results, and submitted documents. This object serves as a comprehensive record of the application process, providing landlords or property managers with the necessary information to evaluate applicants and make informed decisions regarding their suitability as tenants.</p>
+      <p>The Application object encapsulates data related to a prospective tenant's application for a rental property. It includes details such as applicant information, employment history, financial records, screening results, and submitted documents. This object serves as a comprehensive record of the application process, providing landlords or property managers with the necessary information to evaluate applicants and make informed decisions regarding their suitability as tenants. Note that if a single individual applies to 2 different units, we would expect to see 2 different Application objects with 2 different IDs. However, we would expect both of those Applications to share the same Account object with 1 ID.</p>
   </div>
   <div class="col-span-1">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
