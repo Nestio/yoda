@@ -10,84 +10,39 @@ head:
 import { Code } from "@astrojs/starlight/components";
 export const exampleCode = `
 {
-    "id": 519311,
-    "lease_transaction_id": 319927,
+    "id": 564323,
+    "lease_transaction_id": 347612,
+    "role": "Primary Applicant",
     "first_name": "John",
-    "middle_name": null,
-    "suffix": null,
+    "middle_name": "Mary",
     "last_name": "Doe",
-    "person": {
-        "id": 16924738,
-        "email": "hello@gmail.com",
-        "name": "John Doe",
-        "phone_1": "(111) 555-4532",
-        "phone_2": "",
-        "client_id": 1111,
-    },
-    "account": {
-        "id": 394080,
-        "email": "rcwilliams2407@gmail.com",
-        "phone_number": "(760) 996-0792"
-    },
-    "role": "Roommate",
+    "suffix": "Jr",
+    "email": "john.doe@gmail.com",
     "address_street": "2 Main Street",
-    "address_line_2": "Apt 1",
+    "address_line_2": "Apt 5",
     "address_city": "New York",
     "address_state": "NY",
-    "address_postal_code": "10001",
-    "date_of_birth": "1991-01-01",
-    "international": false,
-    "verified_income_total": "80000.00",
-    "verified_asset_total": "0.00",
-    "stated_income": "80000.00",
-    "stated_assets": "0.00",
-    "credit_score_rating": "Approved",
-    "credit_rating": "Approved",
-    "screening_eviction_result": 140,
-    "screening_criminal_result": null,
-    "screening_criminal_result_overridden": false,
-    "eviction_report": {
-        "id": 204951,
-        "type": 30,
-        "report_id": "",
-        "status": 40,
-        "report_url": null,
-        "onlineleasing_report_url": null,
-        "created_at": "2024-05-21",
-        "name": "transunion eviction",
-        "available": 10,
-        "applicant_name": "John Doe",
+    "address_postal_code": "10036",
+    "screening_eviction_recommendation": "Accept",
+    "screening_criminal_recommendation": "Accept",
+    "identity_verification_status": "Manually Verified",
+    "warnings_and_cautions": [
+        {
+            "type": "Warning",
+            "source": "Transunion Report",
+            "description": "No Record Found"
+        },
+        {
+            "type": "Warning",
+            "source": "International Applicant",
+            "description": "*Notice: INTERNATIONAL APPLICANT.\nApplicants without a SSN (typically international applicants) cannot be screened for credit."
+        }
+    ],
+    "financial_data": {
+        "reported_no_income_assets": false,
+        "income_total": "$250,000",
+        "asset_total": "$103,760"
     },
-    "criminal_report": null,
-    "credit_report": {
-        "id": 204950,
-        "type": 10,
-        "report_id": "",
-        "status": 40,
-        "report_url": "url.com",
-        "onlineleasing_report_url": "url.com",
-        "created_at": "2024-05-21",
-        "name": "transunion credit",
-        "available": 20,
-        "applicant_name": "John Doe",
-        "lease_transaction_type": 10
-    },
-    "identity_verification_status": 30,
-    "warnings_and_cautions": [],
-    "transaction_errors": [],
-
-    "applicant_screened": true,
-    "requires_two_phased_screening": false,
-    "submitted_application": true,
-    "submitted_application_at": "2024-05-21T02:35:33.389256+00:00",
-    "is_registered": true,
-    "is_moving_in": true,
-
-
-    "is_managed": false,
-
-    "is_income_completed": true,
-
     "employer": {
         "name": "Funnel Leasing ",
         "address_street": "33 Chelsea Street",
@@ -95,19 +50,11 @@ export const exampleCode = `
         "address_city": "Tampa",
         "address_state": "FL",
         "address_postal_code": "12341"
-    },
-    "ssn": "101-21-1124",
-    "corporation_name": "",
-    "representative_first_name": "",
-    "representative_last_name": "",
-    "corporation_screened": null,
-    "will_provide_own_screening": false,
-    "agent_uploaded_screening": false
-
+    }
 }
 `;
 
-import { Row, Col, Properties, Property } from './../../../components/Layout';
+import { Row, Col, Properties, Property } from "./../../../components/Layout";
 
 <Row>
   <Col>
@@ -124,7 +71,7 @@ import { Row, Col, Properties, Property } from './../../../components/Layout';
     <Code
       type="code"
       wrap={true}
-      code={`GET /v2/onlineleasing/applicant/:id`}
+      code={`GET /api/v2/applicant/:id`}
       frame="terminal"
       title="API"
     />
@@ -133,230 +80,110 @@ import { Row, Col, Properties, Property } from './../../../components/Layout';
 
 ---
 
-
 #### Attributes
 
 <Row>
   <Col>
     <Properties>
       <Property name="ID" type="integer">
-        A Unique Funnel Identifier
-      </Property>
-      <Property name="Lease Transaction ID" type="integer">
-        ID of the Lease Transaction
-      </Property>
-      <Property name="First Name" type="string">
-        The First Name of the Applicant
-      </Property>
-      <Property name="Middle Name" type="string">
-        The Middle Name of the Applicant
-      </Property>
-      <Property name="Suffix" type="string">
-        The Suffix of the Applicant
-      </Property>
-      <Property name="Last Name" type="string">
-        The Last Name of the Applicant
-      </Property>
-      <Property name="Person ID" type="integer">
-        ID of the Person
-      </Property>
-      <Property name="Email" type="string">
-        Email Address of the Person
-      </Property>
-      <Property name="Person Name" type="string">
-        Name of the Person
-      </Property>
-      <Property name="Phone 1" type="string">
-        Primary Phone Number of the Person
-      </Property>
-      <Property name="Phone 2" type="string">
-        Secondary Phone Number of the Person
-      </Property>
-      <Property name="Client ID" type="integer">
-        ID of the Client
-      </Property>
-      <Property name="Account ID" type="integer">
-        ID of the Account
-      </Property>
-      <Property name="Account Email" type="string">
-        Email Address of the Account
-      </Property>
-      <Property name="Account Phone Number" type="string">
-        Phone Number of the Account
-      </Property>
-      <Property name="Role" type="string">
-        Role of the Applicant
-      </Property>
-      <Property name="Street Address" type="string">
-        Street Address of the Applicant
-      </Property>
-      <Property name="Address Line 2" type="string">
-        Additional Address Information
-      </Property>
-      <Property name="City" type="string">
-        City of the Applicant's Address
-      </Property>
-      <Property name="State" type="string">
-        State of the Applicant's Address
-      </Property>
-      <Property name="Postal Code" type="string">
-        Postal Code of the Applicant's Address
-      </Property>
-      <Property name="Date of Birth" type="string">
-        Date of Birth of the Applicant
-      </Property>
-      <Property name="International" type="boolean">
-        Indicates if the Applicant is International
-      </Property>
-      <Property name="Verified Income Total" type="string">
-        Total Verified Income of the Applicant
-      </Property>
-      <Property name="Verified Asset Total" type="string">
-        Total Verified Assets of the Applicant
-      </Property>
-      <Property name="Stated Income" type="string">
-        Stated Income of the Applicant
-      </Property>
-      <Property name="Stated Assets" type="string">
-        Stated Assets of the Applicant
-      </Property>
-      <Property name="Credit Score Rating" type="string">
-        Credit Score Rating of the Applicant
-      </Property>
-      <Property name="Credit Rating" type="string">
-        Credit Rating of the Applicant
-      </Property>
-      <Property name="Screening Eviction Result" type="integer">
-        Eviction Screening Result Code
-      </Property>
-      <Property name="Screening Criminal Result" type="null">
-        Criminal Screening Result (Null if Not Available)
-      </Property>
-      <Property name="Screening Criminal Result Overridden" type="boolean">
-        Indicates if Criminal Screening Result was Overridden
-      </Property>
-      <Property name="Eviction Report ID" type="integer">
-        ID of the Eviction Report
-      </Property>
-      <Property name="Eviction Report Type" type="integer">
-        Type of the Eviction Report
-      </Property>
-      <Property name="Eviction Report Status" type="integer">
-        Status Code of the Eviction Report
-      </Property>
-      <Property name="Eviction Report Name" type="string">
-        Name of the Eviction Report
-      </Property>
-      <Property name="Eviction Report Available" type="integer">
-        Availability Status of the Eviction Report
-      </Property>
-      <Property name="Eviction Report Applicant Name" type="string">
-        Name of the Applicant in the Eviction Report
-      </Property>
-      <Property name="Criminal Report" type="null">
-        Criminal Report (Null if Not Available)
-      </Property>
-      <Property name="Credit Report ID" type="integer">
-        ID of the Credit Report
-      </Property>
-      <Property name="Credit Report Type" type="integer">
-        Type of the Credit Report
-      </Property>
-      <Property name="Credit Report Status" type="integer">
-        Status Code of the Credit Report
-      </Property>
-      <Property name="Credit Report URL" type="string">
-        URL Link to the Credit Report
-      </Property>
-      <Property name="Credit Report Onlineleasing URL" type="string">
-        Onlineleasing URL Link to the Credit Report
-      </Property>
-      <Property name="Credit Report Created At" type="string">
-        Date and Time when the Credit Report was Created
-      </Property>
-      <Property name="Credit Report Name" type="string">
-        Name of the Credit Report
-      </Property>
-      <Property name="Credit Report Available" type="integer">
-        Availability Status of the Credit Report
-      </Property>
-      <Property name="Credit Report Applicant Name" type="string">
-        Name of the Applicant in the Credit Report
-      </Property>
-      <Property name="Credit Report Lease Transaction Type" type="integer">
-        Lease Transaction Type Code in the Credit Report
-      </Property>
-      <Property name="Identity Verification Status" type="integer">
-        Identity Verification Status Code
-      </Property>
-      <Property name="Warnings and Cautions" type="array">
-        List of Warnings and Cautions
-      </Property>
-      <Property name="Transaction Errors" type="array">
-        List of Transaction Errors
-      </Property>
-      <Property name="Applicant Screened" type="boolean">
-        Indicates if the Applicant has been Screened
-      </Property>
-      <Property name="Requires Two Phased Screening" type="boolean">
-        Indicates if Two-Phased Screening is Required
-      </Property>
-      <Property name="Submitted Application" type="boolean">
-        Indicates if an Application has been Submitted
-      </Property>
-      <Property name="Submitted Application At" type="string">
-        Date and Time when the Application was Submitted
-      </Property>
-      <Property name="Is Registered" type="boolean">
-        Indicates if the Applicant is Registered
-      </Property>
-      <Property name="Is Moving In" type="boolean">
-        Indicates if the Applicant is Moving In
-      </Property>
-      <Property name="Is Managed" type="boolean">
-        Indicates if the Applicant is Managed
-      </Property>
-      <Property name="Is Income Completed" type="boolean">
-        Indicates if Income Information is Completed
-      </Property>
-      <Property name="Employer Name" type="string">
-        Name of the Applicant's Employer
-      </Property>
-      <Property name="Employer Street Address" type="string">
-        Street Address of the Applicant's Employer
-      </Property>
-      <Property name="Employer Address Line 2" type="string">
-        Additional Address Information of the Applicant's Employer
-      </Property>
-      <Property name="Employer City" type="string">
-        City of the Applicant's Employer
-      </Property>
-      <Property name="Employer State" type="string">
-        State of the Applicant's Employer
-      </Property>
-      <Property name="Employer Postal Code" type="string">
-        Postal Code of the Applicant's Employer
-      </Property>
-      <Property name="SSN" type="string">
-        Social Security Number of the Applicant
-      </Property>
-      <Property name="Corporation Name" type="string">
-        Name of the Corporation
-      </Property>
-      <Property name="Representative First Name" type="string">
-        First Name of the Representative
-      </Property>
-      <Property name="Representative Last Name" type="string">
-        Last Name of the Representative
-      </Property>
-      <Property name="Corporation Screened" type="null">
-        Corporation Screening Result (Null if Not Available)
-      </Property>
-      <Property name="Will Provide Own Screening" type="boolean">
-        Indicates if Applicant will Provide Own Screening
-      </Property>
-      <Property name="Agent Uploaded Screening" type="boolean">
-        Indicates if Agent Uploaded Screening
+        A Unique Funnel Identifier for the applicant.
+      </Property>
+      <Property name="lease_transaction_id" type="integer">
+        The ID of the Lease Transaction associated with the applicant.
+      </Property>
+      <Property name="role" type="string">
+        The role of the applicant in the lease transaction (e.g., "Primary
+        Applicant").
+      </Property>
+      <Property name="first_name" type="string">
+        The first name of the applicant.
+      </Property>
+      <Property name="middle_name" type="string">
+        The middle name of the applicant.
+      </Property>
+      <Property name="last_name" type="string">
+        The last name of the applicant.
+      </Property>
+      <Property name="suffix" type="string">
+        The suffix of the applicant's name (e.g., "Jr").
+      </Property>
+      <Property name="email" type="string">
+        The email address of the applicant.
+      </Property>
+      <Property name="address_street" type="string">
+        The street address of the applicant.
+      </Property>
+      <Property name="address_line_2" type="string">
+        Additional line of address (e.g., apartment number).
+      </Property>
+      <Property name="address_city" type="string">
+        The city of the applicant's address.
+      </Property>
+      <Property name="address_state" type="string">
+        The state of the applicant's address.
+      </Property>
+      <Property name="address_postal_code" type="string">
+        The postal code of the applicant's address.
+      </Property>
+      <Property name="screening_eviction_recommendation" type="string">
+        Recommendation from eviction screening (e.g., "Accept").
+      </Property>
+      <Property name="screening_criminal_recommendation" type="string">
+        Recommendation from criminal screening (e.g., "Accept").
+      </Property>
+      <Property name="identity_verification_status" type="string">
+        The status of identity verification (e.g., "Manually Verified").
+      </Property>
+      <Property name="warnings_and_cautions" type="array">
+        Array of warnings and cautions associated with the applicant.
+        <Properties>
+          <Property name="type" type="string">
+            The type of warning or caution (e.g., "Warning").
+          </Property>
+          <Property name="source" type="string">
+            The source of the warning or caution (e.g., "Transunion Report").
+          </Property>
+          <Property name="description" type="string">
+            The description of the warning or caution.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="financial_data" type="object">
+        Financial information of the applicant.
+        <Properties>
+          <Property name="reported_no_income_assets" type="boolean">
+            Indicates if the applicant reported no income/assets.
+          </Property>
+          <Property name="income_total" type="string">
+            Total reported income of the applicant.
+          </Property>
+          <Property name="asset_total" type="string">
+            Total reported assets of the applicant.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="employer" type="object">
+        Employer details of the applicant.
+        <Properties>
+          <Property name="name" type="string">
+            The name of the employer.
+          </Property>
+          <Property name="address_street" type="string">
+            The street address of the employer.
+          </Property>
+          <Property name="address_line_2" type="string">
+            Additional line of employer's address (e.g., floor number).
+          </Property>
+          <Property name="address_city" type="string">
+            The city of the employer's address.
+          </Property>
+          <Property name="address_state" type="string">
+            The state of the employer's address.
+          </Property>
+          <Property name="address_postal_code" type="string">
+            The postal code of the employer's address.
+          </Property>
+        </Properties>
       </Property>
     </Properties>
   </Col>

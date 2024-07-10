@@ -1,0 +1,313 @@
+---
+title: Lease Transaction
+description: Lease Transaction Object
+tableOfContents: false
+head:
+  - tag: style
+    content: ":root { --sl-content-width: 100% !important; }"
+---
+
+import { Code } from "@astrojs/starlight/components";
+export const exampleCode = `
+{
+    "id": 347612,
+    "type": "Application",
+    "profile_type": "Standard",
+    "community": {
+        "id": 3521,
+        "display_name": "Magnolia View UAT"
+    },
+    "status": "Approved",
+    "quote": {
+        "id": 4421921,
+        "price": "1571.00",
+        "base_price": "1571.00",
+        "lease_start": "2024-06-27",
+        "lease_end": "2024-12-26",
+        "lease_term": 6,
+        "expiration": "2024-07-27 15:02:00.651184",
+        "total_monthly_fees": "1625.00",
+        "total_move_in_fees": "666.68"
+    },
+    "unit": {
+        "id": 3998557,
+        "unit_number": "0826",
+        "price": 1571.0,
+        "address": "721 E Ridge Dr - #0826"
+    },
+    "applicants": [
+        {
+            "id": 564323,
+            "full_name": "test elim two",
+            "role_name": "Primary Applicant"
+        }
+    ],
+    "invitees": [
+        {
+            "id": 564323,
+            "full_name": "test elim two",
+            "email": "john.doe@gmail.com",
+            "phone_number": "+13120984673"
+        }
+
+    ],
+    "security_deposit": 1200,
+    "fees_itemized": [
+        {
+            "id": 292498,
+            "name": "App Fee",
+            "fee_type": "Application Fee",
+            "amount": 60,
+            "paid": true,
+            "waived": false,
+            "charge_success": true,
+            "is_handled_offline": false,
+            "payer": "test elim two",
+            "paid_for": "test elim two"
+        },
+        {
+            "id": 292499,
+            "name": "Administrative Fee",
+            "fee_type": "Holding Deposit",
+            "amount": 125,
+            "paid": true,
+            "waived": false,
+            "charge_success": true,
+            "is_handled_offline": false,
+            "payer": "test elim two",
+            "paid_for": "test elim two"
+        }
+    ],
+    "guest_card": {
+        "client_id": 15209922,
+        "realpage_pms_attributes": {
+            "guestcard_id": [
+                "p5003909"
+            ],
+            "resident_household_id": [
+                "t2570582"
+            ]
+        }
+    },
+    "executed_lease_document": [
+        // This is still under consideration
+    ],
+    "created_at": "2024-06-27T14:36:50.765136",
+    "updated_at": "2024-06-27T14:38:53.585190"
+
+}
+`;
+
+import { Row, Col, Properties, Property } from "./../../../components/Layout";
+
+<Row>
+  <Col>
+    <p>
+      A Lease Transaction represents any operation within Funnel Leasing that
+      creates or updates a Lease. Examples include "Application", "Lease
+      Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", and
+      "Transfer".
+    </p>
+  </Col>
+  <Col>
+    <Code
+      type="code"
+      wrap={true}
+      code={`GET /api/v2/lease-transaction/:id`}
+      frame="terminal"
+      title="API"
+    />
+  </Col>
+</Row>
+
+---
+
+#### Attributes
+
+<Row>
+  <Col>
+    <Properties>
+      <Property name="ID" type="integer">
+        A unique identifier for the Lease Transaction within Funnel.
+      </Property>
+      <Property name="type" type="string">
+        The type of Lease Transaction (e.g., "Application", "Renewal").
+      </Property>
+      <Property name="profile_type" type="string">
+        The profile type associated with the transaction (e.g., "Standard").
+      </Property>
+      <Property name="community" type="object">
+        Details of the community where the lease applies.
+        <Properties>
+          <Property name="id" type="integer">
+            The community ID.
+          </Property>
+          <Property name="display_name" type="string">
+            The display name of the community.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="status" type="string">
+        The current status of the Lease Transaction (e.g., "Approved").
+      </Property>
+      <Property name="quote" type="object">
+        Details of the lease quote including pricing and dates.
+        <Properties>
+          <Property name="id" type="integer">
+            The quote ID.
+          </Property>
+          <Property name="price" type="string">
+            The total price of the lease.
+          </Property>
+          <Property name="base_price" type="string">
+            The base price of the lease.
+          </Property>
+          <Property name="lease_start" type="string">
+            The start date of the lease.
+          </Property>
+          <Property name="lease_end" type="string">
+            The end date of the lease.
+          </Property>
+          <Property name="lease_term" type="integer">
+            The duration of the lease in months.
+          </Property>
+          <Property name="expiration" type="string">
+            The expiration date and time of the quote.
+          </Property>
+          <Property name="total_monthly_fees" type="string">
+            The total monthly fees associated with the lease.
+          </Property>
+          <Property name="total_move_in_fees" type="string">
+            The total move-in fees associated with the lease.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="unit" type="object">
+        Details of the leased unit including ID, price, and address.
+        <Properties>
+          <Property name="id" type="integer">
+            The unit ID.
+          </Property>
+          <Property name="unit_number" type="string">
+            The unit number.
+          </Property>
+          <Property name="price" type="number">
+            The price of the unit.
+          </Property>
+          <Property name="address" type="string">
+            The address of the unit.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="applicants" type="array">
+        List of applicants involved in the transaction.
+        <Properties>
+          <Property name="id" type="integer">
+            The applicant's ID.
+          </Property>
+          <Property name="full_name" type="string">
+            The full name of the applicant.
+          </Property>
+          <Property name="role_name" type="string">
+            The role of the applicant in the transaction (e.g., "Primary
+            Applicant").
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="invitees" type="array">
+        List of invitees associated with the transaction.
+        <Properties>
+          <Property name="id" type="integer">
+            The invitee's ID.
+          </Property>
+          <Property name="full_name" type="string">
+            The full name of the invitee.
+          </Property>
+          <Property name="email" type="string">
+            The email address of the invitee.
+          </Property>
+          <Property name="phone_number" type="string">
+            The phone number of the invitee.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="security_deposit" type="number">
+        The amount of security deposit for the lease.
+      </Property>
+      <Property name="fees_itemized" type="array">
+        Breakdown of itemized fees associated with the transaction.
+        <Properties>
+          <Property name="id" type="integer">
+            The fee item's ID.
+          </Property>
+          <Property name="name" type="string">
+            The name of the fee.
+          </Property>
+          <Property name="fee_type" type="string">
+            The type of fee (e.g., "Application Fee", "Holding Deposit").
+          </Property>
+          <Property name="amount" type="number">
+            The amount of the fee.
+          </Property>
+          <Property name="paid" type="boolean">
+            Indicates if the fee has been paid.
+          </Property>
+          <Property name="waived" type="boolean">
+            Indicates if the fee has been waived.
+          </Property>
+          <Property name="charge_success" type="boolean">
+            Indicates if the fee charge was successful.
+          </Property>
+          <Property name="is_handled_offline" type="boolean">
+            Indicates if the fee was handled offline.
+          </Property>
+          <Property name="payer" type="string">
+            The payer of the fee.
+          </Property>
+          <Property name="paid_for" type="string">
+            The entity for which the fee was paid.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="guest_card" type="object">
+        Guest card details associated with the transaction.
+        <Properties>
+          <Property name="client_id" type="integer">
+            The client ID associated with the guest card.
+          </Property>
+          <Property name="realpage_pms_attributes" type="object">
+            Attributes specific to RealPage PMS.
+            <Properties>
+              <Property name="guestcard_id" type="array">
+                Array of guest card IDs.
+              </Property>
+              <Property name="resident_household_id" type="array">
+                Array of resident household IDs.
+              </Property>
+            </Properties>
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="executed_lease_document" type="array">
+        List of executed lease documents (under consideration).
+      </Property>
+      <Property name="created_at" type="string">
+        Date and time when the transaction was created.
+      </Property>
+      <Property name="updated_at" type="string">
+        Date and time when the transaction was last updated.
+      </Property>
+    </Properties>
+  </Col>
+  <Col sticky>
+    <Code
+      type="code"
+      wrap={true}
+      code={exampleCode}
+      lang="json"
+      lineNumbers={true}
+      frame="terminal"
+      title="Example Lease Transaction Object"
+    />
+  </Col>
+</Row>

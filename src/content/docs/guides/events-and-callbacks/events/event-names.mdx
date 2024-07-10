@@ -5,23 +5,26 @@ head:
   - tag: style
     content: ":root { --sl-content-width: 80% !important; }"
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
 
 Here is a list of webhook events that can be sent to your callback URLs:
 
-| Event type                            | Description                                                                                                  | Event                                  |
-|---------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------|
-| `lease_transaction.unit_reserved`     | Triggered when a lease transaction (e.g., Application) reserves a unit                                      | [Documentation](#lease_transactionunit_reserved)     |
-| `lease_transaction.unit_released`     | Triggered when a leasing professional releases a unit previously reserved by a lease transaction             | [Documentation](#lease_transactionunit_released)     |
-| `lease_transaction.status_updated`    | Triggered when a lease transaction changes status (e.g., from Submitted to Approved)                        | [Documentation](#lease_transactionstatus_updated)    |
-| `lease.resident_move_in`              | Triggered when a future resident moves into a unit                                                          | [Documentation](#leaseresident_move_in)             |
-| `lease.resident_move_in_canceled`     | Triggered when a future resident's move-in is canceled by a leasing professional                             | [Documentation](#leaseresident_move_in_canceled)     |
+| Event type                         | Description                                                                                      | Event                                             |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| `lease_transaction.unit_reserved`  | Triggered when a lease transaction (e.g., Application) reserves a unit                           | [Documentation](#lease_transactionunit_reserved)  |
+| `lease_transaction.unit_released`  | Triggered when a leasing professional releases a unit previously reserved by a lease transaction | [Documentation](#lease_transactionunit_released)  |
+| `lease_transaction.status_updated` | Triggered when a lease transaction changes status (e.g., from Submitted to Approved)             | [Documentation](#lease_transactionstatus_updated) |
+| `lease.resident_move_in`           | Triggered when a future resident moves into a unit                                               | [Documentation](#leaseresident_move_in)           |
+| `lease.resident_move_in_canceled`  | Triggered when a future resident's move-in is canceled by a leasing professional                 | [Documentation](#leaseresident_move_in_canceled)  |
 
-<br /><br />
+<br />
+<br />
 
 ---
 
 ## lease_transaction.unit_reserved
+
 The "Lease Transaction Reserved Unit" event is triggered when a lease transaction, such as an application, successfully reserves a unit. This event is essential for tracking and managing the reservation process, providing necessary data for integrations to act in real-time.
 
 <Tabs syncKey="lease_transaction.unit_reserved">
@@ -29,7 +32,7 @@ The "Lease Transaction Reserved Unit" event is triggered when a lease transactio
       | Property               | Description                                                                                                                                                                                                         | Type    | Nullable |
       |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
       | lease_transaction_id   | Internal Funnel Leasing unique ID that points to the lease transaction                                                                                                        | Integer |          |
-      | lease_transaction_type | Type of lease transaction (e.g., "Application", "Lease Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", "Transfer", "Holdover", "Lease Document Generation") | String  |          |
+      | lease_transaction_type | Type of lease transaction (e.g., "Application", "Lease Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", "Transfer") | String  |          |
       | client_id              | Internal Funnel Leasing ID that points to the guest card of the client                                                                                                        | Integer |          |
       | unit_id                | Internal Funnel Leasing ID that points to the unit                                                                                                                            | Integer |          |
       | community_id           | Internal Funnel Leasing ID that points to the community                                                                                                                       | Integer |          |
@@ -59,6 +62,7 @@ The "Lease Transaction Reserved Unit" event is triggered when a lease transactio
 ---
 
 ## lease_transaction.unit_released
+
 The "Lease Transaction Released Unit" event is triggered when a leasing professional releases a previously reserved unit by a lease transaction, such as an application. This event is crucial for managing unit availability and updating integrations with the latest status.
 
 <Tabs syncKey="lease_transaction.unit_released">
@@ -66,7 +70,7 @@ The "Lease Transaction Released Unit" event is triggered when a leasing professi
       | Property               | Description                                                                                                                                                                                                         | Type    | Nullable |
       |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
       | lease_transaction_id   | Internal Funnel Leasing unique ID that points to the lease transaction                                                                                                        | Integer |          |
-      | lease_transaction_type | Type of lease transaction (e.g., "Application", "Lease Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", "Transfer", "Holdover", "Lease Document Generation") | String  |          |
+      | lease_transaction_type | Type of lease transaction (e.g., "Application", "Lease Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", "Transfer") | String  |          |
       | client_id              | Internal Funnel Leasing ID that points to the guest card of the client                                                                                                        | Integer |          |
       | unit_id                | Internal Funnel Leasing ID that points to the unit                                                                                                                            | Integer |          |
       | community_id           | Internal Funnel Leasing ID that points to the community                                                                                                                       | Integer |          |
@@ -96,15 +100,15 @@ The "Lease Transaction Released Unit" event is triggered when a leasing professi
 ---
 
 ## lease_transaction.status_updated
-The "Lease Transaction Status Updated" event is triggered when a lease transaction changes its status within Funnel Leasing. This event is vital for keeping systems in sync with the latest transaction statuses.
 
+The "Lease Transaction Status Updated" event is triggered when a lease transaction changes its status within Funnel Leasing. This event is vital for keeping systems in sync with the latest transaction statuses.
 
 <Tabs syncKey="lease_transaction.status_updated">
   <TabItem label="Payload Properties">
       | Property               | Description                                                                                                                                                                                                         | Type    | Nullable |
       |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
       | lease_transaction_id   | Internal Funnel Leasing unique ID that points to the lease transaction                                                                                                        | Integer |          |
-      | lease_transaction_type | Type of lease transaction (e.g., "Application", "Lease Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", "Transfer", "Holdover", "Lease Document Generation") | String  |          |
+      | lease_transaction_type | Type of lease transaction (e.g., "Application", "Lease Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", "Transfer") | String  |          |
       | current_status         | The current status of the lease transaction. All the possible statuses of a Lease Transaction are: 'In Progress', 'Submitted', 'Approved', 'Conditionally Approved', 'Denied', 'Canceled', 'Completed' and 'Pending Criminal Review'.       | String  |          |
       | previous_status        | The previous status of the lease transaction, if applicable. All the possible statuses of a Lease Transaction are: 'In Progress', 'Submitted', 'Approved', 'Conditionally Approved', 'Denied', 'Canceled', 'Completed' and 'Pending Criminal Review'.       | String  | Nullable |
       | client_id              | Internal Funnel Leasing ID that points to the guest card of the client                                                                                                        | Integer |          |
@@ -138,6 +142,7 @@ The "Lease Transaction Status Updated" event is triggered when a lease transacti
 ---
 
 ## lease.resident_move_in
+
 The "Resident Move In" event is triggered when a future resident moves into a unit. This event is crucial for tracking resident occupancy and updating relevant systems.
 
 <Tabs syncKey="lease.resident_move_in">
@@ -173,6 +178,7 @@ The "Resident Move In" event is triggered when a future resident moves into a un
 ---
 
 ## lease.resident_move_in_canceled
+
 The "Resident Move In Canceled" event is triggered when a future resident's move-in is canceled by a leasing professional. This event is key for maintaining accurate resident status information.
 
 <Tabs syncKey="lease.resident_move_in_canceled">
