@@ -10,13 +10,14 @@ import { Tabs, TabItem } from "@astrojs/starlight/components";
 
 Here is a list of webhook events that can be sent to your callback URLs:
 
-| Event type                         | Description                                                                                      | Event                                             |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| `lease_transaction.unit_reserved`  | Triggered when a lease transaction (e.g., Application) reserves a unit                           | [Documentation](#lease_transactionunit_reserved)  |
-| `lease_transaction.unit_released`  | Triggered when a leasing professional releases a unit previously reserved by a lease transaction | [Documentation](#lease_transactionunit_released)  |
-| `lease_transaction.status_updated` | Triggered when a lease transaction changes status (e.g., from Submitted to Approved)             | [Documentation](#lease_transactionstatus_updated) |
-| `lease.resident_move_in`           | Triggered when a future resident moves into a unit                                               | [Documentation](#leaseresident_move_in)           |
-| `lease.resident_move_in_canceled`  | Triggered when a future resident's move-in is canceled by a leasing professional                 | [Documentation](#leaseresident_move_in_canceled)  |
+| Event type                         | Description                                                                                                                   | Event                                             |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `lease_transaction.unit_reserved`  | Triggered when a lease transaction (e.g., Application) reserves a unit                                                        | [Documentation](#lease_transactionunit_reserved)  |
+| `lease_transaction.unit_released`  | Triggered when a leasing professional releases a unit previously reserved by a lease transaction                              | [Documentation](#lease_transactionunit_released)  |
+| `lease_transaction.status_updated` | Triggered when a lease transaction changes status (e.g., from Submitted to Approved)                                          | [Documentation](#lease_transactionstatus_updated) |
+| `lease_transaction.terms_updated`  | Triggered when a lease transaction terms changes (including: Move in date, Lease Term, Unit Number, Unit Price and Lease End) | [Documentation](#lease_transactionstatus_updated) |
+| `lease.resident_move_in`           | Triggered when a future resident moves into a unit                                                                            | [Documentation](#leaseresident_move_in)           |
+| `lease.resident_move_in_canceled`  | Triggered when a future resident's move-in is canceled by a leasing professional                                              | [Documentation](#leaseresident_move_in_canceled)  |
 
 <br />
 <br />
@@ -102,6 +103,43 @@ The "Lease Transaction Released Unit" event is triggered when a leasing professi
 ## lease_transaction.status_updated
 
 The "Lease Transaction Status Updated" event is triggered when a lease transaction changes its status within Funnel Leasing. This event is vital for keeping systems in sync with the latest transaction statuses.
+
+<Tabs syncKey="lease_transaction.terms_updated">
+  <TabItem label="Payload Properties">
+      | Property               | Description                                                                                                                                                                                                         | Type    | Nullable |
+      |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
+      | lease_transaction_id   | Internal Funnel Leasing unique ID that points to the lease transaction                                                                                                        | Integer |          |
+      | lease_transaction_type | Type of lease transaction (e.g., "Application", "Lease Revision", "Renewal", "Notice to Vacate", "Lease Confirmation", "Transfer") | String  |          |
+      | current_status         | The current status of the lease transaction. All the possible statuses of a Lease Transaction are: 'In Progress', 'Submitted', 'Approved', 'Conditionally Approved', 'Denied', 'Canceled', 'Completed' and 'Pending Criminal Review'.       | String  |          |
+      | client_id              | Internal Funnel Leasing ID that points to the guest card of the client                                                                                                        | Integer |          |
+      | community_id           | Internal Funnel Leasing ID that points to the community                                                                                                                       | Integer |          |       | Integer | Nullable |
+
+  </TabItem>
+  <TabItem label="Payload example">
+      ```json
+      {
+          "id": 8932129,
+          "event_type": "lease_transaction.terms_updated",
+          "event_timestamp": 1680064030,
+          "idempotency_key": null,
+          "event_data": {
+              "lease_transaction_id": 74826,
+              "lease_transaction_type": "Application",
+              "client_id": 12457535,
+              "community_id": 435244,
+          }
+      }
+      ```
+
+  </TabItem>
+</Tabs>
+<br /><br />
+
+---
+
+## lease_transaction.terms_updated
+
+The "Lease Transaction Terms Updated" event is triggered when a lease transaction terms changes within Funnel Leasing during a lease transaction. This includes changes to Move in date, Lease Term, Unit Number, Unit Price and Lease End.
 
 <Tabs syncKey="lease_transaction.status_updated">
   <TabItem label="Payload Properties">
