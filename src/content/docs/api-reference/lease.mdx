@@ -10,994 +10,359 @@ head:
 import { Code } from "@astrojs/starlight/components";
 export const exampleCode = `
 {
-    "id": 1111,
-    "created_at": "2024-05-28",
+    "id": 295135,
+    "type": "Funnel Originated",
+    "status": "Active",
+    "lease_profile": "Standard",
     "unit": {
-        "id": 1111,
-        "unit_number": "J109",
-        "price": 4469,
-        "date_available": "2024-07-07",
-        "is_unavailable": true,
-        "unit_type": {
-            "id": 8296
-        },
-        "layout": 40,
-        "bathrooms": 20,
-        "building": {
-            "id": 1385886,
-            "display_name": "Carmel Creek",
-            "street_address": "11724 Carmel Creek Road",
-            "city": "San Diego",
-            "state": "CA",
-            "postal_code": "92130"
-        },
-        "address": "2 Main Road #109"
+        "id": 3998520,
+        "unit_number": "0625",
+        "price": 1973.0,
+        "address": "721 E Ridge Dr - #0625"
     },
-    "lease_term": 12,
-    "lease_start_date": "2024-07-12",
-    "lease_end_date": "2025-07-11",
-    "breakdown_lease_end_date": "2025-07-11",
+    "created_at": "2024-06-27",
+    "updated_at": "2024-06-27",
+    "lease_term": 5,
+    "lease_start_date": "2024-06-27",
+    "lease_end_date": "2024-11-26",
+    "move_in_status": "Not set yet",
     "move_out_date": null,
-    "confirmed_moved_out_date": null,
-    "base_rent": "4469.00",
-    "primary_applicant": {
-        "first_name": "John",
-        "last_name": "Doe",
-        "account_id": 396660,
-        "representative_first_name": "",
-        "representative_last_name": "",
-        "corporation_name": "",
-        "person_id": 16821815
-    },
-    "occupants": [],
-    "dependents": [],
-    "co_applicants": [
-        {
-            "first_name": "Jane",
-            "last_name": "Doe",
-            "start_date": null,
-            "end_date": null,
-            "applicant_id": 396733,
-            "representative_first_name": "",
-            "representative_last_name": "",
-            "corporation_name": "",
-            "person_id": 16978076
-        },
-        {
-            "first_name": "Jack",
-            "last_name": "Doe",
-            "start_date": null,
-            "end_date": null,
-            "applicant_id": 396694,
-            "representative_first_name": "",
-            "representative_last_name": "",
-            "corporation_name": "",
-            "person_id": 16978073
-        }
-    ],
-    "guarantors": [],
-    "selected_rental_options": {
-        "parking": [
-            {
-                "id": 1888357,
-                "quantity": 1,
-                "exempted": 0,
-                "rental_option": {
-                    "id": 10045,
-                    "name": "Included Parking",
-                    "category": "Parking",
-                    "category_key": "parking",
-                    "layouts": [],
-                    "unit_types": [],
-                    "leasing_category": "parking",
-                    "collect_leasing_context": true,
-                    "pull_availability_from_pms": false,
-                    "should_pull_pricing_from_pms": false,
-                    "pms_attribute": "pkgr",
-                    "can_override_included_items": false,
-                    "rental_option_group": {
-                        "id": 1675,
-                        "maximum_count": null,
-                        "name": "parking"
-                    },
-                    "rental_option_pricing_group": null,
-                    "default_applied": 0,
-                    "starting_at": false,
-                    "assignment_required": false
-                },
-                "fees": [
-                    {
-                        "id": 2001588,
-                        "name": "Included Parking",
-                        "quoted_amount": "0.00",
-                        "refundable": false,
-                        "payment_time": 10,
-                        "num_charged": 1,
-                        "pricing_tier": null
-                    }
-                ],
-                "leasing_context": {
-                    "parking_spots": [
-                        "Garage (Tandem)"
-                    ]
-                },
-                "items": [
-                    {
-                        "id": 2892720,
-                        "leasing_context": {
-                            "item": "Garage (Tandem)"
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    }
-                ]
-            }
-        ],
-        "key": [
-            {
-                "id": 1888360,
-                "quantity": 2,
-                "exempted": 0,
-                "rental_option": {
-                    "id": 10050,
-                    "name": "Garage Remote",
-                    "category": "Key",
-                    "category_key": "key",
-                    "layouts": [],
-                    "unit_types": [],
-                    "leasing_category": "key",
-                    "collect_leasing_context": false,
-                    "pull_availability_from_pms": false,
-                    "should_pull_pricing_from_pms": false,
-                    "pms_attribute": "femb",
-                    "can_override_included_items": false,
-                    "rental_option_group": {
-                        "id": 1680,
-                        "maximum_count": null,
-                        "name": "key"
-                    },
-                    "rental_option_pricing_group": null,
-                    "default_applied": 0,
-                    "starting_at": false,
-                    "assignment_required": false
-                },
-                "fees": [
-                    {
-                        "id": 2001591,
-                        "name": "Garage Remote Replacement Fee",
-                        "quoted_amount": "50.00",
-                        "refundable": false,
-                        "payment_time": 50,
-                        "num_charged": 2,
-                        "pricing_tier": null
-                    }
-                ],
-                "leasing_context": {
-                    "key_numbers": [
-                        "",
-                        ""
-                    ]
-                },
-                "items": [
-                    {
-                        "id": 2892726,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    },
-                    {
-                        "id": 2892727,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    }
-                ]
-            },
-            {
-                "id": 1888361,
-                "quantity": 3,
-                "exempted": 0,
-                "rental_option": {
-                    "id": 10047,
-                    "name": "Mailbox Key",
-                    "category": "Key",
-                    "category_key": "key",
-                    "layouts": [],
-                    "unit_types": [],
-                    "leasing_category": "key",
-                    "collect_leasing_context": false,
-                    "pull_availability_from_pms": false,
-                    "should_pull_pricing_from_pms": false,
-                    "pms_attribute": "femb",
-                    "can_override_included_items": false,
-                    "rental_option_group": {
-                        "id": 1680,
-                        "maximum_count": null,
-                        "name": "key"
-                    },
-                    "rental_option_pricing_group": null,
-                    "default_applied": 0,
-                    "starting_at": false,
-                    "assignment_required": false
-                },
-                "fees": [
-                    {
-                        "id": 2001592,
-                        "name": "Mailbox Key Replacement Fee",
-                        "quoted_amount": "25.00",
-                        "refundable": false,
-                        "payment_time": 50,
-                        "num_charged": 3,
-                        "pricing_tier": null
-                    }
-                ],
-                "leasing_context": {
-                    "key_numbers": [
-                        "",
-                        "",
-                        ""
-                    ]
-                },
-                "items": [
-                    {
-                        "id": 2892730,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    },
-                    {
-                        "id": 2892728,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    },
-                    {
-                        "id": 2892729,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    }
-                ]
-            },
-            {
-                "id": 1888359,
-                "quantity": 3,
-                "exempted": 0,
-                "rental_option": {
-                    "id": 10051,
-                    "name": "Amenity Fob",
-                    "category": "Key",
-                    "category_key": "key",
-                    "layouts": [],
-                    "unit_types": [],
-                    "leasing_category": "key",
-                    "collect_leasing_context": false,
-                    "pull_availability_from_pms": false,
-                    "should_pull_pricing_from_pms": false,
-                    "pms_attribute": "femb",
-                    "can_override_included_items": false,
-                    "rental_option_group": {
-                        "id": 1680,
-                        "maximum_count": null,
-                        "name": "key"
-                    },
-                    "rental_option_pricing_group": null,
-                    "default_applied": 0,
-                    "starting_at": false,
-                    "assignment_required": false
-                },
-                "fees": [
-                    {
-                        "id": 2001590,
-                        "name": "Amenity Fob Replacement Fee",
-                        "quoted_amount": "50.00",
-                        "refundable": false,
-                        "payment_time": 50,
-                        "num_charged": 3,
-                        "pricing_tier": null
-                    }
-                ],
-                "leasing_context": {
-                    "key_numbers": [
-                        "",
-                        "",
-                        ""
-                    ]
-                },
-                "items": [
-                    {
-                        "id": 2892723,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    },
-                    {
-                        "id": 2892725,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    },
-                    {
-                        "id": 2892724,
-                        "leasing_context": {
-                            "item": ""
-                        },
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    }
-                ]
-            }
-        ],
-        "holding-deposit": [
-            {
-                "id": 1888356,
-                "quantity": 1,
-                "exempted": 0,
-                "rental_option": {
-                    "id": 10038,
-                    "name": "Holding Deposit",
-                    "category": "Holding Deposit",
-                    "category_key": "holding-deposit",
-                    "layouts": [],
-                    "unit_types": [],
-                    "leasing_category": "holding-deposit",
-                    "collect_leasing_context": true,
-                    "pull_availability_from_pms": false,
-                    "should_pull_pricing_from_pms": false,
-                    "pms_attribute": "",
-                    "can_override_included_items": false,
-                    "rental_option_group": {
-                        "id": 1679,
-                        "maximum_count": null,
-                        "name": "holding deposit"
-                    },
-                    "rental_option_pricing_group": null,
-                    "default_applied": 1,
-                    "starting_at": false,
-                    "assignment_required": false
-                },
-                "fees": [
-                    {
-                        "id": 2001587,
-                        "name": "Holding Deposit",
-                        "quoted_amount": "300.00",
-                        "refundable": true,
-                        "payment_time": 20,
-                        "num_charged": 1,
-                        "pricing_tier": null
-                    }
-                ],
-                "leasing_context": {},
-                "items": [
-                    {
-                        "id": 2892719,
-                        "leasing_context": {},
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    }
-                ]
-            }
-        ],
-        "app-fee": [
-            {
-                "id": 1888355,
-                "quantity": 3,
-                "exempted": 0,
-                "rental_option": {
-                    "id": 10037,
-                    "name": "Application Fee",
-                    "category": "Application Fee",
-                    "category_key": "application-fee",
-                    "layouts": [],
-                    "unit_types": [],
-                    "leasing_category": "app-fee",
-                    "collect_leasing_context": true,
-                    "pull_availability_from_pms": false,
-                    "should_pull_pricing_from_pms": false,
-                    "pms_attribute": "",
-                    "can_override_included_items": false,
-                    "rental_option_group": null,
-                    "rental_option_pricing_group": null,
-                    "default_applied": 1,
-                    "starting_at": false,
-                    "assignment_required": false
-                },
-                "fees": [
-                    {
-                        "id": 2001586,
-                        "name": "Application Fee",
-                        "quoted_amount": "48.00",
-                        "refundable": false,
-                        "payment_time": 20,
-                        "num_charged": 3,
-                        "pricing_tier": null
-                    }
-                ],
-                "leasing_context": {},
-                "items": [
-                    {
-                        "id": 2892717,
-                        "leasing_context": {},
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    },
-                    {
-                        "id": 2892718,
-                        "leasing_context": {},
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    },
-                    {
-                        "id": 2892716,
-                        "leasing_context": {},
-                        "start_date": "2024-07-12",
-                        "end_date": null,
-                        "removed_with_id": null
-                    }
-                ]
-            }
-        ],
-        "vehicle": [
-            {
-                "id": 1888358,
-                "quantity": 2,
-                "exempted": 0,
-                "rental_option": {
-                    "id": 10054,
-                    "name": "Vehicle Fee",
-                    "category": "Vehicle",
-                    "category_key": "vehicle",
-                    "layouts": [],
-                    "unit_types": [],
-                    "leasing_category": "vehicle",
-                    "collect_leasing_context": true,
-                    "pull_availability_from_pms": false,
-                    "should_pull_pricing_from_pms": false,
-                    "pms_attribute": "",
-                    "can_override_included_items": false,
-                    "rental_option_group": {
-                        "id": 1676,
-                        "maximum_count": null,
-                        "name": "vehicle"
-                    },
-                    "rental_option_pricing_group": null,
-                    "default_applied": 0,
-                    "starting_at": false,
-                    "assignment_required": false
-                },
-                "fees": [
-                    {
-                        "id": 2001589,
-                        "name": "Vehicle Fee",
-                        "quoted_amount": "0.00",
-                        "refundable": false,
-                        "payment_time": 10,
-                        "num_charged": 2,
-                        "pricing_tier": null
-                    }
-                ],
-                "leasing_context": {
-                    "vehicles": [
-                        {
-                            "make": "Mazda",
-                            "year": 2021,
-                            "color": "Blue",
-                            "model": "CX5",
-                            "plate": "AAAAAA",
-                            "state": "CA",
-                            "permit": null
-                        },
-                        {
-                            "make": "Mazda",
-                            "year": 2019,
-                            "color": "Grey",
-                            "model": "3",
-                            "plate": "BBBBBB",
-                            "state": "CA",
-                            "permit": null
-                        }
-                    ]
-                },
-            }
-        ]
-    },
-
-    "is_holdover_eligible": true,
-    "is_month_to_month": false,
-    "is_vacating": false,
-    "is_renewed": false,
+    "base_rent": "1973.00",
+    "is_holdover_eligible": false,
     "is_holdover": false,
-    "renewed_to": null,
-    "enable_self_service_renewals": false,
-    "selected_lease_offer": null,
-    "lease_offers": [],
-    "latest_renewal_lease_offers_event": false,
-    "lease_offer_options": [],
+    "is_month_to_month": false,
     "month_to_month_rent": "0.00",
-    "holdover_rent": "4469.00",
-    "original_holdover_end_date": null,
-    "status": 15,
-    "type": 10,
-
-    "executed_documents": [
+    "is_renewed": false,
+    "renewed_to": null,
+    "is_vacating": false,
+    "selected_lease_offer": {
+        "base_rent": "1000.00",
+        "lease_term": 10
+    },
+    "lease_offers": [
         {
-            "id": 234835,
-            "document_type": "lease_document",
-            "lease_transaction": {
-                "id": 321623,
-                "status": 25,
-                "signable_doc_type": 5
-            },
-            "created_at_utc": "2024-05-23T23:25:27.959434+00:00",
-            "updated_at_utc": "2024-05-28T17:31:23.434392+00:00",
-            "name": null,
-            "signature_request_id": "c4aqqqqqqqqqb",
-            "status": 10,
-            "application_id": 321623,
-            "work_item_ids": [
-                "qqqqqqqqqq"
-            ],
-            "type": 5,
-            "test_mode": false,
-            "wet_signature": false,
-            "lease_document_templates": [
-                548
-            ]
+            "id": 960638,
+            "rent": "1000.00",
+            "is_month_to_month": false,
+            "minimum_lease_term": 10,
+            "maximum_lease_term": 12,
+            "lease_start": "2024-11-24",
+            "lease_end": null
         }
     ],
-    "hotdocs_documents": [],
-    "encrypted_uploaded_documents": [],
-    "imported_documents": [],
-    "termination_option": null,
+    "holdover_rent": null,
+    "original_holdover_end_date": null,
     "termination_fee": null,
     "renewal_threshold": 90,
     "is_compliant": true,
-    "is_contact_information_complete": true,
-    "is_corporate": false,
     "is_below_market_rate": false,
-    "is_move_out_date_confirmed": false,
-    "has_uncompleted_res_app_move_in_costs_task": true,
-    "lease_profile": 10,
-    "move_in_status": 5,
-    "has_been_imported_and_upcoming": false,
-    "created_from_renewal_or_holdover_transaction": false,
-    "res_app_lease_from_renewal": null,
-    "data_mismatch_fields": null
-
+    "residents": [
+        {
+            "role": "Primary",
+            "first_name": "test",
+            "last_name": "elim",
+            "start_date": null,
+            "end_date": null,
+            "account_id": 422424,
+            "representative_first_name": "",
+            "representative_last_name": "",
+            "corporation_name": ""
+        }
+    ],
+    "executed_documents": [
+        {
+            "id": 255904,
+            "name": null,
+            "lease_transaction_id": 347578,
+            "status": "Completed",
+            "type": "Lease",
+            "is_test_mode": true,
+            "is_wet_signed": false,
+            "lease_document_templates": [
+                "Flood Disclosure Notice",
+                "Apartment Lease Form",
+                "Addendum for Rent Concession",
+            ]
+        }
+    ],
+    "lease_updates": [
+        {
+                "id": 347586,
+                "status": "Approved",
+                "type": "Renewal",
+                "created_at": "2024-06-27T14:15:08.749579",
+                "updated_at": "2024-06-27T14:15:23.516392"
+            },
+            {
+                "id": 347579,
+                "status": "Canceled",
+                "type": "Notice to Vacate",
+                "created_at": "2024-06-27T14:09:20.954958",
+                "updated_at": "2024-06-27T14:10:08.879526"
+            }
+    ],
+    "selected_rental_options": {
+        // Selected Rental Options and Fees format is still under consideration
+    }
 }
 `;
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="col-span-1 justify-self-start">
-      <p>The Lease object represents a rental agreement between a landlord (or property manager) and a tenant. It encapsulates crucial information about the terms and conditions of the lease, including rental property details, lease duration, rental payments, executed documents, and various other attributes. This object serves as a comprehensive record of the lease agreement's key aspects, facilitating effective management and tracking throughout its lifecycle.</p>
-  </div>
-  <div class="col-span-1">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-      <div class="px-4">
-        <p class="font-medium text-gray-900">ENDPOINT</p>
-      </div>
-      <div class="px-4 py-3">
-          ```
-          GET /v2/onlineleasing/lease/:id
-          ```
+import { Row, Col, Properties, Property } from "./../../../components/Layout";
 
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<br />
-<br />
-
-    #### Attributes
+<Row>
+  <Col>
+    <p>
+      The Lease object represents a rental agreement between a landlord (or
+      property manager) and a tenant. It encapsulates crucial information about
+      the terms and conditions of the lease, including rental property details,
+      lease duration, rental payments, executed documents, and various other
+      attributes. This object serves as a comprehensive record of the lease
+      agreement's key aspects, facilitating effective management and tracking
+      throughout its lifecycle.
+    </p>
+  </Col>
+  <Col>
+    <Code
+      type="code"
+      wrap={true}
+      code={`GET /api/v2/lease/:id`}
+      frame="terminal"
+      title="API"
+    />
+  </Col>
+</Row>
 
 ---
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="col-span-1 justify-self-start">
+#### Attributes
 
-<details>
-  <summary>
-    <strong>id</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
-  </summary>
-  <p>An identifier for the lease transaction.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>created_at</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
-  </summary>
-  <p>The date and time when the lease transaction was created.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>unit</strong>:{" "}<span style="font-size: smaller;"><code>object</code></span>
-  </summary>
-  <p>Information about the unit being leased.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>lease_term</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
-  </summary>
-  <p>The duration of the lease term in months.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>lease_start_date</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
-  </summary>
-  <p>The start date of the lease term.</p>
-</details>
-<details>
-  <summary>
-    <strong>lease_end_date</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
-  </summary>
-  <p>The end date of the lease term.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>breakdown_lease_end_date</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
-  </summary>
-  <p>The breakdown of the lease end date.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>move_out_date</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
-  </summary>
-  <p>The date when the tenant moves out, if applicable.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>confirmed_moved_out_date</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
-  </summary>
-  <p>The confirmed date when the tenant moved out, if applicable.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>base_rent</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
-  </summary>
-  <p>The base rent amount.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>primary_applicant</strong>:{" "}<span style="font-size: smaller;"><code>object</code></span>
-  </summary>
-  <p>Information about the primary applicant.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>occupants</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing information about the occupants of the unit.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>dependents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>
-    An array containing information about the dependents of the primary
-    applicant.
-  </p>
-</details>
-
-<details>
-  <summary>
-    <strong>co_applicants</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing information about co-applicants.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>guarantors</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing information about guarantors.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>selected_rental_options</strong>:{" "}<span style="font-size: smaller;"><code>object</code></span>
-  </summary>
-  <p>Information about selected rental options.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_holdover_eligible</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is eligible for holdover.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_month_to_month</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is month-to-month.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_vacating</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the tenant is vacating.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_renewed</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is renewed.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_holdover</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is in holdover status.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>renewed_to</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
-  </summary>
-  <p>The renewed lease transaction ID, if applicable.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>enable_self_service_renewals</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if self-service renewals are enabled for the lease.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>selected_lease_offer</strong>:{" "}<span style="font-size: smaller;"><code>null | object</code></span>
-  </summary>
-  <p>The selected lease offer.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>lease_offers</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing lease offers.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>latest_renewal_lease_offers_event</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the latest event is a renewal lease offer event.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>lease_offer_options</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing lease offer options.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>month_to_month_rent</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
-  </summary>
-  <p>The rent amount for month-to-month leases.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>holdover_rent</strong>:{" "}<span style="font-size: smaller;"><code>string</code></span>
-  </summary>
-  <p>The rent amount for holdover leases.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>original_holdover_end_date</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
-  </summary>
-  <p>The original end date of the holdover lease.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>status</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
-  </summary>
-  <p>The status of the lease transaction.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>type</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
-  </summary>
-  <p>The type of the lease transaction.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>executed_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing information about executed documents.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>hotdocs_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing HotDocs documents.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>encrypted_uploaded_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing encrypted uploaded documents.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>imported_documents</strong>:{" "}<span style="font-size: smaller;"><code>array</code></span>
-  </summary>
-  <p>An array containing imported documents.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>termination_option</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
-  </summary>
-  <p>The termination option for the lease.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>termination_fee</strong>:{" "}<span style="font-size: smaller;"><code>null | string</code></span>
-  </summary>
-  <p>The termination fee for the lease.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>renewal_threshold</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
-  </summary>
-  <p>The threshold for lease renewal in days.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_compliant</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is compliant.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_contact_information_complete</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the contact information is complete.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_corporate</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is corporate.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_below_market_rate</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is below market rate.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>is_move_out_date_confirmed</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the move-out date is confirmed.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>has_uncompleted_res_app_move_in_costs_task</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if there are uncompleted move-in costs tasks.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>lease_profile</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
-  </summary>
-  <p>The lease profile identifier.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>move_in_status</strong>:{" "}<span style="font-size: smaller;"><code>integer</code></span>
-  </summary>
-  <p>The move-in status of the lease.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>has_been_imported_and_upcoming</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>Indicates if the lease has been imported and is upcoming.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>created_from_renewal_or_holdover_transaction</strong>:{" "}<span style="font-size: smaller;"><code>boolean</code></span>
-  </summary>
-  <p>
-    Indicates if the lease was created from a renewal or holdover transaction.
-  </p>
-</details>
-
-<details>
-  <summary>
-    <strong>res_app_lease_from_renewal</strong>:{" "}<span style="font-size: smaller;"><code>null | boolean</code></span>
-  </summary>
-  <p>Indicates if the lease is from a renewal.</p>
-</details>
-
-<details>
-  <summary>
-    <strong>data_mismatch_fields</strong>:{" "}<span style="font-size: smaller;"><code>null | object</code></span>
-  </summary>
-  <p>Information about data mismatch fields.</p>
-</details>
-
-  </div>
-
-
-
-
-
-    <div class="col-span-1">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-      <div class="px-4">
-        <p class="font-medium text-gray-900">THE LEASE OBJECT</p>
-      </div>
-      <div class="px-4 py-3">
-          <Code type="code" wrap={true} code={exampleCode} lang="json" lineNumbers={true} />
-      </div>
-    </div>
-  </div>
-</div>
+<Row>
+  <Col>
+    <Properties>
+      <Property name="ID" type="integer">
+        A Unique Funnel Identifier for the Lease.
+      </Property>
+      <Property name="type" type="string">
+        The type of lease (e.g., "Funnel Originated").
+      </Property>
+      <Property name="status" type="string">
+        The current status of the lease (e.g., "Active").
+      </Property>
+      <Property name="lease_profile" type="string">
+        The profile of the lease (e.g., "Standard").
+      </Property>
+      <Property name="unit" type="object">
+        Details of the rental unit.
+        <Properties>
+          <Property name="id" type="integer">
+            Unique identifier for the unit.
+          </Property>
+          <Property name="unit_number" type="string">
+            The unit number.
+          </Property>
+          <Property name="price" type="number">
+            The rental price of the unit.
+          </Property>
+          <Property name="address" type="string">
+            The address of the rental unit.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="created_at" type="string">
+        Date and time when the lease was created.
+      </Property>
+      <Property name="updated_at" type="string">
+        Date and time when the lease was last updated.
+      </Property>
+      <Property name="lease_term" type="integer">
+        The term (in months) of the lease.
+      </Property>
+      <Property name="lease_start_date" type="string">
+        The start date of the lease.
+      </Property>
+      <Property name="lease_end_date" type="string">
+        The end date of the lease.
+      </Property>
+      <Property name="move_in_status" type="string">
+        Status of move-in (e.g., "Not set yet").
+      </Property>
+      <Property name="move_out_date" type="string">
+        Date of move-out, if applicable.
+      </Property>
+      <Property name="base_rent" type="string">
+        Base rent amount for the lease.
+      </Property>
+      <Property name="is_holdover_eligible" type="boolean">
+        Indicates if holdover is eligible.
+      </Property>
+      <Property name="is_holdover" type="boolean">
+        Indicates if the lease is in holdover status.
+      </Property>
+      <Property name="is_month_to_month" type="boolean">
+        Indicates if the lease is month-to-month.
+      </Property>
+      <Property name="month_to_month_rent" type="string">
+        Rent amount for month-to-month lease.
+      </Property>
+      <Property name="is_renewed" type="boolean">
+        Indicates if the lease has been renewed.
+      </Property>
+      <Property name="renewed_to" type="string">
+        Details of the renewed lease, if applicable.
+      </Property>
+      <Property name="is_vacating" type="boolean">
+        Indicates if the lease is in the process of vacating.
+      </Property>
+      <Property name="selected_lease_offer" type="object">
+        Selected lease offer details.
+        <Properties>
+          <Property name="base_rent" type="string">
+            Base rent amount of the selected offer.
+          </Property>
+          <Property name="lease_term" type="integer">
+            Term (in months) of the selected offer.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="lease_offers" type="array">
+        Array of lease offers available.
+        <Properties>
+          <Property name="id" type="integer">
+            Unique identifier for the lease offer.
+          </Property>
+          <Property name="rent" type="string">
+            Rent amount of the lease offer.
+          </Property>
+          <Property name="is_month_to_month" type="boolean">
+            Indicates if the lease offer is month-to-month.
+          </Property>
+          <Property name="minimum_lease_term" type="integer">
+            Minimum term (in months) for the lease offer.
+          </Property>
+          <Property name="maximum_lease_term" type="integer">
+            Maximum term (in months) for the lease offer.
+          </Property>
+          <Property name="lease_start" type="string">
+            Start date of the lease offer.
+          </Property>
+          <Property name="lease_end" type="string">
+            End date of the lease offer, if applicable.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="holdover_rent" type="string">
+        Rent amount for holdover, if applicable.
+      </Property>
+      <Property name="original_holdover_end_date" type="string">
+        Original end date for holdover, if applicable.
+      </Property>
+      <Property name="termination_fee" type="string">
+        Termination fee amount, if applicable.
+      </Property>
+      <Property name="renewal_threshold" type="integer">
+        Renewal threshold percentage.
+      </Property>
+      <Property name="is_compliant" type="boolean">
+        Indicates if the lease is compliant.
+      </Property>
+      <Property name="is_below_market_rate" type="boolean">
+        Indicates if the rent is below market rate.
+      </Property>
+      <Property name="residents" type="array">
+        Array of residents associated with the lease.
+        <Properties>
+          <Property name="role" type="string">
+            Role of the resident (e.g., "Primary").
+          </Property>
+          <Property name="first_name" type="string">
+            First name of the resident.
+          </Property>
+          <Property name="last_name" type="string">
+            Last name of the resident.
+          </Property>
+          <Property name="start_date" type="string">
+            Start date of residency.
+          </Property>
+          <Property name="end_date" type="string">
+            End date of residency.
+          </Property>
+          <Property name="account_id" type="integer">
+            Unique identifier for the resident's account.
+          </Property>
+          <Property name="representative_first_name" type="string">
+            First name of the representative, if applicable.
+          </Property>
+          <Property name="representative_last_name" type="string">
+            Last name of the representative, if applicable.
+          </Property>
+          <Property name="corporation_name" type="string">
+            Name of the corporation, if applicable.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="executed_documents" type="array">
+        Array of executed documents associated with the lease.
+        <Properties>
+          <Property name="id" type="integer">
+            Unique identifier for the document.
+          </Property>
+          <Property name="name" type="string">
+            Name of the document.
+          </Property>
+          <Property name="lease_transaction_id" type="integer">
+            ID of the lease transaction associated with the document.
+          </Property>
+          <Property name="status" type="string">
+            Status of the document (e.g., "Completed").
+          </Property>
+          <Property name="type" type="string">
+            Type of the document (e.g., "Lease").
+          </Property>
+          <Property name="is_test_mode" type="boolean">
+            Indicates if the document is in test mode.
+          </Property>
+          <Property name="is_wet_signed" type="boolean">
+            Indicates if the document is wet signed.
+          </Property>
+          <Property name="lease_document_templates" type="array">
+            Array of document templates associated with the document.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="lease_updates" type="array">
+        Array of lease updates.
+        <Properties>
+          <Property name="id" type="integer">
+            Unique identifier for the lease update.
+          </Property>
+          <Property name="status" type="string">
+            Status of the update (e.g., "Approved").
+          </Property>
+          <Property name="type" type="string">
+            Type of the update (e.g., "Renewal").
+          </Property>
+          <Property name="created_at" type="string">
+            Date and time when the update was created.
+          </Property>
+          <Property name="updated_at" type="string">
+            Date and time when the update was last updated.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="selected_rental_options" type="object">
+        Selected rental options and fees (format under consideration).
+      </Property>
+    </Properties>
+  </Col>
+  <Col sticky>
+    <Code
+      type="code"
+      wrap={true}
+      code={exampleCode}
+      lang="json"
+      lineNumbers={true}
+      frame="terminal"
+      title="Example Lease Object"
+    />
+  </Col>
+</Row>

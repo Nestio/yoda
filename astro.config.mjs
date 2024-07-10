@@ -77,11 +77,6 @@ export default defineConfig({
                   label: "Lease",
                   link: "/api-reference/lease/",
                 },
-
-                {
-                  label: "Document",
-                  link: "/api-reference/document/",
-                },
               ],
             },
           ],
