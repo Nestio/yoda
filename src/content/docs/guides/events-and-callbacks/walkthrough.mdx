@@ -1,6 +1,9 @@
 ---
 title: Events Wakthrough
 description: Learn how to integrate Funnel Leasing Events and Callbacks into your application.
+head:
+  - tag: style
+    content: ":root { --sl-content-width: 80% !important; }"
 ---
 
 This walkthrough provides comprehensive instructions for integrating Funnel Leasing Events and Callbacks (commonly known as "webhooks") into your application. These webhooks deliver event metadata automatically whenever an action occurs within the Funnel Online Leasing product.
@@ -21,7 +24,7 @@ To configure the account callback URL, please contact the Funnel Leasing technic
 
 #### Responding to Events
 
-Funnel Leasing dispatches events to a specified callback URL and expects a specific response for verification purposes. Upon receiving an event, the callback URL must return an HTTP `200` response with a body containing the string `Funnel API Event Received`. Failure to respond triggers a retry mechanism by Funnel Leasing.
+Funnel Leasing dispatches events to a specified callback URL and expects a specific response for verification purposes. Upon receiving an event, the callback URL must return an HTTP `200` response with a body containing the string `Funnel Event Received`. Failure to respond triggers a retry mechanism by Funnel Leasing.
 
 import { Aside } from '@astrojs/starlight/components';
 
@@ -38,7 +41,7 @@ const app = express();
 
 app.post('/funnel-events', (req, res) => {
     res.set('content-Type', 'text/plain');
-    res.status(200).send('Funnel API Event Received`');
+    res.status(200).send('Funnel Event Received');
 });
 ```
 
@@ -47,25 +50,12 @@ app.post('/funnel-events', (req, res) => {
 During the setup process, you can test your callback URL's functionality by triggering a test event through the Funnel Leasing testing API. This ensures that your webhook handler responds correctly to events.
 
 ### Securing your Callback Handler
-Make sure that webhook events are originating from Funnel Leasing by using the following recommended method.
+We offer the option to enhance the security of your webhook URL by including an API token in our webhook event requests. If you would like to take advantage of this feature, please contact our support team. Provide them with your API token, and they will configure your webhook requests accordingly.
 
-#### IP Address Whitelisting
-We have made a JSON file containing the full list of IP addresses that webhook events may come from available for you below.
+It's important to inform us immediately if your API token changes. Without notification of the new token, we will continue to send requests using the old token, which will result in failed attempts to communicate with your servers.
 
-```json
-{
-    "updatedDate": "2024-06-06-20-11-43",
-    "ips": {
-        "us": [
-            "**.**.**.**/32",
-            "**.**.**.**/32",
-        ]
-    }
-}
+While this step is optional, it provides an extra layer of security for your webhook URL, ensuring that only authorized requests are processed. If you have any questions or need assistance with this setup, our support team is ready to help.
 
-```
-
-Note: This list will be automatically updated if the IP addresses change. We recommend checking this list periodically to ensure your callback handler is secure.
 
 ### Failures and Retries
 

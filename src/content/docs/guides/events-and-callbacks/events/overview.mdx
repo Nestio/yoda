@@ -1,6 +1,9 @@
 ---
 title: The Event Object
 description: Listen to events in your Funnel Leasing account on your webhook endpoint so your integration can automatically trigger reactions.
+head:
+  - tag: style
+    content: ":root { --sl-content-width: 80% !important; }"
 ---
 
 ## Overview
@@ -11,7 +14,7 @@ Funnel Leasing generates event data to keep you informed about activities relate
 
 ## How It Works
 
-When an event occurs, such as the completion of an application, Funnel Leasing creates a new Event object. This object encapsulates the pertinent details of the event, allowing you to react accordingly. For instance, upon receiving an `application_status_completed` event, your system can automate actions like reserving a unit in your Property Management System (PMS).
+When an event occurs, such as the status change of an application from Submitted to being Approved by a Leasing Professional, Funnel Leasing creates a new Event object. This object encapsulates the pertinent details of the event, allowing you to react accordingly. For instance, upon receiving an `lease_transaction.status_updated` event, your system can automate actions like reserving a unit in your Property Management System (PMS).
 
 ## Listening to Events
 
@@ -27,14 +30,18 @@ Here's an example of the payload you can expect to receive:
 
 ```json
 {
-  "event_id": "evt_1MqqbKLt4dXK03v5qaIbiNCC",
-  "event_type": "application_status_completed",
-  "created_at": 1680064028,
+  "id": 8932127,
+  "event_type": "lease_transaction.status_updated",
+  "event_timestamp": 1680064028,
+  "idempotency_key": null,
   "event_data": {
-      "application_id": 1234,
-      "unit_id": 12453,
+      "lease_transaction_id": 74824,
+      "lease_transaction_type": "Application",
+      "current_status": "Approved",
+      "previous_status": "Submitted",
+      "client_id": 12453,
       "community_id": 43522
-  }
+  },
 }
 ```
 
@@ -42,11 +49,11 @@ Here's an example of the payload you can expect to receive:
 
 Let's break down the components of the Event object:
 
-- **`event_id`**: This unique identifier facilitates easy referencing of events for communication with Funnel Leasing and troubleshooting purposes.
+- **`id`**: This unique identifier facilitates easy referencing of events for communication with Funnel Leasing and troubleshooting purposes.
 
 - **`event_type`**: Indicating the type of event that has occurred, this field enables your application to determine the necessary processing steps. The structure of the accompanying `event_data` object varies based on the event type.
 
-- **`created_at`**: This timestamp denotes the exact moment when Funnel Leasing triggered the event.
+- **`event_timestamp`**: This timestamp denotes the exact moment when Funnel Leasing triggered the event.
 
 - **`event_data`**: Containing essential information about the event, this object provides context for your application to act upon. Its structure varies according to the specific event type.
 

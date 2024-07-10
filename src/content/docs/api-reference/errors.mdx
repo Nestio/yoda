@@ -52,9 +52,9 @@ head:
 
   </div>
   <div class="col-span-1">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="shadow-md rounded-lg overflow-hidden">
       <div class="px-4">
-        <p class="font-medium text-gray-900">HTTP Status Code Summary</p>
+        <p class="font-medium">HTTP Status Code Summary</p>
       </div>
       <div class="px-4 py-3">
         <table class="w-full table-auto">
@@ -66,47 +66,47 @@ head:
             </tr>
           </thead>
           <tbody>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">200</td>
               <td class="px-4 py-2 text-left">OK</td>
               <td class="px-4 py-2 text-left">Everything worked as expected.</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">400</td>
               <td class="px-4 py-2 text-left">Bad Request</td>
               <td class="px-4 py-2 text-left">The request was unacceptable, often due to missing a required parameter.</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">401</td>
               <td class="px-4 py-2 text-left">Unauthorized</td>
               <td class="px-4 py-2 text-left">No valid API key provided.</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">402</td>
               <td class="px-4 py-2 text-left">Request Failed</td>
               <td class="px-4 py-2 text-left">The parameters were valid but the request failed.</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">403</td>
               <td class="px-4 py-2 text-left">Forbidden</td>
               <td class="px-4 py-2 text-left">The API key doesn’t have permissions to perform the request.</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">404</td>
               <td class="px-4 py-2 text-left">Not Found</td>
               <td class="px-4 py-2 text-left">The requested resource doesn’t exist.</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">409</td>
               <td class="px-4 py-2 text-left">Conflict</td>
               <td class="px-4 py-2 text-left">The request conflicts with another request (perhaps due to using the same idempotent key).</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">429</td>
               <td class="px-4 py-2 text-left">Too Many Requests</td>
               <td class="px-4 py-2 text-left">Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.</td>
             </tr>
-            <tr class="hover:bg-gray-100">
+            <tr>
               <td class="px-4 py-2 text-left">500, 502, 503, 504</td>
               <td class="px-4 py-2 text-left">Server Errors</td>
               <td class="px-4 py-2 text-left">Something went wrong on Funnel Leasing’s end. (These are rare.)</td>
