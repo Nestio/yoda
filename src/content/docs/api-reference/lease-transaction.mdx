@@ -78,6 +78,16 @@ export const exampleCode = `
             "paid_for": "test elim two"
         }
     ],
+    "concessions": [
+        {
+            "amount": 100,
+            "description": "Rent Concession",
+            "flat_or_percentage": "Flat",
+            "is_required": false,
+            "is_monthly": true,
+            "term": 12,
+        }
+    ],
     "guest_card": {
         "client_id": 15209922,
         "realpage_pms_attributes": {
@@ -279,6 +289,26 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
           </Property>
           <Property name="paid_for" type="string">
             The entity for which the fee was paid.
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="concessions" type="array">
+        Breakdown of the selected concessions during the lease transaction.
+        <Properties>
+          <Property name="amount" type="integer">
+            Amount of the concession.
+          </Property>
+          <Property name="description" type="string">
+            User friendly description of the concession.
+          </Property>
+          <Property name="flat_or_percentage" type="string">
+            A concession can be a percentage or a flat fee. example: 10% of the rent or $100 off the rent
+          </Property>
+          <Property name="is_required" type="boolean">
+            Describes if the concession was added automatically or manually
+          </Property>
+          <Property name="term" type="integer">
+            The number of terms the concessions applies for
           </Property>
         </Properties>
       </Property>
