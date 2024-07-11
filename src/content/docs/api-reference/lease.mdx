@@ -8,6 +8,7 @@ head:
 ---
 
 import { Code } from "@astrojs/starlight/components";
+
 export const exampleCode = `
 {
     "id": 295135,
@@ -28,32 +29,6 @@ export const exampleCode = `
     "move_in_status": "Not set yet",
     "move_out_date": null,
     "base_rent": "1973.00",
-    "is_holdover_eligible": false,
-    "is_holdover": false,
-    "is_month_to_month": false,
-    "month_to_month_rent": "0.00",
-    "is_renewed": false,
-    "renewed_to": null,
-    "is_vacating": false,
-    "selected_lease_offer": {
-        "base_rent": "1000.00",
-        "lease_term": 10
-    },
-    "lease_offers": [
-        {
-            "id": 960638,
-            "rent": "1000.00",
-            "is_month_to_month": false,
-            "minimum_lease_term": 10,
-            "maximum_lease_term": 12,
-            "lease_start": "2024-11-24",
-            "lease_end": null
-        }
-    ],
-    "holdover_rent": null,
-    "original_holdover_end_date": null,
-    "termination_fee": null,
-    "renewal_threshold": 90,
     "is_compliant": true,
     "is_below_market_rate": false,
     "residents": [
@@ -81,29 +56,154 @@ export const exampleCode = `
             "lease_document_templates": [
                 "Flood Disclosure Notice",
                 "Apartment Lease Form",
-                "Addendum for Rent Concession",
+                "Addendum for Rent Concession"
             ]
         }
     ],
-    "lease_updates": [
+    "pets": [
         {
-                "id": 347586,
-                "status": "Approved",
-                "type": "Renewal",
-                "created_at": "2024-06-27T14:15:08.749579",
-                "updated_at": "2024-06-27T14:15:23.516392"
-            },
-            {
-                "id": 347579,
-                "status": "Canceled",
-                "type": "Notice to Vacate",
-                "created_at": "2024-06-27T14:09:20.954958",
-                "updated_at": "2024-06-27T14:10:08.879526"
-            }
+            "id": 2056195,
+            "quantity": 1,
+            "exempted": 0,
+            "fees": [
+                {
+                    "id": 2177040,
+                    "name": "Cat Rent",
+                    "quoted_amount": "25.00",
+                    "refundable": false,
+                    "payment_time": "Monthly",
+                    "num_charged": 1,
+                    "pricing_tier": null
+                },
+                {
+                    "id": 2177042,
+                    "name": "Pet Fee",
+                    "quoted_amount": "400.00",
+                    "refundable": false,
+                    "payment_time": "At move-in",
+                    "num_charged": 1,
+                    "pricing_tier": 1
+                }
+            ],
+            "items": [
+                {
+                    "id": 3128960,
+                    "leasing_context": {
+                        "item": {
+                            "name": "Garfield",
+                            "weight": "10",
+                            "pet_type": "pets-cats",
+                            "service_animal": false
+                        }
+                    },
+                    "start_date": "2024-07-10"
+                }
+            ]
+        },
+        {
+            "id": 2056196,
+            "quantity": 1,
+            "exempted": 1,
+            "fees": [],
+            "items": [
+                {
+                    "id": 3128961,
+                    "leasing_context": {
+                        "item": {
+                            "name": "Bella",
+                            "breed": "German Shepherd",
+                            "weight": "40",
+                            "pet_type": "pets-dogs",
+                            "service_animal": true
+                        }
+                    },
+                    "start_date": "2024-07-10"
+                }
+            ]
+        }
     ],
-    "selected_rental_options": {
-        // Selected Rental Options and Fees format is still under consideration
-    }
+    "vehicles": [
+        {
+            "id": 2056194,
+            "quantity": 1,
+            "exempted": 0,
+            "fees": [
+                {
+                    "id": 2177039,
+                    "name": "Vehicle Fee",
+                    "quoted_amount": "0.00",
+                    "refundable": false,
+                    "payment_time": "Monthly",
+                    "num_charged": 1,
+                    "pricing_tier": null
+                }
+            ],
+            "items": [
+                {
+                    "id": 3128959,
+                    "leasing_context": {
+                        "item": {
+                            "make": "Toyota",
+                            "year": 2020,
+                            "color": "Blue",
+                            "model": "Camry",
+                            "plate": "FL31497",
+                            "state": "FL",
+                            "permit": "432-141-14313"
+                        }
+                    },
+                    "start_date": "2024-06-24"
+                }
+            ]
+        }
+    ],
+    "fees_itemized": [
+        {
+            "id": 2123429,
+            "name": "App Fee",
+            "quoted_amount": "60.00",
+            "refundable": false,
+            "payment_time": "At application",
+            "num_charged": 1,
+            "pricing_tier": null
+        },
+        {
+            "id": 2123434,
+            "name": "Administrative Fee",
+            "quoted_amount": "125.00",
+            "refundable": true,
+            "payment_time": "At application",
+            "num_charged": 1,
+            "pricing_tier": null
+        },
+        {
+            "id": 2177039,
+            "name": "Vehicle Fee",
+            "quoted_amount": "0.00",
+            "refundable": false,
+            "payment_time": "Monthly",
+            "num_charged": 1,
+            "pricing_tier": null
+        },
+        {
+            "id": 2177040,
+            "name": "Cat Rent",
+            "quoted_amount": "25.00",
+            "refundable": false,
+            "payment_time": "Monthly",
+            "num_charged": 1,
+            "pricing_tier": null
+        },
+        {
+            "id": 2177042,
+            "name": "Pet Fee",
+            "quoted_amount": "400.00",
+            "refundable": false,
+            "payment_time": "At move-in",
+            "num_charged": 1,
+            "pricing_tier": 1
+        }
+    ]
 }
 `;
 
@@ -192,80 +292,12 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
       <Property name="base_rent" type="string">
         Base rent amount for the lease.
       </Property>
-      <Property name="is_holdover_eligible" type="boolean">
-        Indicates if holdover is eligible.
-      </Property>
-      <Property name="is_holdover" type="boolean">
-        Indicates if the lease is in holdover status.
-      </Property>
-      <Property name="is_month_to_month" type="boolean">
-        Indicates if the lease is month-to-month.
-      </Property>
-      <Property name="month_to_month_rent" type="string">
-        Rent amount for month-to-month lease.
-      </Property>
-      <Property name="is_renewed" type="boolean">
-        Indicates if the lease has been renewed.
-      </Property>
-      <Property name="renewed_to" type="string">
-        Details of the renewed lease, if applicable.
-      </Property>
-      <Property name="is_vacating" type="boolean">
-        Indicates if the lease is in the process of vacating.
-      </Property>
-      <Property name="selected_lease_offer" type="object">
-        Selected lease offer details.
-        <Properties>
-          <Property name="base_rent" type="string">
-            Base rent amount of the selected offer.
-          </Property>
-          <Property name="lease_term" type="integer">
-            Term (in months) of the selected offer.
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="lease_offers" type="array">
-        Array of lease offers available.
-        <Properties>
-          <Property name="id" type="integer">
-            Unique identifier for the lease offer.
-          </Property>
-          <Property name="rent" type="string">
-            Rent amount of the lease offer.
-          </Property>
-          <Property name="is_month_to_month" type="boolean">
-            Indicates if the lease offer is month-to-month.
-          </Property>
-          <Property name="minimum_lease_term" type="integer">
-            Minimum term (in months) for the lease offer.
-          </Property>
-          <Property name="maximum_lease_term" type="integer">
-            Maximum term (in months) for the lease offer.
-          </Property>
-          <Property name="lease_start" type="string">
-            Start date of the lease offer.
-          </Property>
-          <Property name="lease_end" type="string">
-            End date of the lease offer, if applicable.
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="holdover_rent" type="string">
-        Rent amount for holdover, if applicable.
-      </Property>
-      <Property name="original_holdover_end_date" type="string">
-        Original end date for holdover, if applicable.
-      </Property>
-      <Property name="termination_fee" type="string">
-        Termination fee amount, if applicable.
-      </Property>
-      <Property name="renewal_threshold" type="integer">
-        Renewal threshold percentage.
-      </Property>
       <Property name="is_compliant" type="boolean">
         Indicates if the lease is compliant.
       </Property>
-      <Property name="is_below_market_rate" type="boolean">
+      <Property name="is_below_market
+
+_rate" type="boolean">
         Indicates if the rent is below market rate.
       </Property>
       <Property name="residents" type="array">
@@ -329,28 +361,186 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
           </Property>
         </Properties>
       </Property>
-      <Property name="lease_updates" type="array">
-        Array of lease updates.
+      <Property name="pets" type="array">
+        Array of pets associated with the lease.
         <Properties>
           <Property name="id" type="integer">
-            Unique identifier for the lease update.
+            Unique identifier for the pet.
           </Property>
-          <Property name="status" type="string">
-            Status of the update (e.g., "Approved").
+          <Property name="quantity" type="integer">
+            Number of pets.
           </Property>
-          <Property name="type" type="string">
-            Type of the update (e.g., "Renewal").
+          <Property name="exempted" type="boolean">
+            Indicates if the pet is exempted from fees.
           </Property>
-          <Property name="created_at" type="string">
-            Date and time when the update was created.
+          <Property name="fees" type="array">
+            Array of fees associated with the pet.
+            <Properties>
+              <Property name="id" type="integer">
+                Unique identifier for the fee.
+              </Property>
+              <Property name="name" type="string">
+                Name of the fee.
+              </Property>
+              <Property name="quoted_amount" type="string">
+                Quoted amount of the fee.
+              </Property>
+              <Property name="refundable" type="boolean">
+                Indicates if the fee is refundable.
+              </Property>
+              <Property name="payment_time" type="string">
+                Time of payment for the fee.
+              </Property>
+              <Property name="num_charged" type="integer">
+                Number of times the fee is charged.
+              </Property>
+              <Property name="pricing_tier" type="integer">
+                Pricing tier for the fee.
+              </Property>
+            </Properties>
           </Property>
-          <Property name="updated_at" type="string">
-            Date and time when the update was last updated.
+          <Property name="items" type="array">
+            Array of items associated with the pet.
+            <Properties>
+              <Property name="id" type="integer">
+                Unique identifier for the item.
+              </Property>
+              <Property name="leasing_context" type="object">
+                Leasing context for the item.
+                <Properties>
+                  <Property name="item" type="object">
+                    Item details.
+                    <Properties>
+                      <Property name="name" type="string">
+                        Name of the item.
+                      </Property>
+                      <Property name="weight" type="string">
+                        Weight of the item.
+                      </Property>
+                      <Property name="pet_type" type="string">
+                        Type of pet.
+                      </Property>
+                      <Property name="service_animal" type="boolean">
+                        Indicates if the pet is a service animal.
+                      </Property>
+                    </Properties>
+                  </Property>
+                </Properties>
+              </Property>
+              <Property name="start_date" type="string">
+                Start date for the item.
+              </Property>
+            </Properties>
           </Property>
         </Properties>
       </Property>
-      <Property name="selected_rental_options" type="object">
-        Selected rental options and fees (format under consideration).
+      <Property name="vehicles" type="array">
+        Array of vehicles associated with the lease.
+        <Properties>
+          <Property name="id" type="integer">
+            Unique identifier for the vehicle.
+          </Property>
+          <Property name="quantity" type="integer">
+            Number of vehicles.
+          </Property>
+          <Property name="exempted" type="boolean">
+            Indicates if the vehicle is exempted from fees.
+          </Property>
+          <Property name="fees" type="array">
+            Array of fees associated with the vehicle.
+            <Properties>
+              <Property name="id" type="integer">
+                Unique identifier for the fee.
+              </Property>
+              <Property name="name" type="string">
+                Name of the fee.
+              </Property>
+              <Property name="quoted_amount" type="string">
+                Quoted amount of the fee.
+              </Property>
+              <Property name="refundable" type="boolean">
+                Indicates if the fee is refundable.
+              </Property>
+              <Property name="payment_time" type="string">
+                Time of payment for the fee.
+              </Property>
+              <Property name="num_charged" type="integer">
+                Number of times the fee is charged.
+              </Property>
+              <Property name="pricing_tier" type="integer">
+                Pricing tier for the fee.
+              </Property>
+            </Properties>
+          </Property>
+          <Property name="items" type="array">
+            Array of items associated with the vehicle.
+            <Properties>
+              <Property name="id" type="integer">
+                Unique identifier for the item.
+              </Property>
+              <Property name="leasing_context" type="object">
+                Leasing context for the item.
+                <Properties>
+                  <Property name="item" type="object">
+                    Item details.
+                    <Properties>
+                      <Property name="make" type="string">
+                        Make of the vehicle.
+                      </Property>
+                      <Property name="year" type="integer">
+                        Year of the vehicle.
+                      </Property>
+                      <Property name="color" type="string">
+                        Color of the vehicle.
+                      </Property>
+                      <Property name="model" type="string">
+                        Model of the vehicle.
+                      </Property>
+                      <Property name="plate" type="string">
+                        License plate number of the vehicle.
+                      </Property>
+                      <Property name="state" type="string">
+                        State of registration for the vehicle.
+                      </Property>
+                      <Property name="permit" type="string">
+                        Parking permit number for the vehicle.
+                      </Property>
+                    </Properties>
+                  </Property>
+                </Properties>
+              </Property>
+              <Property name="start_date" type="string">
+                Start date for the item.
+              </Property>
+            </Properties>
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="fees_itemized" type="array">
+        Array of itemized fees associated with the lease.
+        <Properties>
+          <Property name="id" type="integer">
+            Unique identifier for the fee.
+          </Property>
+          <Property name="name" type="string">
+            Name of the fee.
+          </Property>
+          <Property name="quoted_amount" type="string">
+            Quoted amount of the fee.
+          </Property>
+          <Property name="refundable" type="boolean">
+            Indicates if the fee is refundable.
+          </Property>
+          <Property name="payment_time" type="string">
+            Time of payment for the fee.
+          </Property>
+          <Property name="num_charged" type="integer">
+            Number of times the fee is charged.
+          </Property>
+          <Property name="pricing_tier" type="integer">
+            Pricing tier for the fee.
+          </Property>
+        </Properties>
       </Property>
     </Properties>
   </Col>

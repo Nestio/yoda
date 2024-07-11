@@ -89,8 +89,21 @@ export const exampleCode = `
             ]
         }
     },
-    "executed_lease_document": [
-        // This is still under consideration
+    "executed_documents": [
+        {
+            "id": 255904,
+            "name": null,
+            "lease_transaction_id": 347578,
+            "status": "Completed",
+            "type": "Lease",
+            "is_test_mode": true,
+            "is_wet_signed": false,
+            "lease_document_templates": [
+                "Flood Disclosure Notice",
+                "Apartment Lease Form",
+                "Addendum for Rent Concession"
+            ]
+        }
     ],
     "created_at": "2024-06-27T14:36:50.765136",
     "updated_at": "2024-06-27T14:38:53.585190"
@@ -285,6 +298,35 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
                 Array of resident household IDs.
               </Property>
             </Properties>
+          </Property>
+        </Properties>
+      </Property>
+      <Property name="executed_documents" type="array">
+        Array of executed documents associated with the lease transaction.
+        <Properties>
+          <Property name="id" type="integer">
+            Unique identifier for the document.
+          </Property>
+          <Property name="name" type="string">
+            Name of the document.
+          </Property>
+          <Property name="lease_transaction_id" type="integer">
+            ID of the lease transaction associated with the document.
+          </Property>
+          <Property name="status" type="string">
+            Status of the document (e.g., "Completed").
+          </Property>
+          <Property name="type" type="string">
+            Type of the document (e.g., "Lease").
+          </Property>
+          <Property name="is_test_mode" type="boolean">
+            Indicates if the document is in test mode.
+          </Property>
+          <Property name="is_wet_signed" type="boolean">
+            Indicates if the document is wet signed.
+          </Property>
+          <Property name="lease_document_templates" type="array">
+            Array of document templates associated with the document.
           </Property>
         </Properties>
       </Property>
