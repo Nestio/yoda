@@ -59,19 +59,16 @@ While this step is optional, it provides an extra layer of security for your web
 
 ### Failures and Retries
 
-If your callback url is not reachable or returns a non-successful response, we will retry POSTing the event up to **6 times**, with each retry interval being longer than the previous one. If the **sixth retry fails**, you will begin receiving notifications by email.
+If your callback url is not reachable or returns a non-successful response, we will retry POSTing the event up to **3 times**, with each retry interval being longer than the previous one. If the **third retry fails**, you will begin receiving notifications by email.
 
 After **10 consecutive failures**, your callback URL will be automatically cleared.
 
-Please note that our requests will timeout after **20 seconds**, so callbacks will fail if your server takes longer than that to respond. The retry pattern is described below.
+Please note that our requests will timeout after **5 seconds**, so callbacks will fail if your server takes longer than that to respond. The retry pattern is described below.
 
 | Retry  | Delay After Previous Attempt |
 |--------|------------------------------|
-| First  | 5 minutes                    |
-| Second | 15 minutes                   |
-| Third  | 45 minutes                   |
-| Fourth | 2 hours 15 minutes           |
-| Fifth  | 6 hours 45 minutes           |
-| Sixth  | 20 hours 15 minutes          |
+| First  | 5 seconds                    |
+| Second | 10 seconds                   |
+| Third  | 15 seconds                   |
 
 The above retry pattern may not always be exact, but it is a good approximation of the retry pattern we use.
