@@ -7,25 +7,38 @@ head:
     content: ":root { --sl-content-width: 100% !important; }"
 ---
 
+import { Code } from "@astrojs/starlight/components";
+
+export const exampleCode = `
+JVBERi0xLjEKJcKlwrHDqwoKMSAwIG9iagogIDw8IC9UeXBlIC9DYXRhbG9nCiAgICAgL1BhZ2VzIDIgMCBSCiAgPj4KZW5kb2JqCgoyIDAgb2JqCiAgPDwgL1R5cGUgL1BhZ2VzCiAgICAgL0tpZHMgWzMgMCBSXQogICAgIC9Db3VudCAxCiAgICAgL01lZGlhQm94IFswIDAgMzAwIDE0NF0KICA+PgplbmRvYmoKCjMgMCBvYmoKICA8PCAgL1R5cGUgL1BhZ2UKICAgICAgL1BhcmVudCAyIDAgUgogICAgICAvUmVzb3VyY2VzCiAgICAgICA8PCAvRm9udAogICAgICAgICAgIDw8IC9GMQogICAgICAgICAgICAgICA8PCAvVHlwZSAvRm9udAogICAgICAgICAgICAgICAgICAvU3VidHlwZSAvVHlwZTEKICAgICAgICAgICAgICAgICAgL0Jhc2VGb250IC9UaW1lcy1Sb21hbgogICAgICAgICAgICAgICA+PgogICAgICAgICAgID4+CiAgICAgICA+PgogICAgICAvQ29udGVudHMgNCAwIFIKICA+PgplbmRvYmoKCjQgMCBvYmoKICA8PCAvTGVuZ3RoIDU1ID4+CnN0cmVhbQogIEJUCiAgICAvRjEgMTggVGYKICAgIDAgMCBUZAogICAgKEhlbGxvIFdvcmxkKSBUagogIEVUCmVuZHN0cmVhbQplbmRvYmoKCnhyZWYKMCA1CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxOCAwMDAwMCBuIAowMDAwMDAwMDc3IDAwMDAwIG4gCjAwMDAwMDAxNzggMDAwMDAgbiAKMDAwMDAwMDQ1NyAwMDAwMCBuIAp0cmFpbGVyCiAgPDwgIC9Sb290IDEgMCBSCiAgICAgIC9TaXplIDUKICA+PgpzdGFydHhyZWYKNTY1CiUlRU9GCg==
+`;
+
 import { Row, Col, Properties, Property } from './../../../components/Layout';
 
 <Row>
   <Col>
-    <Properties>
-      <Property name="id" type="integer">
-        A Unique Funnel Identifier
-      </Property>
-      
-    </Properties>
+    <p>
+    The Document object represents a lease or lease transaction document and is included in the serialized data for each lease or lease transaction. It contains a url field that provides access to the document's base64-encoded content. To retrieve this content, you need to provide your API key, just as with other endpoints.
+
+    When available, we will include a header named `Original-Content-Type`, which specifies the document's MIME type. For example, in the response, you might see `Original-Content-Type: "application/pdf"`.
+    </p>
   </Col>
-  <Col sticky>
-
-    ```json {{ 'title': 'Example payload' }}
-    {
-      "id": "a056V7R7NmNRjl70",
-      // Add documentation here
-    }
-    ```
-
+  <Col>
+    <Code
+      type="code"
+      wrap={true}
+      code={`GET /api/v2/documents/:id`}
+      frame="terminal"
+      title="API"
+    />
+    <Code
+      type="code"
+      wrap={true}
+      code={exampleCode}
+      lang="json"
+      lineNumbers={true}
+      frame="terminal"
+      title="Example Response"
+    />
   </Col>
 </Row>
