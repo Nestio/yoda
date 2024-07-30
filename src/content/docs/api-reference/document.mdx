@@ -18,16 +18,16 @@ import { Row, Col, Properties, Property } from './../../../components/Layout';
 <Row>
   <Col>
     <p>
-    The Document object represents a lease or lease transaction document and is included in the serialized data for each lease or lease transaction. It contains a url field that provides access to the document's base64-encoded content. To retrieve this content, you need to provide your API key, just as with other endpoints.
+    The `Document` object represents a lease or lease transaction document and is included in the serialized data for each lease or lease transaction. It features a url field that provides access to the document's base64-encoded content. This URL is pre-generated for you, so you won't need to construct it yourself. To access the content, simply provide your API key, as with other endpoints.
 
-    When available, we will include a header named `Original-Content-Type`, which specifies the document's MIME type. For example, in the response, you might see `Original-Content-Type: "application/pdf"`.
+    When available, a header named `Original-Content-Type` will be included in the response. This header indicates the MIME type of the document. For example, you might see `Original-Content-Type: "application/pdf"`.
     </p>
   </Col>
   <Col>
     <Code
       type="code"
       wrap={true}
-      code={`GET /api/v2/documents/:id`}
+      code={`GET /api/v2/documents/:id/:document_type`}
       frame="terminal"
       title="API"
     />
