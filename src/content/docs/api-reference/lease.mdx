@@ -15,20 +15,51 @@ export const exampleCode = `
     "type": "Funnel Originated",
     "status": "Active",
     "lease_profile": "Standard",
+    "guest_card": {
+        "client_id": 15209251,
+        "pms_guestcard_id": [
+            "p5003908"
+        ],
+        "pms_resident_household_id": [
+            "t2570581"
+        ]
+    },
     "unit": {
         "id": 3998520,
         "unit_number": "0625",
-        "price": 1973.0,
+        "price": 1973,
         "address": "721 E Ridge Dr - #0625"
     },
-    "created_at": "2024-06-27",
-    "updated_at": "2024-06-27",
     "lease_term": 5,
     "lease_start_date": "2024-06-27",
     "lease_end_date": "2024-11-26",
     "move_in_status": "Not set yet",
     "move_out_date": null,
     "base_rent": "1973.00",
+    "is_holdover_eligible": false,
+    "is_holdover": false,
+    "is_month_to_month": false,
+    "month_to_month_rent": "0.00",
+    "is_renewed": false,
+    "renewed_to": null,
+    "is_vacating": false,
+    "selected_lease_offer": 10,
+    "lease_offers": [
+        {
+            "id": 960638,
+            "rent": "1000.00",
+            "is_month_to_month": false,
+            "minimum_lease_term": 10,
+            "maximum_lease_term": 12,
+            "lease_start": "2024-11-24",
+            "lease_end": null
+        }
+    ],
+    "holdover_rent": null,
+    "original_holdover_end_date": null,
+    "termination_option": null,
+    "termination_fee": null,
+    "renewal_threshold": 90,
     "is_compliant": true,
     "is_below_market_rate": false,
     "residents": [
@@ -44,166 +75,155 @@ export const exampleCode = `
             "corporation_name": ""
         }
     ],
-    "executed_documents": [
+    "lease_updates": {
+        "midlease_change": [],
+        "renewal": [
+            {
+                "id": 347586,
+                "status": "Canceled",
+                "type": "Renewal",
+                "created_at": "2024-06-27T14:15:08.749579",
+                "updated_at": "2024-07-30T05:39:05.154981"
+            }
+        ],
+        "vacate": [
+            {
+                "id": 347579,
+                "status": "Canceled",
+                "type": "Notice to Vacate",
+                "created_at": "2024-06-27T14:09:20.954958",
+                "updated_at": "2024-06-27T14:10:08.879526"
+            },
+            {
+                "id": 352226,
+                "status": "Approved",
+                "type": "Notice to Vacate",
+                "created_at": "2024-07-30T05:39:06.341763",
+                "updated_at": "2024-07-30T05:39:09.250540"
+            }
+        ],
+        "reconciliation": [],
+        "transfer": [],
+        "holdover": [],
+        "month_to_month": [],
+        "lease_document_regeneration": []
+    },
+    "rentable_items": [
         {
-            "id": 255904,
-            "name": null,
-            "lease_transaction_id": 347578,
-            "status": "Completed",
-            "type": "Lease",
-            "is_test_mode": true,
-            "is_wet_signed": false,
-            "lease_document_templates": [
-                "Flood Disclosure Notice",
-                "Apartment Lease Form",
-                "Addendum for Rent Concession"
+            "id": 21532501,
+            "name": "Garage",
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "charges": [
+                {
+                    "id": 21949362,
+                    "name": "Rent",
+                    "amount": "95.00",
+                    "refundable": false,
+                    "due_at": "Monthly",
+                    "start_date": "2024-06-27",
+                    "end_date": null
+                }
             ]
         }
     ],
     "pets": [
         {
-            "id": 2056195,
-            "quantity": 1,
-            "exempted": 0,
-            "fees": [
+            "id": 21532499,
+            "name": "Bob",
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "charges": [
                 {
-                    "id": 2177040,
-                    "name": "Cat Rent",
-                    "quoted_amount": "25.00",
+                    "id": 21949356,
+                    "name": "Dog Rent",
+                    "amount": "25.00",
                     "refundable": false,
-                    "payment_time": "Monthly",
-                    "num_charged": 1,
-                    "pricing_tier": null
+                    "due_at": "Monthly",
+                    "start_date": "2024-06-27",
+                    "end_date": null
                 },
                 {
-                    "id": 2177042,
-                    "name": "Pet Fee",
-                    "quoted_amount": "400.00",
-                    "refundable": false,
-                    "payment_time": "At move-in",
-                    "num_charged": 1,
-                    "pricing_tier": 1
+                    "id": 21949357,
+                    "name": "Dog Deposit",
+                    "amount": "400.00",
+                    "refundable": true,
+                    "due_at": "At move-in",
+                    "start_date": "2024-06-27",
+                    "end_date": null
                 }
             ],
-            "items": [
-                {
-                    "id": 3128960,
-                    "leasing_context": {
-                        "item": {
-                            "name": "Garfield",
-                            "weight": "10",
-                            "pet_type": "pets-cats",
-                            "service_animal": false
-                        }
-                    },
-                    "start_date": "2024-07-10"
-                }
-            ]
+            "type": "Dog",
+            "breed": "Pitbull",
+            "weight": "25",
+            "description": null,
+            "is_service_animal": false
         },
         {
-            "id": 2056196,
-            "quantity": 1,
-            "exempted": 1,
-            "fees": [],
-            "items": [
+            "id": 21532500,
+            "name": null,
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "charges": [
                 {
-                    "id": 3128961,
-                    "leasing_context": {
-                        "item": {
-                            "name": "Bella",
-                            "breed": "German Shepherd",
-                            "weight": "40",
-                            "pet_type": "pets-dogs",
-                            "service_animal": true
-                        }
-                    },
-                    "start_date": "2024-07-10"
+                    "id": 21949359,
+                    "name": "Rent",
+                    "amount": "0.00",
+                    "refundable": false,
+                    "due_at": "Monthly",
+                    "start_date": "2024-06-27",
+                    "end_date": null
+                },
+                {
+                    "id": 21949360,
+                    "name": "Pet Fee",
+                    "amount": "00.00",
+                    "refundable": false,
+                    "due_at": "At move-in",
+                    "start_date": "2024-06-27",
+                    "end_date": null
                 }
-            ]
+            ],
+            "type": "Other",
+            "breed": null,
+            "weight": null,
+            "description": "Dragon",
+            "is_service_animal": true
         }
     ],
     "vehicles": [
         {
-            "id": 2056194,
-            "quantity": 1,
-            "exempted": 0,
-            "fees": [
-                {
-                    "id": 2177039,
-                    "name": "Vehicle Fee",
-                    "quoted_amount": "0.00",
-                    "refundable": false,
-                    "payment_time": "Monthly",
-                    "num_charged": 1,
-                    "pricing_tier": null
-                }
-            ],
-            "items": [
-                {
-                    "id": 3128959,
-                    "leasing_context": {
-                        "item": {
-                            "make": "Toyota",
-                            "year": 2020,
-                            "color": "Blue",
-                            "model": "Camry",
-                            "plate": "FL31497",
-                            "state": "FL",
-                            "permit": "432-141-14313"
-                        }
-                    },
-                    "start_date": "2024-06-24"
-                }
-            ]
+            "id": 21532503,
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "make": "Toyota",
+            "model": "Rav4",
+            "color": "Blue",
+            "year": 2007,
+            "state": "TX",
+            "plate": "TX1342",
+            "permit": "12345"
         }
     ],
-    "fees_itemized": [
+    "documents": [
         {
-            "id": 2123429,
-            "name": "App Fee",
-            "quoted_amount": "60.00",
-            "refundable": false,
-            "payment_time": "At application",
-            "num_charged": 1,
-            "pricing_tier": null
+            "title": null,
+            "document_type": "lease_document",
+            "url": "https://api.funnelleasing.com/api/v2/documents/255904/lease_document"
         },
         {
-            "id": 2123434,
-            "name": "Administrative Fee",
-            "quoted_amount": "125.00",
-            "refundable": true,
-            "payment_time": "At application",
-            "num_charged": 1,
-            "pricing_tier": null
+            "title": "money.jpeg",
+            "document_type": "user_uploaded_document",
+            "url": "https://webhooks-chuck-pr27411.nestiostaging.com/api/vgs/v2/242138/user_uploaded_document/10/"
         },
         {
-            "id": 2177039,
-            "name": "Vehicle Fee",
-            "quoted_amount": "0.00",
-            "refundable": false,
-            "payment_time": "Monthly",
-            "num_charged": 1,
-            "pricing_tier": null
-        },
-        {
-            "id": 2177040,
-            "name": "Cat Rent",
-            "quoted_amount": "25.00",
-            "refundable": false,
-            "payment_time": "Monthly",
-            "num_charged": 1,
-            "pricing_tier": null
-        },
-        {
-            "id": 2177042,
-            "name": "Pet Fee",
-            "quoted_amount": "400.00",
-            "refundable": false,
-            "payment_time": "At move-in",
-            "num_charged": 1,
-            "pricing_tier": 1
+            "title": "AAN - test elim",
+            "document_type": "aan_document",
+            "url": "https://api.funnelleasing.com/api/v2/documents/44071/aan_document"
         }
-    ]
+    ],
+    "created_at": "2024-06-27T14:09:00.526774",
+    "updated_at": "2024-07-30T05:55:34.673978"
 }
 `;
 
@@ -239,309 +259,502 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
 <Row>
   <Col>
     <Properties>
-      <Property name="ID" type="integer">
-        A Unique Funnel Identifier for the Lease.
-      </Property>
-      <Property name="type" type="string">
-        The type of lease (e.g., "Funnel Originated").
-      </Property>
-      <Property name="status" type="string">
-        The current status of the lease (e.g., "Active").
-      </Property>
-      <Property name="lease_profile" type="string">
-        The profile of the lease (e.g., "Standard").
-      </Property>
-      <Property name="unit" type="object">
-        Details of the rental unit.
-        <Properties>
-          <Property name="id" type="integer">
-            Unique identifier for the unit.
-          </Property>
-          <Property name="unit_number" type="string">
-            The unit number.
-          </Property>
-          <Property name="price" type="number">
-            The rental price of the unit.
-          </Property>
-          <Property name="address" type="string">
-            The address of the rental unit.
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="created_at" type="string">
-        Date and time when the lease was created.
-      </Property>
-      <Property name="updated_at" type="string">
-        Date and time when the lease was last updated.
-      </Property>
-      <Property name="lease_term" type="integer">
-        The term (in months) of the lease.
-      </Property>
-      <Property name="lease_start_date" type="string">
-        The start date of the lease.
-      </Property>
-      <Property name="lease_end_date" type="string">
-        The end date of the lease.
-      </Property>
-      <Property name="move_in_status" type="string">
-        Status of move-in (e.g., "Not set yet").
-      </Property>
-      <Property name="move_out_date" type="string">
-        Date of move-out, if applicable.
-      </Property>
-      <Property name="base_rent" type="string">
-        Base rent amount for the lease.
-      </Property>
-      <Property name="is_compliant" type="boolean">
-        Indicates if the lease is compliant.
-      </Property>
-      <Property name="is_below_market
-
-_rate" type="boolean">
-        Indicates if the rent is below market rate.
-      </Property>
-      <Property name="residents" type="array">
-        Array of residents associated with the lease.
-        <Properties>
-          <Property name="role" type="string">
-            Role of the resident (e.g., "Primary").
-          </Property>
-          <Property name="first_name" type="string">
-            First name of the resident.
-          </Property>
-          <Property name="last_name" type="string">
-            Last name of the resident.
-          </Property>
-          <Property name="start_date" type="string">
-            Start date of residency.
-          </Property>
-          <Property name="end_date" type="string">
-            End date of residency.
-          </Property>
-          <Property name="account_id" type="integer">
-            Unique identifier for the resident's account.
-          </Property>
-          <Property name="representative_first_name" type="string">
-            First name of the representative, if applicable.
-          </Property>
-          <Property name="representative_last_name" type="string">
-            Last name of the representative, if applicable.
-          </Property>
-          <Property name="corporation_name" type="string">
-            Name of the corporation, if applicable.
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="executed_documents" type="array">
-        Array of executed documents associated with the lease.
-        <Properties>
-          <Property name="id" type="integer">
-            Unique identifier for the document.
-          </Property>
-          <Property name="name" type="string">
-            Name of the document.
-          </Property>
-          <Property name="lease_transaction_id" type="integer">
-            ID of the lease transaction associated with the document.
-          </Property>
-          <Property name="status" type="string">
-            Status of the document (e.g., "Completed").
-          </Property>
-          <Property name="type" type="string">
-            Type of the document (e.g., "Lease").
-          </Property>
-          <Property name="is_test_mode" type="boolean">
-            Indicates if the document is in test mode.
-          </Property>
-          <Property name="is_wet_signed" type="boolean">
-            Indicates if the document is wet signed.
-          </Property>
-          <Property name="lease_document_templates" type="array">
-            Array of document templates associated with the document.
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="pets" type="array">
-        Array of pets associated with the lease.
-        <Properties>
-          <Property name="id" type="integer">
-            Unique identifier for the pet.
-          </Property>
-          <Property name="quantity" type="integer">
-            Number of pets.
-          </Property>
-          <Property name="exempted" type="boolean">
-            Indicates if the pet is exempted from fees.
-          </Property>
-          <Property name="fees" type="array">
-            Array of fees associated with the pet.
+      <Property name="id" type="integer">
+            Unique identifier for the lease.
+        </Property>
+        <Property name="type" type="string">
+            Type of the lease. Example: "Funnel Originated".
+        </Property>
+        <Property name="status" type="string">
+            Current status of the lease. Example: "Active".
+        </Property>
+        <Property name="lease_profile" type="string">
+            Lease profile type. Example: "Standard".
+        </Property>
+        <Property name="guest_card" type="object">
+            Information related to the guest card.
             <Properties>
-              <Property name="id" type="integer">
-                Unique identifier for the fee.
-              </Property>
-              <Property name="name" type="string">
-                Name of the fee.
-              </Property>
-              <Property name="quoted_amount" type="string">
-                Quoted amount of the fee.
-              </Property>
-              <Property name="refundable" type="boolean">
-                Indicates if the fee is refundable.
-              </Property>
-              <Property name="payment_time" type="string">
-                Time of payment for the fee.
-              </Property>
-              <Property name="num_charged" type="integer">
-                Number of times the fee is charged.
-              </Property>
-              <Property name="pricing_tier" type="integer">
-                Pricing tier for the fee.
-              </Property>
-            </Properties>
-          </Property>
-          <Property name="items" type="array">
-            Array of items associated with the pet.
-            <Properties>
-              <Property name="id" type="integer">
-                Unique identifier for the item.
-              </Property>
-              <Property name="leasing_context" type="object">
-                Leasing context for the item.
-                <Properties>
-                  <Property name="item" type="object">
-                    Item details.
+                <Property name="client_id" type="integer">
+                    Client identifier associated with the guest card.
+                </Property>
+                <Property name="pms_guestcard_id" type="array">
+                    List of PMS guest card identifiers.
                     <Properties>
-                      <Property name="name" type="string">
-                        Name of the item.
-                      </Property>
-                      <Property name="weight" type="string">
-                        Weight of the item.
-                      </Property>
-                      <Property name="pet_type" type="string">
-                        Type of pet.
-                      </Property>
-                      <Property name="service_animal" type="boolean">
-                        Indicates if the pet is a service animal.
-                      </Property>
+                        <Property name="pms_guestcard_id" type="string">
+                            PMS guest card identifier.
+                        </Property>
                     </Properties>
-                  </Property>
-                </Properties>
-              </Property>
-              <Property name="start_date" type="string">
-                Start date for the item.
-              </Property>
-            </Properties>
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="vehicles" type="array">
-        Array of vehicles associated with the lease.
-        <Properties>
-          <Property name="id" type="integer">
-            Unique identifier for the vehicle.
-          </Property>
-          <Property name="quantity" type="integer">
-            Number of vehicles.
-          </Property>
-          <Property name="exempted" type="boolean">
-            Indicates if the vehicle is exempted from fees.
-          </Property>
-          <Property name="fees" type="array">
-            Array of fees associated with the vehicle.
-            <Properties>
-              <Property name="id" type="integer">
-                Unique identifier for the fee.
-              </Property>
-              <Property name="name" type="string">
-                Name of the fee.
-              </Property>
-              <Property name="quoted_amount" type="string">
-                Quoted amount of the fee.
-              </Property>
-              <Property name="refundable" type="boolean">
-                Indicates if the fee is refundable.
-              </Property>
-              <Property name="payment_time" type="string">
-                Time of payment for the fee.
-              </Property>
-              <Property name="num_charged" type="integer">
-                Number of times the fee is charged.
-              </Property>
-              <Property name="pricing_tier" type="integer">
-                Pricing tier for the fee.
-              </Property>
-            </Properties>
-          </Property>
-          <Property name="items" type="array">
-            Array of items associated with the vehicle.
-            <Properties>
-              <Property name="id" type="integer">
-                Unique identifier for the item.
-              </Property>
-              <Property name="leasing_context" type="object">
-                Leasing context for the item.
-                <Properties>
-                  <Property name="item" type="object">
-                    Item details.
+                </Property>
+                <Property name="pms_resident_household_id" type="array">
+                    List of PMS resident household identifiers.
                     <Properties>
-                      <Property name="make" type="string">
-                        Make of the vehicle.
-                      </Property>
-                      <Property name="year" type="integer">
-                        Year of the vehicle.
-                      </Property>
-                      <Property name="color" type="string">
-                        Color of the vehicle.
-                      </Property>
-                      <Property name="model" type="string">
-                        Model of the vehicle.
-                      </Property>
-                      <Property name="plate" type="string">
-                        License plate number of the vehicle.
-                      </Property>
-                      <Property name="state" type="string">
-                        State of registration for the vehicle.
-                      </Property>
-                      <Property name="permit" type="string">
-                        Parking permit number for the vehicle.
-                      </Property>
+                        <Property name="pms_resident_household_id" type="string">
+                            PMS resident household identifier.
+                        </Property>
                     </Properties>
-                  </Property>
-                </Properties>
-              </Property>
-              <Property name="start_date" type="string">
-                Start date for the item.
-              </Property>
+                </Property>
             </Properties>
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="fees_itemized" type="array">
-        Array of itemized fees associated with the lease.
-        <Properties>
-          <Property name="id" type="integer">
-            Unique identifier for the fee.
-          </Property>
-          <Property name="name" type="string">
-            Name of the fee.
-          </Property>
-          <Property name="quoted_amount" type="string">
-            Quoted amount of the fee.
-          </Property>
-          <Property name="refundable" type="boolean">
-            Indicates if the fee is refundable.
-          </Property>
-          <Property name="payment_time" type="string">
-            Time of payment for the fee.
-          </Property>
-          <Property name="num_charged" type="integer">
-            Number of times the fee is charged.
-          </Property>
-          <Property name="pricing_tier" type="integer">
-            Pricing tier for the fee.
-          </Property>
-        </Properties>
-      </Property>
+        </Property>
+        <Property name="unit" type="object">
+            Details of the unit.
+            <Properties>
+                <Property name="id" type="integer">
+                    Unique identifier for the unit.
+                </Property>
+                <Property name="unit_number" type="string">
+                    Unit number.
+                </Property>
+                <Property name="price" type="integer">
+                    Monthly rent price for the unit.
+                </Property>
+                <Property name="address" type="string">
+                    Address of the unit.
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="lease_term" type="integer">
+            Term of the lease in months.
+        </Property>
+        <Property name="lease_start_date" type="string">
+            Start date of the lease in the format "YYYY-MM-DD".
+        </Property>
+        <Property name="lease_end_date" type="string">
+            End date of the lease in the format "YYYY-MM-DD".
+        </Property>
+        <Property name="move_in_status" type="string">
+            Status of the move-in process.
+        </Property>
+        <Property name="move_out_date" type="string">
+            Move-out date in the format "YYYY-MM-DD".
+        </Property>
+        <Property name="base_rent" type="string">
+            Base rent amount for the lease.
+        </Property>
+        <Property name="is_holdover_eligible" type="boolean">
+            Indicates if the lease is eligible for holdover.
+        </Property>
+        <Property name="is_holdover" type="boolean">
+            Indicates if the lease is currently in holdover.
+        </Property>
+        <Property name="is_month_to_month" type="boolean">
+            Indicates if the lease is month-to-month.
+        </Property>
+        <Property name="month_to_month_rent" type="string">
+            Rent amount for month-to-month leases.
+        </Property>
+        <Property name="is_renewed" type="boolean">
+            Indicates if the lease has been renewed.
+        </Property>
+        <Property name="renewed_to" type="string">
+            Lease term renewed to.
+        </Property>
+        <Property name="is_vacating" type="boolean">
+            Indicates if the lease is currently in vacating status.
+        </Property>
+        <Property name="selected_lease_offer" type="integer">
+            Identifier of the selected lease offer.
+        </Property>
+        <Property name="lease_offers" type="array">
+            List of lease offers.
+            <Properties>
+                <Property name="id" type="integer">
+                    Unique identifier for the lease offer.
+                </Property>
+                <Property name="rent" type="string">
+                    Rent amount for the lease offer.
+                </Property>
+                <Property name="is_month_to_month" type="boolean">
+                    Indicates if the lease offer is month-to-month.
+                </Property>
+                <Property name="minimum_lease_term" type="integer">
+                    Minimum lease term for the offer in months.
+                </Property>
+                <Property name="maximum_lease_term" type="integer">
+                    Maximum lease term for the offer in months.
+                </Property>
+                <Property name="lease_start" type="string">
+                    Start date of the lease offer in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="lease_end" type="string">
+                    End date of the lease offer in the format "YYYY-MM-DD".
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="holdover_rent" type="string">
+            Rent amount for holdover leases.
+        </Property>
+        <Property name="original_holdover_end_date" type="string">
+            Original end date for holdover leases in the format "YYYY-MM-DD".
+        </Property>
+        <Property name="termination_option" type="string">
+            Termination option for the lease.
+        </Property>
+        <Property name="termination_fee" type="string">
+            Termination fee for the lease.
+        </Property>
+        <Property name="renewal_threshold" type="integer">
+            Threshold for lease renewal in days.
+        </Property>
+        <Property name="is_compliant" type="boolean">
+            Indicates if the lease is compliant with regulations.
+        </Property>
+        <Property name="is_below_market_rate" type="boolean">
+            Indicates if the lease rate is below market rate.
+        </Property>
+        <Property name="residents" type="array">
+            List of residents associated with the lease.
+            <Properties>
+                <Property name="role" type="string">
+                    Role of the resident (e.g., Primary).
+                </Property>
+                <Property name="first_name" type="string">
+                    First name of the resident.
+                </Property>
+                <Property name="last_name" type="string">
+                    Last name of the resident.
+                </Property>
+                <Property name="start_date" type="string">
+                    Start date for the resident in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="end_date" type="string">
+                    End date for the resident in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="account_id" type="integer">
+                    Account identifier for the resident.
+                </Property>
+                <Property name="representative_first_name" type="string">
+                    First name of the representative (if applicable).
+                </Property>
+                <Property name="representative_last_name" type="string">
+                    Last name of the representative (if applicable).
+                </Property>
+                <Property name="corporation_name" type="string">
+                    Name of the corporation (if applicable).
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="lease_updates" type="object">
+            Updates related to the lease.
+            <Properties>
+                <Property name="midlease_change" type="array">
+                    List of mid-lease change transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+                <Property name="renewal" type="array">
+                    List of lease renewal transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+                <Property name="vacate" type="array">
+                    List of notice to vacate lease transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+                <Property name="reconciliation" type="array">
+                    List of reconciliation lease transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+                <Property name="transfer" type="array">
+                    List of transfer lease transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+                <Property name="holdover" type="array">
+                    List of holdover lease transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+                <Property name="month_to_month" type="array">
+                    List of month-to-month lease transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+                <Property name="lease_document_regeneration" type="array">
+                    List of lease document regeneration lease transactions.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the transaction.
+                        </Property>
+                        <Property name="status" type="string">
+                            Status of the transaction.
+                        </Property>
+                        <Property name="type" type="string">
+                            Type of the transaction. This will be set according to the transaction type.
+                        </Property>
+                        <Property name="created_at" type="string">
+                            Creation date of the lease transaction.
+                        </Property>
+                        <Property name="updated_at" type="string">
+                            Last updated timestamp for the lease transaction.
+                        </Property>
+                    </Properties>
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="rentable_items" type="array">
+            List of rentable items associated with the lease.
+            <Properties>
+                <Property name="id" type="integer">
+                    Unique identifier for the rentable item.
+                </Property>
+                <Property name="name" type="string">
+                    Name of the rentable item.
+                </Property>
+                <Property name="start_date" type="string">
+                    Start date for the rentable item in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="end_date" type="string">
+                    End date for the rentable item in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="charges" type="array">
+                    List of charges associated with the rentable item.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the charge.
+                        </Property>
+                        <Property name="name" type="string">
+                            Name of the charge.
+                        </Property>
+                        <Property name="amount" type="string">
+                            Amount for the charge.
+                        </Property>
+                        <Property name="refundable" type="boolean">
+                            Indicates if the charge is refundable.
+                        </Property>
+                        <Property name="due_at" type="string">
+                            When the charge is due. Example: "Monthly".
+                        </Property>
+                        <Property name="start_date" type="string">
+                            Start date for the charge in the format "YYYY-MM-DD".
+                        </Property>
+                        <Property name="end_date" type="string">
+                            End date for the charge in the format "YYYY-MM-DD".
+                        </Property>
+                    </Properties>
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="pets" type="array">
+            List of pets associated with the lease.
+            <Properties>
+                <Property name="id" type="integer">
+                    Unique identifier for the pet.
+                </Property>
+                <Property name="name" type="string">
+                    Name of the pet.
+                </Property>
+                <Property name="start_date" type="string">
+                    Start date for the pet in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="end_date" type="string">
+                    End date for the pet in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="type" type="string">
+                    Type of the pet. Example: "Dog".
+                </Property>
+                <Property name="breed" type="string">
+                    Breed of the pet.
+                </Property>
+                <Property name="weight" type="string">
+                    Weight of the pet.
+                </Property>
+                <Property name="description" type="string">
+                    Description of the pet.
+                </Property>
+                <Property name="is_service_animal" type="boolean">
+                    Indicates if the pet is a service animal.
+                </Property>
+                <Property name="charges" type="array">
+                    List of charges associated with the pet.
+                    <Properties>
+                        <Property name="id" type="integer">
+                            Unique identifier for the charge.
+                        </Property>
+                        <Property name="name" type="string">
+                            Name of the charge.
+                        </Property>
+                        <Property name="amount" type="string">
+                            Amount for the charge.
+                        </Property>
+                        <Property name="refundable" type="boolean">
+                            Indicates if the charge is refundable.
+                        </Property>
+                        <Property name="due_at" type="string">
+                            When the charge is due. Example: "Monthly".
+                        </Property>
+                        <Property name="start_date" type="string">
+                            Start date for the charge in the format "YYYY-MM-DD".
+                        </Property>
+                        <Property name="end_date" type="string">
+                            End date for the charge in the format "YYYY-MM-DD".
+                        </Property>
+                    </Properties>
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="vehicles" type="array">
+            List of vehicles associated with the lease.
+            <Properties>
+                <Property name="id" type="integer">
+                    Unique identifier for the vehicle.
+                </Property>
+                <Property name="start_date" type="string">
+                    Start date for the vehicle in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="end_date" type="string">
+                    End date for the vehicle in the format "YYYY-MM-DD".
+                </Property>
+                <Property name="make" type="string">
+                    Make of the vehicle.
+                </Property>
+                <Property name="model" type="string">
+                    Model of the vehicle.
+                </Property>
+                <Property name="color" type="string">
+                    Color of the vehicle.
+                </Property>
+                <Property name="year" type="integer">
+                    Year of the vehicle.
+                </Property>
+                <Property name="state" type="string">
+                    State where the vehicle is registered.
+                </Property>
+                <Property name="plate" type="string">
+                    License plate number of the vehicle.
+                </Property>
+                <Property name="permit" type="string">
+                    Permit number for the vehicle.
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="documents" type="array">
+            List of documents related to the lease.
+            <Properties>
+                <Property name="title" type="string">
+                    Title of the document.
+                </Property>
+                <Property name="document_type" type="string">
+                    Type of the document.
+                </Property>
+                <Property name="url" type="string">
+                    URL for accessing the document's base64-encoded content.
+                    To retrieve the content, you must provide your API key, just as you would with other endpoints.
+                </Property>
+            </Properties>
+        </Property>
+        <Property name="created_at" type="string">
+            Creation timestamp of the lease record.
+        </Property>
+        <Property name="updated_at" type="string">
+            Last updated timestamp of the lease record. 
+        </Property>
     </Properties>
   </Col>
   <Col sticky>

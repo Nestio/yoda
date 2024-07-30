@@ -25,15 +25,24 @@ export const exampleCode = `
         "lease_start": "2024-06-27",
         "lease_end": "2024-12-26",
         "lease_term": 6,
-        "expiration": "2024-07-27 15:02:00.651184",
-        "total_monthly_fees": "1625.00",
-        "total_move_in_fees": "666.68"
+        "expiration": "2024-08-29 07:04:45.034937",
+        "total_monthly_fees": "1745.00",
+        "total_move_in_fees": "1082.68"
     },
     "unit": {
         "id": 3998557,
         "unit_number": "0826",
-        "price": 1571.0,
+        "price": 1571,
         "address": "721 E Ridge Dr - #0826"
+    },
+    "guest_card": {
+        "client_id": 15209922,
+        "pms_guestcard_id": [
+            "p5003909"
+        ],
+        "pms_resident_household_id": [
+            "t2570582"
+        ]
     },
     "applicants": [
         {
@@ -49,9 +58,23 @@ export const exampleCode = `
             "email": "john.doe@gmail.com",
             "phone_number": "+13120984673"
         }
-
     ],
-    "security_deposit": 1200,
+    "security_deposit": "600.00",
+    "concessions": [
+        {
+            "id": 1,
+            "type": "Rent Concession",
+            "amount": 550.0,
+            "amount_type": "fixed",
+            "description": "Test Concession",
+            "is_monthly": true,
+            "is_required": false,
+            "starting_month": 1,
+            "duration": 3,
+            "starting_date": "2024-07-01",
+            "ending_date": "2024-08-01"
+        }
+    ],
     "fees_itemized": [
         {
             "id": 292498,
@@ -78,46 +101,112 @@ export const exampleCode = `
             "paid_for": "test elim two"
         }
     ],
-    "concessions": [
+    "rentable_items": [
         {
-            "amount": 100,
-            "description": "Rent Concession",
-            "flat_or_percentage": "Flat",
-            "is_required": false,
-            "is_monthly": true,
-            "term": 12,
+            "id": 21532501,
+            "name": "Garage",
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "charges": [
+                {
+                    "id": 21949362,
+                    "name": "Rent",
+                    "amount": "95.00",
+                    "refundable": false,
+                    "due_at": "Monthly",
+                    "start_date": "2024-06-27",
+                    "end_date": null
+                }
+            ]
         }
     ],
-    "guest_card": {
-        "client_id": 15209922,
-        "realpage_pms_attributes": {
-            "guestcard_id": [
-                "p5003909"
-            ],
-            "resident_household_id": [
-                "t2570582"
-            ]
-        }
-    },
-    "executed_documents": [
+    "pets": [
         {
-            "id": 255904,
+            "id": 21532499,
+            "name": "Bob",
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "charges": [
+                {
+                    "id": 21949356,
+                    "name": "Dog Rent",
+                    "amount": "25.00",
+                    "refundable": false,
+                    "due_at": "Monthly",
+                    "start_date": "2024-06-27",
+                    "end_date": null
+                },
+                {
+                    "id": 21949357,
+                    "name": "Dog Deposit",
+                    "amount": "400.00",
+                    "refundable": true,
+                    "due_at": "At move-in",
+                    "start_date": "2024-06-27",
+                    "end_date": null
+                }
+            ],
+            "type": "Dog",
+            "breed": "Pitbull",
+            "weight": "25",
+            "description": null,
+            "is_service_animal": false
+        },
+        {
+            "id": 21532500,
             "name": null,
-            "lease_transaction_id": 347578,
-            "status": "Completed",
-            "type": "Lease",
-            "is_test_mode": true,
-            "is_wet_signed": false,
-            "lease_document_templates": [
-                "Flood Disclosure Notice",
-                "Apartment Lease Form",
-                "Addendum for Rent Concession"
-            ]
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "charges": [
+                {
+                    "id": 21949359,
+                    "name": "Rent",
+                    "amount": "0.00",
+                    "refundable": false,
+                    "due_at": "Monthly",
+                    "start_date": "2024-06-27",
+                    "end_date": null
+                },
+                {
+                    "id": 21949360,
+                    "name": "Pet Fee",
+                    "amount": "00.00",
+                    "refundable": false,
+                    "due_at": "At move-in",
+                    "start_date": "2024-06-27",
+                    "end_date": null
+                }
+            ],
+            "type": "Other",
+            "breed": null,
+            "weight": null,
+            "description": "Dragon",
+            "is_service_animal": true
+        }
+    ],
+    "vehicles": [
+        {
+            "id": 21532503,
+            "start_date": "2024-06-27",
+            "end_date": null,
+            "make": "Toyota",
+            "model": "Rav4",
+            "color": "Blue",
+            "year": 2007,
+            "state": "TX",
+            "plate": "TX1342",
+            "permit": "12345"
+        }
+    ],
+    "documents": [
+        {
+            "title": "scan_1.png",
+            "document_type": "user_uploaded_document",
+            "url": "https://webhooks-chuck-pr27411.nestiostaging.com/api/vgs/v2/242143/user_uploaded_document/10/"
         }
     ],
     "created_at": "2024-06-27T14:36:50.765136",
-    "updated_at": "2024-06-27T14:38:53.585190"
-
+    "updated_at": "2024-07-30T07:04:19.119826"
 }
 `;
 
@@ -136,7 +225,7 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
     <Code
       type="code"
       wrap={true}
-      code={`GET /api/v2/lease-transaction/:id`}
+      code={`GET /api/v2/lease-transactions/:id`}
       frame="terminal"
       title="API"
     />
@@ -222,6 +311,20 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
           </Property>
         </Properties>
       </Property>
+      <Property name="guest_card" type="object">
+        Guest card details associated with the transaction.
+        <Properties>
+          <Property name="client_id" type="integer">
+            The client ID associated with the guest card.
+          </Property>
+          <Property name="guestcard_id" type="array">
+            Array of guest card IDs.
+          </Property>
+          <Property name="resident_household_id" type="array">
+            Array of resident household IDs.
+          </Property>
+        </Properties>
+      </Property>
       <Property name="applicants" type="array">
         List of applicants involved in the transaction.
         <Properties>
@@ -293,75 +396,190 @@ import { Row, Col, Properties, Property } from "./../../../components/Layout";
         </Properties>
       </Property>
       <Property name="concessions" type="array">
-        Breakdown of the selected concessions during the lease transaction.
-        <Properties>
-          <Property name="amount" type="integer">
-            Amount of the concession.
-          </Property>
-          <Property name="description" type="string">
-            User friendly description of the concession.
-          </Property>
-          <Property name="flat_or_percentage" type="string">
-            A concession can be a percentage or a flat fee. example: 10% of the rent or $100 off the rent
-          </Property>
-          <Property name="is_required" type="boolean">
-            Describes if the concession was added automatically or manually
-          </Property>
-          <Property name="term" type="integer">
-            The number of terms the concessions applies for
-          </Property>
-        </Properties>
-      </Property>
-      <Property name="guest_card" type="object">
-        Guest card details associated with the transaction.
-        <Properties>
-          <Property name="client_id" type="integer">
-            The client ID associated with the guest card.
-          </Property>
-          <Property name="realpage_pms_attributes" type="object">
-            Attributes specific to RealPage PMS.
-            <Properties>
-              <Property name="guestcard_id" type="array">
-                Array of guest card IDs.
+          Breakdown of the selected concessions during the lease transaction.
+          <Properties>
+              <Property name="type" type="string">
+                  Indicates the type of concession.
               </Property>
-              <Property name="resident_household_id" type="array">
-                Array of resident household IDs.
+              <Property name="amount" type="float">
+                  Amount of the concession.
               </Property>
-            </Properties>
-          </Property>
-        </Properties>
+              <Property name="amount_type" type="string">
+                  Specifies whether the amount is fixed or a percentage.
+              </Property>
+              <Property name="description" type="string">
+                  User-friendly description of the concession.
+              </Property>
+              <Property name="is_monthly" type="boolean">
+                  Indicates whether the concession is applied monthly.
+              </Property>
+              <Property name="is_required" type="boolean">
+                  Specifies if the concession was automatically applied based on the selected unit and can not be removed.
+              </Property>
+              <Property name="starting_month" type="integer">
+                  The starting month of the concession period.
+              </Property>
+              <Property name="duration" type="integer">
+                  The duration in months for which the concession applies.
+              </Property>
+              <Property name="starting_date" type="string">
+                  The start date of the concession.
+              </Property>
+              <Property name="ending_date" type="string">
+                  The end date of the concession.
+              </Property>
+          </Properties>
       </Property>
-      <Property name="executed_documents" type="array">
-        Array of executed documents associated with the lease transaction.
+      <Property name="rentable_items" type="array">
+        List of rentable items and their associated charges.
         <Properties>
-          <Property name="id" type="integer">
-            Unique identifier for the document.
-          </Property>
-          <Property name="name" type="string">
-            Name of the document.
-          </Property>
-          <Property name="lease_transaction_id" type="integer">
-            ID of the lease transaction associated with the document.
-          </Property>
-          <Property name="status" type="string">
-            Status of the document (e.g., "Completed").
-          </Property>
-          <Property name="type" type="string">
-            Type of the document (e.g., "Lease").
-          </Property>
-          <Property name="is_test_mode" type="boolean">
-            Indicates if the document is in test mode.
-          </Property>
-          <Property name="is_wet_signed" type="boolean">
-            Indicates if the document is wet signed.
-          </Property>
-          <Property name="lease_document_templates" type="array">
-            Array of document templates associated with the document.
-          </Property>
+            <Property name="id" type="integer">
+                Unique identifier for the rentable item.
+            </Property>
+            <Property name="name" type="string">
+                Name of the rentable item.
+            </Property>
+            <Property name="start_date" type="string">
+                Start date for the rentable item in the format "YYYY-MM-DD".
+            </Property>
+            <Property name="end_date" type="string">
+                End date for the rentable item in the format "YYYY-MM-DD".
+            </Property>
+            <Property name="charges" type="array">
+                List of charges associated with the rentable item.
+                <Properties>
+                    <Property name="id" type="integer">
+                        Unique identifier for the charge.
+                    </Property>
+                    <Property name="name" type="string">
+                        Name of the charge.
+                    </Property>
+                    <Property name="amount" type="string">
+                        Amount of the charge.
+                    </Property>
+                    <Property name="refundable" type="boolean">
+                        Indicates if the charge is refundable.
+                    </Property>
+                    <Property name="due_at" type="string">
+                        Indicates when the charge is due.
+                    </Property>
+                    <Property name="start_date" type="string">
+                        Start date for the charge in the format "YYYY-MM-DD".
+                    </Property>
+                    <Property name="end_date" type="string">
+                        End date for the charge in the format "YYYY-MM-DD".
+                    </Property>
+                </Properties>
+            </Property>
         </Properties>
       </Property>
-      <Property name="executed_lease_document" type="array">
-        List of executed lease documents (under consideration).
+      <Property name="pets" type="array">
+        List of pets and their associated charges.
+        <Properties>
+            <Property name="id" type="integer">
+                Unique identifier for the pet.
+            </Property>
+            <Property name="name" type="string">
+                Name of the pet.
+            </Property>
+            <Property name="start_date" type="string">
+                Start date for the pet in the format "YYYY-MM-DD".
+            </Property>
+            <Property name="end_date" type="string">
+                End date for the pet in the format "YYYY-MM-DD".
+            </Property>
+            <Property name="type" type="string">
+                Type of the pet (e.g., Dog, Cat, etc.).
+            </Property>
+            <Property name="breed" type="string">
+                Breed of the pet.
+            </Property>
+            <Property name="weight" type="string">
+                Weight of the pet.
+            </Property>
+            <Property name="description" type="string">
+                Description of the pet.
+            </Property>
+            <Property name="is_service_animal" type="boolean">
+                Indicates if the pet is a service animal.
+            </Property>
+            <Property name="charges" type="array">
+                List of charges associated with the pet.
+                <Properties>
+                    <Property name="id" type="integer">
+                        Unique identifier for the charge.
+                    </Property>
+                    <Property name="name" type="string">
+                        Name of the charge.
+                    </Property>
+                    <Property name="amount" type="string">
+                        Amount of the charge.
+                    </Property>
+                    <Property name="refundable" type="boolean">
+                        Indicates if the charge is refundable.
+                    </Property>
+                    <Property name="due_at" type="string">
+                        Indicates when the charge is due.
+                    </Property>
+                    <Property name="start_date" type="string">
+                        Start date for the charge in the format "YYYY-MM-DD".
+                    </Property>
+                    <Property name="end_date" type="string">
+                        End date for the charge in the format "YYYY-MM-DD".
+                    </Property>
+                </Properties>
+            </Property>
+        </Properties>
+      </Property>
+      <Property name="vehicles" type="array">
+        List of vehicles and their details.
+        <Properties>
+            <Property name="id" type="integer">
+                Unique identifier for the vehicle.
+            </Property>
+            <Property name="start_date" type="string">
+                Start date for the vehicle in the format "YYYY-MM-DD".
+            </Property>
+            <Property name="end_date" type="string">
+                End date for the vehicle in the format "YYYY-MM-DD".
+            </Property>
+            <Property name="make" type="string">
+                Make of the vehicle.
+            </Property>
+            <Property name="model" type="string">
+                Model of the vehicle.
+            </Property>
+            <Property name="color" type="string">
+                Color of the vehicle.
+            </Property>
+            <Property name="year" type="integer">
+                Year of the vehicle.
+            </Property>
+            <Property name="state" type="string">
+                State where the vehicle is registered.
+            </Property>
+            <Property name="plate" type="string">
+                License plate number of the vehicle.
+            </Property>
+            <Property name="permit" type="string">
+                Permit number for the vehicle.
+            </Property>
+        </Properties>
+      </Property>
+      <Property name="documents" type="array">
+        List of documents and their details.
+        <Properties>
+            <Property name="title" type="string">
+                Title of the document.
+            </Property>
+            <Property name="document_type" type="string">
+                Type of the document.
+            </Property>
+            <Property name="url" type="string">
+                URL for accessing the document's base64-encoded content.
+                To retrieve the content, you must provide your API key, just as you would with other endpoints.
+            </Property>
+        </Properties>
       </Property>
       <Property name="created_at" type="string">
         Date and time when the transaction was created.
