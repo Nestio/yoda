@@ -59,9 +59,7 @@ While this step is optional, it provides an extra layer of security for your web
 
 ### Failures and Retries
 
-If your callback url is not reachable or returns a non-successful response, we will retry POSTing the event up to **3 times**, with each retry interval being longer than the previous one. If the **third retry fails**, you will begin receiving notifications by email.
-
-After **10 consecutive failures**, your callback URL will be automatically cleared.
+If your callback url is not reachable or returns a non-successful response, we will retry POSTing the event up to **3 times**, with each retry interval being longer than the previous one.
 
 Please note that our requests will timeout after **5 seconds**, so callbacks will fail if your server takes longer than that to respond. The retry pattern is described below.
 
